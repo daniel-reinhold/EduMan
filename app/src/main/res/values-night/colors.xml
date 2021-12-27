@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#007FAC</color>
+    <color name="primary_variant">#409DC9</color>
+
+    <color name="background">#000000</color>
+    <color name="status_bar_background">#232323</color>
+    <color name="status_bar_foreground">#FFFFFF</color>
+
+    <color name="card_background">#232323</color>
+
+    <color name="icon">#B9B9B9</color>
+
+    <color name="text">#FFFFFF</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+</resources>
