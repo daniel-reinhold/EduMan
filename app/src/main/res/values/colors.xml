@@ -5,11 +5,11 @@
 
     <color name="background">#FFFFFF</color>
     <color name="status_bar_background">#F5F5F5</color>
-    <color name="status_bar_foreground">#121413</color>
 
     <color name="card_background">#F5F5F5</color>
 
-    <color name="icon">#6A6C6B</color>
+    <color name="icon_light">#6A6C6B</color>
+    <color name="icon_dark">#121413</color>
 
     <color name="text">#121413</color>
 

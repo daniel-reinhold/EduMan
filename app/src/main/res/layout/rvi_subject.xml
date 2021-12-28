@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    app:cardCornerRadius="4dp"
+    android:layout_marginHorizontal="@dimen/default_margin"
+    android:layout_marginVertical="@dimen/extra_small_margin"
+    style="@style/DefaultCard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="@dimen/small_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/rviSubjectColorView"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/background_color_view"
+            android:layout_width="@dimen/color_view_size"
+            android:layout_height="@dimen/color_view_size" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rviSubjectTextViewSubjectTitle"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

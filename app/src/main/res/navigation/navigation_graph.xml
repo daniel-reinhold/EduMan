@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_dashboard"
+        android:id="@+id/dashboardFragment"
+        android:name="com.eduman.ui.fragments.DashboardFragment"
+        android:label="DashboardFragment" />
+    <fragment
+        tools:layout="@layout/fragment_subject"
+        android:id="@+id/subjectFragment"
+        android:name="com.eduman.ui.fragments.SubjectFragment"
+        android:label="SubjectFragment" >
+        <action
+            android:id="@+id/action_subjectFragment_to_subjectFormFragment"
+            app:destination="@id/subjectFormFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_subject_form"
+        android:id="@+id/subjectFormFragment"
+        android:name="com.eduman.ui.fragments.SubjectFormFragment"
+        android:label="SubjectFormFragment" />
+</navigation>

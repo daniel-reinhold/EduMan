@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">EduMan</string>
+
+    <string name="dashboard">Dashboard</string>
+
+    <string name="subject">Subject</string>
+    <string name="subjects">Subjects</string>
+
+    <string name="cd_button_close">Button to close the current view</string>
+
+    <plurals name="subject">
+        <item quantity="one">Subject</item>
+        <item quantity="many">Subjects</item>
+    </plurals>
 </resources>
