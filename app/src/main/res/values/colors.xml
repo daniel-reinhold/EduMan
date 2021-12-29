@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#007FAC</color>
-    <color name="primary_variant">#409DC9</color>
+    <color name="primary">#007AFF</color>
+    <color name="primary_variant">#0A84FF</color>
 
     <color name="background">#FFFFFF</color>
     <color name="status_bar_background">#F5F5F5</color>
+
+    <color name="bottom_sheet_dialog_background">#FFFFFF</color>
 
     <color name="card_background">#F5F5F5</color>
 
@@ -12,6 +14,18 @@
     <color name="icon_dark">#121413</color>
 
     <color name="text">#121413</color>
+
+    <color name="error">#FF3B30</color>
+    <color name="warning">#FF9500</color>
+    <color name="success">#34C759</color>
+
+    <color name="text_button_enabled">#FFFFFF</color>
+    <color name="text_button_disabled">#6A6C6B</color>
+    <color name="background_button_enabled">@color/primary</color>
+    <color name="background_button_disabled">#CDCDCD</color>
+
+    <color name="text_field_stroke_color_focused">@color/primary</color>
+    <color name="text_field_stroke_color_unfocused">#BDBDBD</color>
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>

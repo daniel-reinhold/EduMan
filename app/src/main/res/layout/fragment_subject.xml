@@ -6,6 +6,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/fragmentSubjectsContainerEmpty"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/default_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            app:lottie_fileName="empty.json"
+            android:layout_marginBottom="@dimen/default_margin"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginTop="@dimen/default_margin"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="@string/no_subjects_added_yet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragmentSubjectsRecyclerView"
         android:layout_width="match_parent"

@@ -7,14 +7,14 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "subjects")
 data class Subject(
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = null,
+    var id: Int? = null,
 
     @ColumnInfo(name = "title")
-    val title: String,
+    var title: String,
 
     @ColumnInfo(name = "color")
-    val color: Int,
+    var color: Int,
 
     @ColumnInfo(name = "teacher_name")
-    val teacherName: String
+    var teacherName: String
 )

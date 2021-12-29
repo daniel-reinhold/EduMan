@@ -5,12 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
+import com.eduman.core.util.GeneralUtil
 import com.eduman.data.room.entitiy.Subject
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
 class SubjectsAdapter(
-    private val subjects: List<Subject>
+    var subjects: List<Subject>
 ) : RecyclerView.Adapter<SubjectsAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -33,6 +34,7 @@ class SubjectsAdapter(
         val subject = subjects[holder.adapterPosition]
 
         holder.textViewSubjectName.text = subject.title
+        holder.colorView.backgroundTintList = GeneralUtil.getColorStateList(subject.color)
     }
 
     override fun getItemCount() = subjects.size

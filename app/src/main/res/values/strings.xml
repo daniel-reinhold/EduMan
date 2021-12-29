@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">EduMan</string>
+    <string name="save">Save</string>
 
     <string name="dashboard">Dashboard</string>
 
@@ -7,6 +8,12 @@
     <string name="subjects">Subjects</string>
 
     <string name="cd_button_close">Button to close the current view</string>
+
+    <string name="no_subjects_added_yet">No subjects have been created yet</string>
+
+    <string name="name_of_subject">Subject name</string>
+    <string name="name_of_teacher">Teacher name</string>
+    <string name="select_color">Select color</string>
 
     <plurals name="subject">
         <item quantity="one">Subject</item>

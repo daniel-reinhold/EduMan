@@ -3,15 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/background_bottom_sheet_dialog.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/background_color_view.xml" value="0.2703125" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/button_background.xml" value="0.2703125" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/button_text_color.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_close.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_dashboard.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_education.xml" value="0.2703125" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_save.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_subjects.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/plus (1).xml" value="0.2703125" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/text_field_stroke_color.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/activity_dashboard.xml" value="0.264" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/dialog_select_color.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_subject.xml" value="0.264" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_subject_form.xml" value="0.264" />

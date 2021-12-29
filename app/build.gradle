@@ -67,4 +67,10 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$navVersion"
 
+    // Lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    // Color picker (included as aar because it isn't hosted anymore)
+    implementation fileTree(includes: ['color_picker.aar'], dir: 'libs')
+
 }
