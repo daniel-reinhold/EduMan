@@ -79,6 +79,7 @@
                 android:backgroundTint="@color/success" />
 
             <com.google.android.material.button.MaterialButton
+                app:icon="@drawable/icon_color"
                 android:id="@+id/fragmentSubjectFormButtonSelectColor"
                 style="@style/DefaultButton"
                 android:layout_width="wrap_content"

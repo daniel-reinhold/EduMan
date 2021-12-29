@@ -19,11 +19,7 @@ class MainActivity : EduManActivity("MainActivity") {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initialize()
         initializeNavigation()
-    }
-
-    private fun initialize() {
     }
 
     private fun initializeNavigation() {

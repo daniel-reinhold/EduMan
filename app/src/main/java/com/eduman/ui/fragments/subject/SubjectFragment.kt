@@ -1,4 +1,4 @@
-package com.eduman.ui.fragments
+package com.eduman.ui.fragments.subject
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -26,7 +26,7 @@ class SubjectFragment : EduManFragment(
     private var navController: NavController? = null
 
     private var recyclerView: RecyclerView? = null
-    private var adapterSubjects = SubjectsAdapter(listOf())
+    private var adapterSubjects: SubjectsAdapter? = null
 
     private var containerEmpty: LinearLayout? = null
 
@@ -37,7 +37,7 @@ class SubjectFragment : EduManFragment(
 
         initialize()
     }
-    //fragmentSubjectsContainerEmpty
+
     @SuppressLint("NotifyDataSetChanged")
     private fun initialize() {
         navController = findNavController()
@@ -45,11 +45,12 @@ class SubjectFragment : EduManFragment(
         containerEmpty = activity?.findViewById(R.id.fragmentSubjectsContainerEmpty)
         buttonAddSubject = activity?.findViewById(R.id.fragmentSubjectsButtonAddSubject)
 
+        adapterSubjects = SubjectsAdapter(listOf(), navController)
         recyclerView?.adapter = adapterSubjects
 
         subjectViewModel.getAll().observe(viewLifecycleOwner, { subjects ->
             if (subjects.isNotEmpty()) {
-                adapterSubjects.apply {
+                adapterSubjects?.apply {
                     this.subjects = subjects
                     this.notifyDataSetChanged()
                 }

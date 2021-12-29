@@ -10,11 +10,13 @@
         android:id="@+id/dashboardFragment"
         android:name="com.eduman.ui.fragments.DashboardFragment"
         android:label="DashboardFragment" />
+
     <fragment
         tools:layout="@layout/fragment_subject"
         android:id="@+id/subjectFragment"
-        android:name="com.eduman.ui.fragments.SubjectFragment"
+        android:name="com.eduman.ui.fragments.subject.SubjectFragment"
         android:label="SubjectFragment" >
+
         <action
             android:id="@+id/action_subjectFragment_to_subjectFormFragment"
             app:destination="@id/subjectFormFragment"
@@ -22,10 +24,26 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            android:id="@+id/action_subjectFragment_to_subjectDetailFragment"
+            app:destination="@id/subjectDetailFragment" />
     </fragment>
     <fragment
         tools:layout="@layout/fragment_subject_form"
         android:id="@+id/subjectFormFragment"
-        android:name="com.eduman.ui.fragments.SubjectFormFragment"
+        android:name="com.eduman.ui.fragments.subject.SubjectFormFragment"
         android:label="SubjectFormFragment" />
+    <fragment
+        tools:layout="@layout/fragment_subject_detail"
+        android:id="@+id/subjectDetailFragment"
+        android:name="com.eduman.ui.fragments.subject.SubjectDetailFragment"
+        android:label="SubjectDetailFragment" >
+        <argument
+            android:name="subject"
+            app:argType="com.eduman.data.room.entitiy.Subject" />
+    </fragment>
 </navigation>

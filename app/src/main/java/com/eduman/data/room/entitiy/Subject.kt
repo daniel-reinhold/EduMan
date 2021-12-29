@@ -1,9 +1,12 @@
 package com.eduman.data.room.entitiy
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "subjects")
 data class Subject(
     @PrimaryKey(autoGenerate = true)
@@ -17,4 +20,4 @@ data class Subject(
 
     @ColumnInfo(name = "teacher_name")
     var teacherName: String
-)
+) : Parcelable

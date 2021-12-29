@@ -3,15 +3,18 @@ package com.eduman.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.GeneralUtil
 import com.eduman.data.room.entitiy.Subject
+import com.eduman.ui.fragments.subject.SubjectFragmentDirections
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
 class SubjectsAdapter(
-    var subjects: List<Subject>
+    var subjects: List<Subject>,
+    private val navController: NavController?
 ) : RecyclerView.Adapter<SubjectsAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -35,6 +38,12 @@ class SubjectsAdapter(
 
         holder.textViewSubjectName.text = subject.title
         holder.colorView.backgroundTintList = GeneralUtil.getColorStateList(subject.color)
+
+        holder.card.setOnClickListener {
+            navController?.navigate(
+                SubjectFragmentDirections.actionSubjectFragmentToSubjectDetailFragment(subject)
+            )
+        }
     }
 
     override fun getItemCount() = subjects.size

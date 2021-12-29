@@ -14,6 +14,7 @@
     <color name="icon_dark">#121413</color>
 
     <color name="text">#121413</color>
+    <color name="text_secondary">#686868</color>
 
     <color name="error">#FF3B30</color>
     <color name="warning">#FF9500</color>

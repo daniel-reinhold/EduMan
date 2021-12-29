@@ -6,42 +6,56 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <com.google.android.material.textview.MaterialTextView
+        android:gravity="center_vertical"
+        android:id="@+id/fragmentSubjectsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="@dimen/default_margin"
+        android:text="@string/subjects"
+        android:textColor="@color/text"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/fragmentSubjectsContainerEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_margin"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        app:layout_constraintTop_toBottomOf="@+id/fragmentSubjectsTitle">
 
         <com.airbnb.lottie.LottieAnimationView
-            app:lottie_fileName="empty.json"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:layout_marginBottom="@dimen/default_margin"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            app:lottie_fileName="empty.json"
+            app:lottie_loop="true" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_margin"
-            android:textStyle="bold"
+            android:text="@string/no_subjects_added_yet"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:text="@string/no_subjects_added_yet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragmentSubjectsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingTop="@dimen/extra_small_margin"
         android:paddingBottom="@dimen/recyclerview_bottom_padding"
@@ -49,7 +63,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentSubjectsTitle"
         tools:listitem="@layout/rvi_subject" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton

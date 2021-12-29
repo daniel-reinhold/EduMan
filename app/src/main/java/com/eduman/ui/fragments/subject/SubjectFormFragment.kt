@@ -1,6 +1,5 @@
-package com.eduman.ui.fragments
+package com.eduman.ui.fragments.subject
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
