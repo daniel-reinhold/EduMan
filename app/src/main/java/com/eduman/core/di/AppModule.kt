@@ -28,4 +28,8 @@ object AppModule {
     @Provides
     fun provideSubjectDao(database: AppDatabase) = database.getSubjectDAO()
 
+    @Singleton
+    @Provides
+    fun provideGradeDao(database: AppDatabase) = database.getGradeDAO()
+
 }

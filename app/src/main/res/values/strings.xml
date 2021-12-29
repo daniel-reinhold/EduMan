@@ -2,6 +2,10 @@
     <string name="app_name" translatable="false">EduMan</string>
     <string name="save">Save</string>
     <string name="details">Details</string>
+    <string name="grade">Grade</string>
+    <string name="test">Test</string>
+    <string name="weighting">Weighting</string>
+    <string name="total">Total</string>
 
     <string name="dashboard">Dashboard</string>
 
@@ -16,6 +20,7 @@
     <string name="name_of_teacher">Teacher name</string>
     <string name="select_color">Select color</string>
     <string name="tests">Tests</string>
+    <string name="add_grade">Add grade</string>
 
     <plurals name="subject">
         <item quantity="one">Subject</item>
