@@ -10,6 +10,9 @@ interface GradeDAO {
     @Query("SELECT * FROM grades WHERE subject_id = :subjectId")
     fun getAll(subjectId: Int): Flow<List<Grade>>
 
+    @Query("SELECT * FROM grades WHERE subject_id = :subjectId ORDER BY created_at DESC LIMIT :amount")
+    fun getLast(subjectId: Int, amount: Int): Flow<List<Grade>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(grade: Grade)
 

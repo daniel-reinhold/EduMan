@@ -6,6 +6,9 @@
     <string name="test">Test</string>
     <string name="weighting">Weighting</string>
     <string name="total">Total</string>
+    <string name="teacher_colon">Teacher:</string>
+    <string name="select_date">Select date</string>
+    <string name="select_time">Select time</string>
 
     <string name="dashboard">Dashboard</string>
 
@@ -15,12 +18,20 @@
     <string name="cd_button_close">Button to close the current view</string>
 
     <string name="no_subjects_added_yet">No subjects have been created yet</string>
+    <string name="subject_empty">Nothing is going on here yet. Add a new grade or test.</string>
 
     <string name="name_of_subject">Subject name</string>
     <string name="name_of_teacher">Teacher name</string>
     <string name="select_color">Select color</string>
     <string name="tests">Tests</string>
     <string name="add_grade">Add grade</string>
+
+    <string name="add_test">Add test</string>
+    <string name="topic">Topic</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+
+    <string name="format_date_default">yyyy/dd/MM</string>
 
     <plurals name="subject">
         <item quantity="one">Subject</item>

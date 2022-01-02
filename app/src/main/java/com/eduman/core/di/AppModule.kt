@@ -26,10 +26,18 @@ object AppModule {
 
     @Singleton
     @Provides
+    fun provideCoreDao(database: AppDatabase) = database.getCoreDAO()
+
+    @Singleton
+    @Provides
     fun provideSubjectDao(database: AppDatabase) = database.getSubjectDAO()
 
     @Singleton
     @Provides
     fun provideGradeDao(database: AppDatabase) = database.getGradeDAO()
+
+    @Singleton
+    @Provides
+    fun provideTestDao(database: AppDatabase) = database.getTestDAO()
 
 }

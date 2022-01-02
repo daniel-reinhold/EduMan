@@ -20,6 +20,9 @@
     <color name="text_field_stroke_color_focused">@color/primary</color>
     <color name="text_field_stroke_color_unfocused">#333333</color>
 
+    <color name="text_field_stroke_color_focused_dialog">@color/primary</color>
+    <color name="text_field_stroke_color_unfocused_dialog">#717171</color>
+
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 </resources>

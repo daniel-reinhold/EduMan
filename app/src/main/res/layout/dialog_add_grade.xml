@@ -25,7 +25,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/dialogAddGradeTextFieldGrade"
             android:hint="@string/grade"
-            style="@style/DefaultTextField"
+            style="@style/DialogTextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -40,7 +40,7 @@
             android:layout_marginTop="@dimen/extra_small_margin"
             android:id="@+id/dialogAddGradeTextFieldWeighting"
             android:hint="@string/weighting"
-            style="@style/DefaultTextField"
+            style="@style/DialogTextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

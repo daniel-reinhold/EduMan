@@ -6,6 +6,9 @@
     <string name="test">Leistungskontrolle</string>
     <string name="weighting">Gewichtung</string>
     <string name="total">Gesamt</string>
+    <string name="teacher_colon">Lehrer:</string>
+    <string name="select_date">Datum auswählen</string>
+    <string name="select_time">Uhrzeit auswählen</string>
 
     <string name="dashboard">Dashboard</string>
 
@@ -15,12 +18,20 @@
     <string name="cd_button_close">Button zum schließen der aktuell sichtbaren Ansicht</string>
 
     <string name="no_subjects_added_yet">Es wurden noch keine Fächer erstellt</string>
+    <string name="subject_empty">Hier ist noch nichts los. Füge eine neue Note oder eine neue Leistungskontrolle hinzu.</string>
 
     <string name="name_of_subject">Name des Faches</string>
     <string name="name_of_teacher">Name des Lehrers</string>
     <string name="select_color">Farbe auswählen</string>
     <string name="tests">Leistungskontrollen</string>
     <string name="add_grade">Note hinzufügen</string>
+
+    <string name="add_test">Leistungskontrolle hinzufügen</string>
+    <string name="topic">Thema</string>
+    <string name="date">Datum</string>
+    <string name="time">Uhrzeit</string>
+
+    <string name="format_date_default">dd.MM.yyyy</string>
 
     <plurals name="subject">
         <item quantity="one">Fach</item>

@@ -15,6 +15,8 @@ class GradeViewModel @Inject constructor(
 
     fun getAll(subjectId: Int) = repository.getAll(subjectId)
 
+    fun getLast(subjectId: Int, amount: Int) = repository.getLast(subjectId, amount)
+
     fun insert(grade: Grade) = viewModelScope.launch {
         repository.insert(grade)
     }

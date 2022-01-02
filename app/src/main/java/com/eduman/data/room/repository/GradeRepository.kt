@@ -11,6 +11,8 @@ class GradeRepository @Inject constructor(
 
     fun getAll(subjectId: Int) = dao.getAll(subjectId).asLiveData()
 
+    fun getLast(subjectId: Int, amount: Int) = dao.getLast(subjectId, amount).asLiveData()
+
     suspend fun insert(grade: Grade) = dao.insert(grade)
 
     suspend fun delete(grade: Grade) = dao.delete(grade)
