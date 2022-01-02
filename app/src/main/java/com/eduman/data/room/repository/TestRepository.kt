@@ -13,6 +13,8 @@ class TestRepository @Inject constructor(
 
     fun getNext(subjectId: Int, amount: Int) = dao.getNext(subjectId, amount).asLiveData()
 
+    fun getGrade(testId: Int) = dao.getGrade(testId).asLiveData()
+
     suspend fun insert(test: Test) = dao.insert(test)
 
     suspend fun delete(test: Test) = dao.delete(test)

@@ -17,6 +17,8 @@ class TestViewModel @Inject constructor(
 
     fun getNext(subjectId: Int, amount: Int) = repository.getNext(subjectId, amount)
 
+    fun getGrade(testId: Int) = repository.getGrade(testId)
+
     fun insert(test: Test) = viewModelScope.launch {
         repository.insert(test)
     }

@@ -3,6 +3,7 @@ package com.eduman.core.di
 import android.content.Context
 import androidx.room.Room
 import com.eduman.data.room.core.AppDatabase
+import com.eduman.data.room.core.MIGRATION_1_2
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +23,9 @@ object AppModule {
         context,
         AppDatabase::class.java,
         "eduman_db"
-    ).build()
+    )
+    .addMigrations(MIGRATION_1_2)
+    .build()
 
     @Singleton
     @Provides

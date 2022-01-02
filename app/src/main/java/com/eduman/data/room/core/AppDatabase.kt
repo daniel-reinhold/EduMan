@@ -3,6 +3,8 @@ package com.eduman.data.room.core
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.eduman.data.room.converters.DateConverter
 import com.eduman.data.room.dao.CoreDao
 import com.eduman.data.room.dao.GradeDAO
@@ -18,14 +20,18 @@ import com.eduman.data.room.entitiy.Test
         Grade::class,
         Test::class
     ],
-    version = 1
+    version = 2
 )
 @TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
-
     abstract fun getCoreDAO(): CoreDao
     abstract fun getSubjectDAO(): SubjectDAO
     abstract fun getGradeDAO(): GradeDAO
     abstract fun getTestDAO(): TestDAO
+}
 
+val MIGRATION_1_2 = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL("ALTER TABLE `grades` ADD COLUMN test_id INTEGER")
+    }
 }

@@ -20,5 +20,8 @@ data class Grade(
     var weighting: Float,
 
     @ColumnInfo(name = "subject_id")
-    var subjectId: Int
+    var subjectId: Int,
+
+    @ColumnInfo(name = "test_id")
+    var testId: Int? = null
 )
