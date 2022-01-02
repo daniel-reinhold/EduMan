@@ -32,6 +32,7 @@
     <string name="time">Time</string>
 
     <string name="format_date_default">yyyy/dd/MM</string>
+    <string name="format_date_time_default">yyyy/dd/MM, hh:mm a</string>
 
     <plurals name="subject">
         <item quantity="one">Subject</item>

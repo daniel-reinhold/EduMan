@@ -1,8 +1,8 @@
-package com.eduman.core.util
+package com.eduman.core.util.formatter
 
 import com.eduman.data.util.Time
 
-class TimeFormatUtil {
+class TimeFormatter {
 
     companion object {
 

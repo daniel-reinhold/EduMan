@@ -1,14 +1,12 @@
 package com.eduman.ui.dialogs
 
 import android.text.format.DateFormat
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.FragmentActivity
 import com.eduman.R
-import com.eduman.core.util.DateFormatUtil
-import com.eduman.core.util.TimeFormatUtil
-import com.eduman.data.room.entitiy.Test
+import com.eduman.core.util.formatter.DateFormatter
+import com.eduman.core.util.formatter.TimeFormatter
 import com.eduman.data.util.Time
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
@@ -78,7 +76,7 @@ class AddTestDialog(
             .build().apply {
                 addOnPositiveButtonClickListener { timestamp ->
                     Date(timestamp).also { date ->
-                        textFieldDate.editText?.setText(DateFormatUtil.formatDateDefault(parentActivity, date))
+                        textFieldDate.editText?.setText(DateFormatter.formatDateDefault(parentActivity, date))
                         selectedDate = timestamp
                     }
                     validate()
@@ -101,7 +99,7 @@ class AddTestDialog(
                         this.hour,
                         this.minute
                     ).also { time ->
-                        textFieldTime.editText?.setText(TimeFormatUtil.formatTimeDefault(time))
+                        textFieldTime.editText?.setText(TimeFormatter.formatTimeDefault(time))
                         selectedTime = time
                     }
                     validate()

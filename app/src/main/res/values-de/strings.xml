@@ -32,6 +32,7 @@
     <string name="time">Uhrzeit</string>
 
     <string name="format_date_default">dd.MM.yyyy</string>
+    <string name="format_date_time_default">dd.MM.yyyy, HH:mm</string>
 
     <plurals name="subject">
         <item quantity="one">Fach</item>

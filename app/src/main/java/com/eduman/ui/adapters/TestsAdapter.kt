@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
-import com.eduman.core.util.DateFormatUtil
+import com.eduman.core.util.formatter.DateFormatter
+import com.eduman.core.util.formatter.DateTimeFormatter
 import com.eduman.data.room.entitiy.Test
 import com.google.android.material.textview.MaterialTextView
 
@@ -34,7 +35,7 @@ class TestsAdapter(
         val test = tests[holder.adapterPosition]
 
         holder.textViewTopic.text = test.topic
-        holder.textViewDate.text = DateFormatUtil.formatDateDefault(holder.context, test.date)
+        holder.textViewDate.text = DateTimeFormatter.formatDateTimeDefault(holder.context, test.date)
     }
 
     override fun getItemCount() = tests.size
