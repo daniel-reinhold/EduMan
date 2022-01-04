@@ -65,10 +65,7 @@ class SubjectsFragment : EduManFragment("Subjects") {
 
         subjectViewModel.getAll().observe(viewLifecycleOwner, { subjects ->
             if (subjects.isNotEmpty()) {
-                adapterSubjects?.apply {
-                    this.subjects = subjects
-                    this.notifyDataSetChanged()
-                }
+                adapterSubjects?.updateList(subjects)
 
                 containerEmpty?.visibility = View.GONE
                 recyclerView?.visibility = View.VISIBLE

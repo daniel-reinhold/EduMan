@@ -5,16 +5,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.util.GeneralUtil
 import com.eduman.data.room.entitiy.Subject
+import com.eduman.data.room.entitiy.Test
+import com.eduman.ui.adapters.diffcallback.SubjectsDiffCallback
+import com.eduman.ui.adapters.diffcallback.TestsDiffCallback
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
 class SubjectsAdapter(
-    var subjects: List<Subject>
+    private var list: List<Subject>
 ) : RecyclerView.Adapter<SubjectsAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,7 +38,7 @@ class SubjectsAdapter(
     }
 
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
-        val subject = subjects[holder.adapterPosition]
+        val subject = list[holder.adapterPosition]
 
         holder.textViewSubjectName.text = subject.title
         holder.colorView.backgroundTintList = GeneralUtil.getColorStateList(subject.color)
@@ -47,6 +51,12 @@ class SubjectsAdapter(
         }
     }
 
-    override fun getItemCount() = subjects.size
+    override fun getItemCount() = list.size
+
+    fun updateList(updatedList: List<Subject>) {
+        val result = DiffUtil.calculateDiff(SubjectsDiffCallback(this.list, updatedList))
+        this.list = updatedList
+        result.dispatchUpdatesTo(this)
+    }
 
 }

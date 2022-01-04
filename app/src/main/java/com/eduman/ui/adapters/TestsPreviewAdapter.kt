@@ -10,10 +10,11 @@ import com.eduman.R
 import com.eduman.core.util.formatter.DateTimeFormatter
 import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.room.entitiy.Test
+import com.eduman.ui.adapters.diffcallback.TestsDiffCallback
 import com.google.android.material.textview.MaterialTextView
 
 class TestsPreviewAdapter(
-    var tests: List<Test>
+    private var list: List<Test>
 ) : RecyclerView.Adapter<TestsPreviewAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -33,36 +34,18 @@ class TestsPreviewAdapter(
     }
 
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
-        val test = tests[holder.adapterPosition]
+        val test = list[holder.adapterPosition]
 
         holder.textViewTopic.text = test.topic
         holder.textViewDate.text = DateTimeFormatter.formatDateTimeDefault(holder.context, test.date)
     }
 
-    override fun getItemCount() = tests.size
+    override fun getItemCount() = list.size
 
     fun updateList(updatedList: List<Test>) {
-        val result = DiffUtil.calculateDiff(TestsPreviewDiffCallback(this.tests, updatedList))
-        this.tests = updatedList
+        val result = DiffUtil.calculateDiff(TestsDiffCallback(this.list, updatedList))
+        this.list = updatedList
         result.dispatchUpdatesTo(this)
-    }
-
-}
-
-class TestsPreviewDiffCallback(
-    private val oldList: List<Test>,
-    private val newList: List<Test>
-) : DiffUtil.Callback() {
-    override fun getOldListSize() = oldList.size
-
-    override fun getNewListSize() = newList.size
-
-    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return (oldList[oldItemPosition].id ?: 0) == (newList[newItemPosition].id ?: 0)
-    }
-
-    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition] == newList[newItemPosition]
     }
 
 }

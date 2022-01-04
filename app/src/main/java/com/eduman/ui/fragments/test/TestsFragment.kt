@@ -61,10 +61,7 @@ class TestsFragment : EduManFragment("TestsFragment") {
 
         subject?.id?.let { subjectId ->
             testViewModel.getAll(subjectId).observe(viewLifecycleOwner, { tests ->
-                adapter.apply {
-                    this.tests = tests
-                    this.notifyDataSetChanged()
-                }
+                adapter.updateList(tests)
             })
         }
     }

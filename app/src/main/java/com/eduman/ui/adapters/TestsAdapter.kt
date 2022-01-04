@@ -4,15 +4,17 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.formatter.DateTimeFormatter
 import com.eduman.data.room.entitiy.Test
+import com.eduman.ui.adapters.diffcallback.TestsDiffCallback
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
 class TestsAdapter(
-    var tests: List<Test>
+    private var list: List<Test>
 ) : RecyclerView.Adapter<TestsAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,12 +36,18 @@ class TestsAdapter(
     }
 
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
-        val test = tests[holder.adapterPosition]
+        val test = list[holder.adapterPosition]
 
         holder.textViewTopic.text = test.topic
         holder.textViewDate.text = DateTimeFormatter.formatDateTimeDefault(holder.context, test.date)
     }
 
-    override fun getItemCount() = tests.size
+    override fun getItemCount() = list.size
+
+    fun updateList(updatedList: List<Test>) {
+        val result = DiffUtil.calculateDiff(TestsDiffCallback(this.list, updatedList))
+        this.list = updatedList
+        result.dispatchUpdatesTo(this)
+    }
 
 }

@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.data.room.entitiy.Grade
+import com.eduman.ui.adapters.diffcallback.GradesDiffCallback
 import com.google.android.material.textview.MaterialTextView
 
 class GradesPreviewAdapter(
-    var grades: List<Grade>
+    private var list: List<Grade>
 ) : RecyclerView.Adapter<GradesPreviewAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -30,38 +31,19 @@ class GradesPreviewAdapter(
     }
 
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
-        val grade = grades[holder.adapterPosition]
+        val grade = list[holder.adapterPosition]
 
         holder.textViewGrade.text = grade.grade.toString()
         holder.textViewWeighting.text = grade.weighting.toString()
         holder.textViewTotal.text = (grade.grade * grade.weighting).toString()
     }
 
-    override fun getItemCount() = grades.size
+    override fun getItemCount() = list.size
 
     fun updateList(updatedList: List<Grade>) {
-        val diffResult = DiffUtil.calculateDiff(GradesPreviewDiffCallback(this.grades, updatedList))
-        this.grades = updatedList
+        val diffResult = DiffUtil.calculateDiff(GradesDiffCallback(this.list, updatedList))
+        this.list = updatedList
         diffResult.dispatchUpdatesTo(this)
-    }
-
-}
-
-class GradesPreviewDiffCallback(
-    private val oldList: List<Grade>,
-    private val newList: List<Grade>
-) : DiffUtil.Callback() {
-
-    override fun getOldListSize() = oldList.size
-
-    override fun getNewListSize() = newList.size
-
-    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return (oldList[oldItemPosition].id ?: 0) == (newList[newItemPosition].id ?: 0)
-    }
-
-    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition] == newList[newItemPosition]
     }
 
 }
