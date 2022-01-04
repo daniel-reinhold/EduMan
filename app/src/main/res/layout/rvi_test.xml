@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:paddingVertical="@dimen/extra_small_margin"
-    android:paddingHorizontal="@dimen/small_margin"
+<com.google.android.material.card.MaterialCardView
+    app:cardCornerRadius="6dp"
+    android:layout_marginHorizontal="@dimen/default_margin"
+    android:layout_marginVertical="@dimen/extra_small_margin"
+    style="@style/DefaultCard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rviTestTextViewTopic"
-        android:textStyle="bold"
-        android:textColor="@color/text"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/small_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rviTestTextViewDate"
-        android:textColor="@color/text_secondary"
-        android:textSize="14sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rviTestTextViewTopic"
+            android:textSize="22sp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-</LinearLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rviTestTextViewDate"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

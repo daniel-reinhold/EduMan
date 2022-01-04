@@ -8,6 +8,7 @@
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/button_background.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/button_text_color.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_arrow_right.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_calendar.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_clock.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_close.xml" value="0.2703125" />
@@ -30,10 +31,14 @@
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_subject.xml" value="0.264" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_subject_detail.xml" value="0.264" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_subject_form.xml" value="0.264" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_subjects.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/fragment_tests.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/icon_test.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/rvi_grade.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/rvi_overview_test.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/rvi_subject.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/rvi_test.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/rvi_test_preview.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
       </map>

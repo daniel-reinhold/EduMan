@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:gravity="center_vertical"
-        android:id="@+id/fragmentSubjectsTitle"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:paddingHorizontal="@dimen/default_margin"
-        android:text="@string/subjects"
-        android:textColor="@color/text"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/fragmentSubjectsContainerEmpty"
         android:layout_width="match_parent"
@@ -31,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentSubjectsTitle">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
@@ -63,8 +49,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentSubjectsTitle"
-        tools:listitem="@layout/rvi_subject" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/rvi_subject_preview" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fragmentSubjectsButtonAddSubject"

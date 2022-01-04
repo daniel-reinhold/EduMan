@@ -3,19 +3,19 @@ package com.eduman.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
+import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.util.GeneralUtil
 import com.eduman.data.room.entitiy.Subject
-import com.eduman.ui.fragments.subject.SubjectFragmentDirections
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
-class SubjectsAdapter(
-    var subjects: List<Subject>,
-    private val navController: NavController?
-) : RecyclerView.Adapter<SubjectsAdapter.AdapterViewHolder>() {
+class SubjectsPreviewAdapter(
+    var subjects: List<Subject>
+) : RecyclerView.Adapter<SubjectsPreviewAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val card: MaterialCardView = view as MaterialCardView
@@ -26,7 +26,7 @@ class SubjectsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
         return AdapterViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.rvi_subject,
+                R.layout.rvi_subject_preview,
                 parent,
                 false
             )
@@ -40,8 +40,9 @@ class SubjectsAdapter(
         holder.colorView.backgroundTintList = GeneralUtil.getColorStateList(subject.color)
 
         holder.card.setOnClickListener {
-            navController?.navigate(
-                SubjectFragmentDirections.actionSubjectFragmentToSubjectDetailFragment(subject)
+            holder.card.findNavController().navigate(
+                R.id.action_subjectFragment_to_subjectDetailFragment,
+                bundleOf(KEY_SUBJECT to subject)
             )
         }
     }

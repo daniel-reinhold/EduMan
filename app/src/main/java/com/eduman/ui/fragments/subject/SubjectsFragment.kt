@@ -2,55 +2,56 @@ package com.eduman.ui.fragments.subject
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
-import com.eduman.core.EduManFragment
 import com.eduman.data.room.viewmodel.SubjectViewModel
-import com.eduman.ui.adapters.SubjectsAdapter
+import com.eduman.ui.adapters.SubjectsPreviewAdapter
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SubjectFragment : EduManFragment(
-    R.layout.fragment_subject,
-    "SubjectsFragment"
-) {
+class SubjectsFragment : Fragment() {
 
     private val subjectViewModel: SubjectViewModel by viewModels()
 
-    private var navController: NavController? = null
-
     private var recyclerView: RecyclerView? = null
-    private var adapterSubjects: SubjectsAdapter? = null
+    private var adapterSubjectsPreview: SubjectsPreviewAdapter? = null
 
     private var containerEmpty: LinearLayout? = null
 
     private var buttonAddSubject: ExtendedFloatingActionButton? = null
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_subjects, container, false)
 
-        initialize()
+        initialize(view)
+
+        return view
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun initialize() {
-        navController = findNavController()
-        recyclerView = activity?.findViewById(R.id.fragmentSubjectsRecyclerView)
-        containerEmpty = activity?.findViewById(R.id.fragmentSubjectsContainerEmpty)
-        buttonAddSubject = activity?.findViewById(R.id.fragmentSubjectsButtonAddSubject)
+    private fun initialize(view: View) {
+        recyclerView = view.findViewById(R.id.fragmentSubjectsRecyclerView)
+        containerEmpty = view.findViewById(R.id.fragmentSubjectsContainerEmpty)
+        buttonAddSubject = view.findViewById(R.id.fragmentSubjectsButtonAddSubject)
 
-        adapterSubjects = SubjectsAdapter(listOf(), navController)
-        recyclerView?.adapter = adapterSubjects
+        adapterSubjectsPreview = SubjectsPreviewAdapter(listOf())
+        recyclerView?.adapter = adapterSubjectsPreview
 
         subjectViewModel.getAll().observe(viewLifecycleOwner, { subjects ->
             if (subjects.isNotEmpty()) {
-                adapterSubjects?.apply {
+                adapterSubjectsPreview?.apply {
                     this.subjects = subjects
                     this.notifyDataSetChanged()
                 }
@@ -64,9 +65,7 @@ class SubjectFragment : EduManFragment(
         })
 
         buttonAddSubject?.setOnClickListener {
-            navController?.navigate(
-                SubjectFragmentDirections.actionSubjectFragmentToSubjectFormFragment()
-            )
+            findNavController().navigate(R.id.action_subjectFragment_to_subjectFormFragment)
         }
     }
 

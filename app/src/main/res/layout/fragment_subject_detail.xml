@@ -7,36 +7,6 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/fragmentSubjectDetailsContainerTitle"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:gravity="center_vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/fragmentSubjectDetailsButtonBack"
-            android:layout_width="?attr/actionBarSize"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/actionBarItemBackground"
-            android:contentDescription="@string/cd_button_close"
-            android:padding="@dimen/action_bar_icon_padding"
-            android:src="@drawable/icon_close"
-            app:tint="@color/icon_dark" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/fragmentSubjectDetailsTextViewSubjectName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/default_margin"
-            android:textColor="@color/text"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
@@ -45,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentSubjectDetailsContainerTitle">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,8 +45,7 @@
             style="@style/DefaultCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin"
-            android:visibility="gone">
+            android:layout_marginTop="@dimen/default_margin">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -158,8 +127,7 @@
             style="@style/DefaultCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin"
-            android:visibility="visible">
+            android:layout_marginTop="@dimen/default_margin">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,6 +135,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -179,13 +148,23 @@
                         app:tint="@color/icon_dark" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/extra_small_margin"
                         android:text="@string/tests"
                         android:textColor="@color/text"
                         android:textSize="20sp"
                         android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/fragmentSubjectDetailsButtonTests"
+                        android:background="?attr/actionBarItemBackground"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_arrow_right"
+                        app:tint="@color/icon_dark" />
 
                 </LinearLayout>
 
@@ -196,7 +175,7 @@
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:itemCount="3"
-                    tools:listitem="@layout/rvi_test" />
+                    tools:listitem="@layout/rvi_test_preview" />
 
             </LinearLayout>
 
@@ -208,12 +187,11 @@
         android:id="@+id/fragmentSubjectDetailsContainerEmpty"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/default_margin"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/fragmentSubjectDetailButtonAddGrade"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentSubjectDetailsContainerTitle">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"

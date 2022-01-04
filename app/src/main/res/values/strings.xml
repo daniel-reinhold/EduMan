@@ -31,6 +31,8 @@
     <string name="date">Date</string>
     <string name="time">Time</string>
 
+    <string name="title_tests">Tests ∙ %1$s</string>
+
     <string name="format_date_default">yyyy/dd/MM</string>
     <string name="format_date_time_default">yyyy/dd/MM, hh:mm a</string>
 

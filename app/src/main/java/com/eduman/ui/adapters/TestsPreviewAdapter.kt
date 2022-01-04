@@ -8,25 +8,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.formatter.DateTimeFormatter
 import com.eduman.data.room.entitiy.Test
-import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
-class TestsAdapter(
+class TestsPreviewAdapter(
     var tests: List<Test>
-) : RecyclerView.Adapter<TestsAdapter.AdapterViewHolder>() {
+) : RecyclerView.Adapter<TestsPreviewAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val card: MaterialCardView = view as MaterialCardView
-        val textViewTopic: MaterialTextView = view.findViewById(R.id.rviTestTextViewTopic)
-        val textViewDate: MaterialTextView = view.findViewById(R.id.rviTestTextViewDate)
-
-        val context: Context = card.context
+        val context: Context = view.context
+        val textViewTopic: MaterialTextView = view.findViewById(R.id.rviTestPreviewTextViewTopic)
+        val textViewDate: MaterialTextView = view.findViewById(R.id.rviTestPreviewTextViewDate)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
         return AdapterViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.rvi_test,
+                R.layout.rvi_test_preview,
                 parent,
                 false
             )

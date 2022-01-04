@@ -1,9 +1,12 @@
 package com.eduman.ui.fragments.subject
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -18,15 +21,9 @@ import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SubjectFormFragment : EduManFragment(
-    R.layout.fragment_subject_form,
-    "SubjectForm"
-) {
+class SubjectFormFragment : Fragment(R.layout.fragment_subject_form) {
 
     private val subjectViewModel: SubjectViewModel by viewModels()
-
-    private var navController: NavController? = null
-    private var buttonClose: ImageView? = null
 
     private var textFieldSubjectName: TextInputLayout? = null
     private var textFieldTeacherName: TextInputLayout? = null
@@ -57,17 +54,11 @@ class SubjectFormFragment : EduManFragment(
     }
 
     private fun initialize() {
-        navController = findNavController()
-        buttonClose = activity?.findViewById(R.id.fragmentSubjectFormButtonClose)
         textFieldSubjectName = activity?.findViewById(R.id.fragmentSubjectFormTextFieldSubjectName)
         textFieldTeacherName = activity?.findViewById(R.id.fragmentSubjectFormTextFieldTeacherName)
         colorView = activity?.findViewById(R.id.fragmentSubjectFormColorView)
         buttonSelectColor = activity?.findViewById(R.id.fragmentSubjectFormButtonSelectColor)
         buttonSave = activity?.findViewById(R.id.fragmentSubjectFormButtonSave)
-
-        buttonClose?.setOnClickListener {
-            navController?.navigateUp()
-        }
 
         textFieldSubjectName?.editText?.doAfterTextChanged {
             subject.title = it.toString()
@@ -87,7 +78,7 @@ class SubjectFormFragment : EduManFragment(
 
         buttonSave?.setOnClickListener {
             subjectViewModel.insert(subject).invokeOnCompletion {
-                navController?.navigateUp()
+                findNavController().navigateUp()
             }
         }
     }

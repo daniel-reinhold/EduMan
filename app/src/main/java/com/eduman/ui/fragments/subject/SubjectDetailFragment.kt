@@ -1,19 +1,21 @@
 package com.eduman.ui.fragments.subject
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.annotation.FloatRange
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
+import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
 import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.room.entitiy.Subject
@@ -22,7 +24,7 @@ import com.eduman.data.room.viewmodel.CoreViewModel
 import com.eduman.data.room.viewmodel.GradeViewModel
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.GradesAdapter
-import com.eduman.ui.adapters.TestsAdapter
+import com.eduman.ui.adapters.TestsPreviewAdapter
 import com.eduman.ui.dialogs.AddGradeDialog
 import com.eduman.ui.dialogs.AddTestDialog
 import com.google.android.material.card.MaterialCardView
@@ -32,25 +34,20 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 @AndroidEntryPoint
-class SubjectDetailFragment : EduManFragment(
-    R.layout.fragment_subject_detail,
-    "SubjectDetail"
-) {
+class SubjectDetailFragment : Fragment(R.layout.fragment_subject_detail) {
 
     companion object {
         private const val AMOUNT_LAST_GRADES = 3
         private const val AMOUNT_LAST_TESTS = 3
     }
 
-    private val arguments: SubjectDetailFragmentArgs by navArgs()
     private var subject: Subject? = null
 
     private val gradeViewModel: GradeViewModel by viewModels()
     private val testViewModel: TestViewModel by viewModels()
     private val coreViewModel: CoreViewModel by viewModels()
 
-    private var buttonBack: ImageView? = null
-    private var textViewSubjectName: MaterialTextView? = null
+    private var buttonTests: ImageView? = null
 
     private var textViewTeacherName: MaterialTextView? = null
 
@@ -67,19 +64,18 @@ class SubjectDetailFragment : EduManFragment(
     private var buttonAddTest: ExtendedFloatingActionButton? = null
 
     private var adapterGrades = GradesAdapter(listOf())
-    private var adapterTests = TestsAdapter(listOf())
+    private var adapterTests = TestsPreviewAdapter(listOf())
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         initialize()
     }
-
+    
     @SuppressLint("NotifyDataSetChanged")
     private fun initialize() {
-        subject = arguments.subject
-        buttonBack = activity?.findViewById(R.id.fragmentSubjectDetailsButtonBack)
-        textViewSubjectName = activity?.findViewById(R.id.fragmentSubjectDetailsTextViewSubjectName)
+        subject = arguments?.getParcelable(KEY_SUBJECT)
+        buttonTests = activity?.findViewById(R.id.fragmentSubjectDetailsButtonTests)
         textViewTeacherName = activity?.findViewById(R.id.fragmentSubjectDetailsTextViewTeacherName)
         containerEmpty = activity?.findViewById(R.id.fragmentSubjectDetailsContainerEmpty)
         textViewGradeAverage = activity?.findViewById(R.id.fragmentSubjectDetailsTextViewGradeAverage)
@@ -90,7 +86,6 @@ class SubjectDetailFragment : EduManFragment(
         buttonAddGrade = activity?.findViewById(R.id.fragmentSubjectDetailButtonAddGrade)
         buttonAddTest = activity?.findViewById(R.id.fragmentSubjectDetailButtonAddTest)
 
-        textViewSubjectName?.text = subject?.title
         textViewTeacherName?.text = subject?.teacherName
 
         recyclerViewGrades?.adapter = adapterGrades
@@ -147,8 +142,13 @@ class SubjectDetailFragment : EduManFragment(
 
         }
 
-        buttonBack?.setOnClickListener {
-            findNavController().navigateUp()
+        buttonTests?.setOnClickListener {
+            subject?.let {
+                findNavController().navigate(
+                    R.id.action_subjectDetailFragment_to_testsFragment,
+                    bundleOf(KEY_SUBJECT to it)
+                )
+            }
         }
 
         buttonAddGrade?.setOnClickListener {

@@ -1,10 +1,6 @@
 package com.eduman.ui.fragments
 
+import androidx.fragment.app.Fragment
 import com.eduman.R
-import com.eduman.core.EduManFragment
 
-class DashboardFragment : EduManFragment(
-    R.layout.fragment_dashboard,
-    "DashboardFragment"
-) {
-}
+class DashboardFragment : Fragment(R.layout.fragment_dashboard)

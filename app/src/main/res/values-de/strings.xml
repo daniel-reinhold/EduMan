@@ -31,6 +31,8 @@
     <string name="date">Datum</string>
     <string name="time">Uhrzeit</string>
 
+    <string name="title_tests">Leistungskontrollen ∙ %1$s</string>
+
     <string name="format_date_default">dd.MM.yyyy</string>
     <string name="format_date_time_default">dd.MM.yyyy, HH:mm</string>
 

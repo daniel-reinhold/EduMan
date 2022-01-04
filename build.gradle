@@ -5,7 +5,7 @@ buildscript {
     ext.lifecycleVersion    = '2.4.0'
     ext.coroutinesVersion   = '1.5.2'
     ext.hiltVersion         = '2.38.1'
-    ext.navVersion          = '2.4.0-rc01'
+    ext.navVersion          = '2.3.0-alpha01'
     ext.lottieVersion       = '4.2.1'
     ext.colorPickerVersion  = '0.0.15'
 
@@ -18,7 +18,6 @@ buildscript {
         classpath "com.android.tools.build:gradle:7.0.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion"
     }
 }
 
