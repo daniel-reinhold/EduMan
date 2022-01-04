@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
+import com.eduman.core.util.GradeUtil
 import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.entitiy.Test
@@ -116,6 +118,19 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
                     containerEmpty?.visibility = View.VISIBLE
                 } else {
                     containerEmpty?.visibility = View.GONE
+                }
+            })
+
+            gradeViewModel.getAll(subjectId).observe(viewLifecycleOwner, { grades ->
+                textViewGradeAverage?.apply {
+                    val average = GradeUtil.calculateGradeAverage(grades)
+
+                    this.text = GradeUtil.formatGrade(average, 2)
+                    activity?.let {
+                        this.setTextColor(
+                            ContextCompat.getColor(it, GradeUtil.gradeToColor(average))
+                        )
+                    }
                 }
             })
 
