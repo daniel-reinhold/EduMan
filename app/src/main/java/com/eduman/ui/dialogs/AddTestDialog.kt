@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentActivity
 import com.eduman.R
 import com.eduman.core.util.formatter.DateFormatter
 import com.eduman.core.util.formatter.TimeFormatter
-import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.util.Time
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton

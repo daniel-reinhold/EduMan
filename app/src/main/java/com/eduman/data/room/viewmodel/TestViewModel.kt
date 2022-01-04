@@ -2,7 +2,6 @@ package com.eduman.data.room.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.room.entitiy.Test
 import com.eduman.data.room.repository.TestRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -33,7 +32,7 @@ class TestViewModel @Inject constructor(
     /**
      * This method queries the grade for a specific test
      * @param testId The ID of the test - [Int]
-     * @return [TestAndGrade] wrapped in LiveData
+     * @return TestAndGrade wrapped in LiveData
      */
     fun getGrade(testId: Int) = repository.getGrade(testId)
 

@@ -13,8 +13,6 @@
 
     <dimen name="recyclerview_bottom_padding">80dp</dimen>
 
-    <dimen name="action_bar_icon_padding">16dp</dimen>
-
     <dimen name="bottom_sheet_dialog_corner_radius">16dp</dimen>
 
     <dimen name="extra_small_margin">8dp</dimen>

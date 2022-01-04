@@ -16,7 +16,7 @@ class CoreViewModel @Inject constructor(
     /**
      * This method queries the grade-and test count for a specific subject
      * @param subjectId The ID if the subject - [Int]
-     * @return A [GradeAndTestCount] wrapped in LiveData
+     * @return A GradeAndTestCount wrapped in LiveData
      */
     fun checkGradeAndTestCount(subjectId: Int) = repository.checkGradeAndTestCount(subjectId)
 

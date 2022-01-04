@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">EduMan</string>
+    <string name="default_grade_weighting" translatable="false">1.0</string>
+
     <string name="save">Save</string>
     <string name="details">Details</string>
     <string name="grade">Grade</string>
@@ -15,7 +17,9 @@
     <string name="subject">Subject</string>
     <string name="subjects">Subjects</string>
 
-    <string name="cd_button_close">Button to close the current view</string>
+    <string name="cd_average">Average icon</string>
+    <string name="cd_test">Test icon</string>
+    <string name="cd_open_new_view">Button to open the corresponding view</string>
 
     <string name="no_subjects_added_yet">No subjects have been created yet</string>
     <string name="subject_empty">Nothing is going on here yet. Add a new grade or test.</string>
@@ -31,13 +35,6 @@
     <string name="date">Date</string>
     <string name="time">Time</string>
 
-    <string name="title_tests">Tests ∙ %1$s</string>
-
     <string name="format_date_default">yyyy/dd/MM</string>
     <string name="format_date_time_default">yyyy/dd/MM, hh:mm a</string>
-
-    <plurals name="subject">
-        <item quantity="one">Subject</item>
-        <item quantity="many">Subjects</item>
-    </plurals>
 </resources>

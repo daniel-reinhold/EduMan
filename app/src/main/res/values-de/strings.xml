@@ -15,7 +15,9 @@
     <string name="subject">Fach</string>
     <string name="subjects">Fächer</string>
 
-    <string name="cd_button_close">Button zum schließen der aktuell sichtbaren Ansicht</string>
+    <string name="cd_average">Durchschnitts-Icon</string>
+    <string name="cd_test">Leistungskontrollen-Icon</string>
+    <string name="cd_open_new_view">Button zum Öffnen der dazugehörigen Ansicht</string>
 
     <string name="no_subjects_added_yet">Es wurden noch keine Fächer erstellt</string>
     <string name="subject_empty">Hier ist noch nichts los. Füge eine neue Note oder eine neue Leistungskontrolle hinzu.</string>
@@ -31,13 +33,6 @@
     <string name="date">Datum</string>
     <string name="time">Uhrzeit</string>
 
-    <string name="title_tests">Leistungskontrollen ∙ %1$s</string>
-
     <string name="format_date_default">dd.MM.yyyy</string>
     <string name="format_date_time_default">dd.MM.yyyy, HH:mm</string>
-
-    <plurals name="subject">
-        <item quantity="one">Fach</item>
-        <item quantity="other">Fächer</item>
-    </plurals>
 </resources>

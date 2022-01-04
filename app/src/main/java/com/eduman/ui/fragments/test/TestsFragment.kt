@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
@@ -14,7 +12,6 @@ import com.eduman.core.EduManFragment
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.TestsAdapter
-import com.google.android.material.textview.MaterialTextView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

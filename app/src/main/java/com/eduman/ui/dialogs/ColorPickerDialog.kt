@@ -1,7 +1,6 @@
 package com.eduman.ui.dialogs
 
 import android.app.Activity
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import com.eduman.R
@@ -44,8 +43,6 @@ class ColorPickerDialog(
 
     private val colorPicker: ColorPickerView = dialogContent.findViewById(R.id.dialogSelectColorColorPicker)
     private val colorView: View = dialogContent.findViewById(R.id.dialogSelectColorColorView)
-    private val alphaSlider: AlphaSlider = dialogContent.findViewById(R.id.dialogSelectColorAlphaSlider)
-    private val lightnessSlider: LightnessSlider = dialogContent.findViewById(R.id.dialogSelectColorLightnessSlider)
 
     init {
         bottomSheetDialog.setContentView(dialogContent)

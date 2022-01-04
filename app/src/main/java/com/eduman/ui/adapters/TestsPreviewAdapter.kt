@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.formatter.DateTimeFormatter
-import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.room.entitiy.Test
 import com.eduman.ui.adapters.diffcallback.TestsDiffCallback
 import com.google.android.material.textview.MaterialTextView

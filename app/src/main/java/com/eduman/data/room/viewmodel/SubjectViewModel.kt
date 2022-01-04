@@ -2,7 +2,6 @@ package com.eduman.data.room.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.repository.SubjectRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

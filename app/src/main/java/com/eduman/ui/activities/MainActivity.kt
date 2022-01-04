@@ -1,4 +1,4 @@
-package com.eduman.ui.activites
+package com.eduman.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
