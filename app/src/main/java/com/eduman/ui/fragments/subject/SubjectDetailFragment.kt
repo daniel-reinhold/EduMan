@@ -91,9 +91,8 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
     // </editor-fold>
 
-    // <editor-fold desc="Private variables" defaultstate="collapsed">
+    // <editor-fold desc="Initialization methods" defaultstate="collapsed">
 
-    @SuppressLint("NotifyDataSetChanged")
     private fun initialize() {
         subject = arguments?.getParcelable(KEY_SUBJECT)
         buttonTests = activity?.findViewById(R.id.fragmentSubjectDetailsButtonTests)
@@ -114,7 +113,6 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
         recyclerViewTests?.adapter = adapterTests
 
         subject?.id?.let { subjectId ->
-
             // Check if any grades or tests exist for the subject
             coreViewModel.checkGradeAndTestCount(subjectId).observe(viewLifecycleOwner, { gradeAndTestCount ->
                 if (gradeAndTestCount.gradeCount == 0 && gradeAndTestCount.testCount == 0) {
@@ -128,28 +126,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
             gradeViewModel.getLast(subjectId, AMOUNT_LAST_GRADES).observe(viewLifecycleOwner, { grades ->
                 if (grades.isNotEmpty()) {
                     cardGrades?.visibility = View.VISIBLE
-                    adapterGrades.grades = grades
-                    adapterGrades.notifyDataSetChanged()
-
-                    var gradeSum = 0.0F
-                    var weightSum = 0.0F
-                    grades.forEach { grade ->
-                        gradeSum += grade.grade * grade.weighting
-                        weightSum += grade.weighting
-                    }
-
-                    val average = gradeSum / weightSum
-                    textViewGradeAverage?.text = String.format("%.2f", average)
-
-                    activity?.let {
-                        textViewGradeAverage?.setTextColor(ContextCompat.getColor(it, when(average) {
-                            in 1.0F..2.5F -> R.color.success
-                            in 2.5F..4.5F -> R.color.warning
-                            in 4.5F..6.0F -> R.color.error
-                            else -> R.color.black
-                        }))
-                    }
-
+                    adapterGrades.updateList(grades)
                 } else {
                     cardGrades?.visibility = View.GONE
                 }
@@ -159,8 +136,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
             testViewModel.getNext(subjectId, AMOUNT_LAST_TESTS).observe(viewLifecycleOwner, { tests ->
                 if (tests.isNotEmpty()) {
                     cardTests?.visibility = View.VISIBLE
-                    adapterTests.tests = tests
-                    adapterTests.notifyDataSetChanged()
+                    adapterTests.updateList(tests)
                 } else {
                     cardTests?.visibility = View.GONE
                 }
