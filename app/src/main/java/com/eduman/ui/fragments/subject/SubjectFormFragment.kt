@@ -21,7 +21,7 @@ import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SubjectFormFragment : Fragment(R.layout.fragment_subject_form) {
+class SubjectFormFragment : EduManFragment("SubjectForm") {
 
     private val subjectViewModel: SubjectViewModel by viewModels()
 
@@ -45,6 +45,14 @@ class SubjectFormFragment : Fragment(R.layout.fragment_subject_form) {
             subject.color = color
         }
 
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_subject_form, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

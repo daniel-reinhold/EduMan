@@ -13,9 +13,9 @@ import com.eduman.data.room.entitiy.Subject
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
-class SubjectsPreviewAdapter(
+class SubjectsAdapter(
     var subjects: List<Subject>
-) : RecyclerView.Adapter<SubjectsPreviewAdapter.AdapterViewHolder>() {
+) : RecyclerView.Adapter<SubjectsAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val card: MaterialCardView = view as MaterialCardView
@@ -26,7 +26,7 @@ class SubjectsPreviewAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
         return AdapterViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.rvi_subject_preview,
+                R.layout.rvi_subject,
                 parent,
                 false
             )

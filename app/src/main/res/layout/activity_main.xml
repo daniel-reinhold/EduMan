@@ -8,9 +8,17 @@
     android:background="@color/background"
     tools:context=".ui.activites.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activityMainToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:subtitleTextAppearance="@style/TextAppearanceActionBarSubTitle"
+        app:titleTextAppearance="@style/TextAppearanceActionBarTitle" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
@@ -27,9 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:menu="@menu/bottom_navigation_menu">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+            app:menu="@menu/bottom_navigation_menu" />
 
     </LinearLayout>
 

@@ -12,7 +12,6 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
@@ -23,7 +22,7 @@ import com.eduman.data.room.entitiy.Test
 import com.eduman.data.room.viewmodel.CoreViewModel
 import com.eduman.data.room.viewmodel.GradeViewModel
 import com.eduman.data.room.viewmodel.TestViewModel
-import com.eduman.ui.adapters.GradesAdapter
+import com.eduman.ui.adapters.GradesPreviewAdapter
 import com.eduman.ui.adapters.TestsPreviewAdapter
 import com.eduman.ui.dialogs.AddGradeDialog
 import com.eduman.ui.dialogs.AddTestDialog
@@ -34,7 +33,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 @AndroidEntryPoint
-class SubjectDetailFragment : Fragment(R.layout.fragment_subject_detail) {
+class SubjectDetailFragment : EduManFragment("Dashboard") {
 
     companion object {
         private const val AMOUNT_LAST_GRADES = 3
@@ -63,8 +62,16 @@ class SubjectDetailFragment : Fragment(R.layout.fragment_subject_detail) {
     private var buttonAddGrade: ExtendedFloatingActionButton? = null
     private var buttonAddTest: ExtendedFloatingActionButton? = null
 
-    private var adapterGrades = GradesAdapter(listOf())
+    private var adapterGrades = GradesPreviewAdapter(listOf())
     private var adapterTests = TestsPreviewAdapter(listOf())
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_subject_detail, container, false)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -86,6 +93,7 @@ class SubjectDetailFragment : Fragment(R.layout.fragment_subject_detail) {
         buttonAddGrade = activity?.findViewById(R.id.fragmentSubjectDetailButtonAddGrade)
         buttonAddTest = activity?.findViewById(R.id.fragmentSubjectDetailButtonAddTest)
 
+        setActionBarTitle(subject?.title)
         textViewTeacherName?.text = subject?.teacherName
 
         recyclerViewGrades?.adapter = adapterGrades

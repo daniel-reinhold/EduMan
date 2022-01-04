@@ -116,7 +116,7 @@
                     android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:itemCount="3"
-                    tools:listitem="@layout/rvi_grade" />
+                    tools:listitem="@layout/rvi_grade_preview" />
 
             </LinearLayout>
 

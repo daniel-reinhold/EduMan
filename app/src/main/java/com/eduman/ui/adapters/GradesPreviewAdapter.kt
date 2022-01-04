@@ -8,20 +8,20 @@ import com.eduman.R
 import com.eduman.data.room.entitiy.Grade
 import com.google.android.material.textview.MaterialTextView
 
-class GradesAdapter(
+class GradesPreviewAdapter(
     var grades: List<Grade>
-) : RecyclerView.Adapter<GradesAdapter.AdapterViewHolder>() {
+) : RecyclerView.Adapter<GradesPreviewAdapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textViewGrade: MaterialTextView = view.findViewById(R.id.rviGradeTextViewGrade)
-        val textViewWeighting: MaterialTextView = view.findViewById(R.id.rviGradeTextViewWeighting)
-        val textViewTotal: MaterialTextView = view.findViewById(R.id.rviGradeTextViewTotal)
+        val textViewGrade: MaterialTextView = view.findViewById(R.id.rviGradePreviewTextViewGrade)
+        val textViewWeighting: MaterialTextView = view.findViewById(R.id.rviGradePreviewTextViewWeighting)
+        val textViewTotal: MaterialTextView = view.findViewById(R.id.rviGradePreviewTextViewTotal)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
         return AdapterViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.rvi_grade,
+                R.layout.rvi_grade_preview,
                 parent,
                 false
             )

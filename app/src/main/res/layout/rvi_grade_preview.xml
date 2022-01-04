@@ -9,7 +9,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rviGradeTextViewGrade"
+        android:id="@+id/rviGradePreviewTextViewGrade"
         android:textStyle="bold"
         android:textColor="@color/text"
         android:textSize="16sp"
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rviGradeTextViewWeighting"
+        android:id="@+id/rviGradePreviewTextViewWeighting"
         android:textStyle="bold"
         android:textColor="@color/text"
         android:textSize="16sp"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rviGradeTextViewTotal"
+        android:id="@+id/rviGradePreviewTextViewTotal"
         android:textStyle="bold"
         android:textColor="@color/text"
         android:textSize="16sp"

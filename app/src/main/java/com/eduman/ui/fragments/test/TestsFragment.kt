@@ -18,13 +18,21 @@ import com.google.android.material.textview.MaterialTextView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class TestsFragment : Fragment(R.layout.fragment_tests) {
+class TestsFragment : EduManFragment("TestsFragment") {
 
     private var subject: Subject? = null
     private val testViewModel: TestViewModel by viewModels()
 
     private var recyclerView: RecyclerView? = null
     private var adapter = TestsAdapter(listOf())
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_tests, container, false)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,9 +44,10 @@ class TestsFragment : Fragment(R.layout.fragment_tests) {
         subject = arguments?.getParcelable(KEY_SUBJECT)
         recyclerView = activity?.findViewById(R.id.fragmentTestsRecyclerView)
 
-        //title?.text = activity?.getString(R.string.title_tests, subject?.title)
-
         recyclerView?.adapter = adapter
+
+        setActionBarTitle(getString(R.string.tests))
+        setActionBarSubTitle(subject?.title)
 
         subject?.id?.let { subjectId ->
             testViewModel.getAll(subjectId).observe(viewLifecycleOwner, { tests ->

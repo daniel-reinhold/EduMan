@@ -11,18 +11,19 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
+import com.eduman.core.EduManFragment
 import com.eduman.data.room.viewmodel.SubjectViewModel
-import com.eduman.ui.adapters.SubjectsPreviewAdapter
+import com.eduman.ui.adapters.SubjectsAdapter
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SubjectsFragment : Fragment() {
+class SubjectsFragment : EduManFragment("Subjects") {
 
     private val subjectViewModel: SubjectViewModel by viewModels()
 
     private var recyclerView: RecyclerView? = null
-    private var adapterSubjectsPreview: SubjectsPreviewAdapter? = null
+    private var adapterSubjects: SubjectsAdapter? = null
 
     private var containerEmpty: LinearLayout? = null
 
@@ -46,12 +47,12 @@ class SubjectsFragment : Fragment() {
         containerEmpty = view.findViewById(R.id.fragmentSubjectsContainerEmpty)
         buttonAddSubject = view.findViewById(R.id.fragmentSubjectsButtonAddSubject)
 
-        adapterSubjectsPreview = SubjectsPreviewAdapter(listOf())
-        recyclerView?.adapter = adapterSubjectsPreview
+        adapterSubjects = SubjectsAdapter(listOf())
+        recyclerView?.adapter = adapterSubjects
 
         subjectViewModel.getAll().observe(viewLifecycleOwner, { subjects ->
             if (subjects.isNotEmpty()) {
-                adapterSubjectsPreview?.apply {
+                adapterSubjects?.apply {
                     this.subjects = subjects
                     this.notifyDataSetChanged()
                 }
