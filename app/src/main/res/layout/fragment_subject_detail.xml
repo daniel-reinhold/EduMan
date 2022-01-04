@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/teacher_colon"
                 android:textColor="@color/text"
-                android:textSize="16sp" />
+                android:textSize="@dimen/font_size_default" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragmentSubjectDetailsTextViewTeacherName"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/extra_small_margin"
                 android:textColor="@color/text"
-                android:textSize="16sp"
+                android:textSize="@dimen/font_size_default"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -70,7 +70,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/extra_small_margin"
                         android:textColor="@color/text"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/font_size_large"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -89,7 +89,7 @@
                         android:layout_weight="1"
                         android:text="@string/grade"
                         android:textColor="@color/text"
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/font_size_default" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="0dp"
@@ -97,7 +97,7 @@
                         android:layout_weight="1"
                         android:text="@string/weighting"
                         android:textColor="@color/text"
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/font_size_default" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="0dp"
@@ -105,7 +105,7 @@
                         android:layout_weight="1"
                         android:text="@string/total"
                         android:textColor="@color/text"
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/font_size_default" />
 
                 </LinearLayout>
 
@@ -154,7 +154,7 @@
                         android:layout_marginStart="@dimen/extra_small_margin"
                         android:text="@string/tests"
                         android:textColor="@color/text"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/font_size_large"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -208,7 +208,7 @@
             android:paddingHorizontal="@dimen/default_margin"
             android:text="@string/subject_empty"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="@dimen/font_size_large"
             android:textStyle="bold" />
 
     </LinearLayout>

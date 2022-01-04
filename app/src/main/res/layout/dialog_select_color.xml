@@ -20,7 +20,7 @@
             android:layout_weight="1"
             android:text="@string/select_color"
             android:textColor="@color/text"
-            android:textSize="20sp"
+            android:textSize="@dimen/font_size_large"
             android:textStyle="bold" />
 
         <View

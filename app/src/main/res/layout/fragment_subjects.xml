@@ -33,7 +33,7 @@
             android:layout_marginTop="@dimen/default_margin"
             android:text="@string/no_subjects_added_yet"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="@dimen/font_size_large"
             android:textStyle="bold" />
 
     </LinearLayout>

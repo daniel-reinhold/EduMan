@@ -13,7 +13,7 @@
         android:padding="@dimen/default_margin"
         android:text="@string/add_test"
         android:textColor="@color/text"
-        android:textSize="20sp"
+        android:textSize="@dimen/font_size_large"
         android:textStyle="bold" />
 
     <LinearLayout

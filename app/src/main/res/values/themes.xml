@@ -67,13 +67,13 @@
     <style name="TextAppearanceActionBarTitle">
         <item name="android:textColor">@color/text</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">@dimen/font_size_app_bar_title</item>
     </style>
 
     <style name="TextAppearanceActionBarSubTitle">
         <item name="android:textColor">@color/text_secondary</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">@dimen/font_size_app_bar_subtitle</item>
     </style>
 
 </resources>

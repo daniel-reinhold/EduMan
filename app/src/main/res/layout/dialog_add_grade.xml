@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/add_grade"
         android:textColor="@color/text"
-        android:textSize="20sp"
+        android:textSize="@dimen/font_size_large"
         android:textStyle="bold" />
 
     <LinearLayout

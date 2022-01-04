@@ -17,7 +17,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/rviTestTextViewTopic"
-            android:textSize="22sp"
+            android:textSize="@dimen/font_size_large"
             android:textColor="@color/text"
             android:textStyle="bold"
             android:gravity="center_vertical"
@@ -27,7 +27,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/rviTestTextViewDate"
-            android:textSize="16sp"
+            android:textSize="@dimen/font_size_default"
             android:textColor="@color/text_secondary"
             android:gravity="center_vertical"
             android:layout_marginStart="@dimen/default_margin"
