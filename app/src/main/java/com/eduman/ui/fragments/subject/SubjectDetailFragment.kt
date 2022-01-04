@@ -35,10 +35,16 @@ import java.util.*
 @AndroidEntryPoint
 class SubjectDetailFragment : EduManFragment("Dashboard") {
 
+    // <editor-fold desc="Static variables" defaultstate="collapsed">
+
     companion object {
         private const val AMOUNT_LAST_GRADES = 3
         private const val AMOUNT_LAST_TESTS = 3
     }
+
+    // </editor-fold>
+
+    // <editor-fold desc="Private variables" defaultstate="collapsed">
 
     private var subject: Subject? = null
 
@@ -65,6 +71,10 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
     private var adapterGrades = GradesPreviewAdapter(listOf())
     private var adapterTests = TestsPreviewAdapter(listOf())
 
+    // </editor-fold>
+
+    // <editor-fold desc="Lifecycle methods" defaultstate="collapsed">
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -78,7 +88,11 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
         initialize()
     }
-    
+
+    // </editor-fold>
+
+    // <editor-fold desc="Private variables" defaultstate="collapsed">
+
     @SuppressLint("NotifyDataSetChanged")
     private fun initialize() {
         subject = arguments?.getParcelable(KEY_SUBJECT)
@@ -100,6 +114,8 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
         recyclerViewTests?.adapter = adapterTests
 
         subject?.id?.let { subjectId ->
+
+            // Check if any grades or tests exist for the subject
             coreViewModel.checkGradeAndTestCount(subjectId).observe(viewLifecycleOwner, { gradeAndTestCount ->
                 if (gradeAndTestCount.gradeCount == 0 && gradeAndTestCount.testCount == 0) {
                     containerEmpty?.visibility = View.VISIBLE
@@ -108,6 +124,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
                 }
             })
 
+            // Display the last added grades
             gradeViewModel.getLast(subjectId, AMOUNT_LAST_GRADES).observe(viewLifecycleOwner, { grades ->
                 if (grades.isNotEmpty()) {
                     cardGrades?.visibility = View.VISIBLE
@@ -138,6 +155,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
                 }
             })
 
+            // Display the next tests
             testViewModel.getNext(subjectId, AMOUNT_LAST_TESTS).observe(viewLifecycleOwner, { tests ->
                 if (tests.isNotEmpty()) {
                     cardTests?.visibility = View.VISIBLE
@@ -150,6 +168,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
         }
 
+        // Navigate to the tests fragment
         buttonTests?.setOnClickListener {
             subject?.let {
                 findNavController().navigate(
@@ -159,10 +178,11 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
             }
         }
 
+        // Display a dialog to add a grade
         buttonAddGrade?.setOnClickListener {
             activity?.let {
                 AddGradeDialog(it, object : AddGradeDialog.AddGradeDialogListener {
-                    override fun onGradeSet(grade: Grade) {
+                    override fun onSave(grade: Grade) {
                         subject?.id?.let { subjectId ->
                             grade.subjectId = subjectId
 
@@ -173,6 +193,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
             }
         }
 
+        // Display a dialog to add a test
         buttonAddTest?.setOnClickListener {
             activity?.let {
                 AddTestDialog(it, object : AddTestDialog.AddTestDialogListener {
@@ -193,5 +214,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
         }
 
     }
+
+    // </editor-fold>
 
 }

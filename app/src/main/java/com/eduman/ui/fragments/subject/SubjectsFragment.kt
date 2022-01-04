@@ -20,6 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SubjectsFragment : EduManFragment("Subjects") {
 
+    // <editor-fold desc="Private variables" defaultstate="collapsed">
+
     private val subjectViewModel: SubjectViewModel by viewModels()
 
     private var recyclerView: RecyclerView? = null
@@ -28,6 +30,10 @@ class SubjectsFragment : EduManFragment("Subjects") {
     private var containerEmpty: LinearLayout? = null
 
     private var buttonAddSubject: ExtendedFloatingActionButton? = null
+
+    // </editor-fold>
+
+    // <editor-fold desc="Lifecycle methods" defaultstate="collapsed">
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,6 +47,13 @@ class SubjectsFragment : EduManFragment("Subjects") {
         return view
     }
 
+    // </editor-fold>
+
+    // <editor-fold desc="Initialization methods" defaultstate="collapsed">
+
+    /**
+     * This method initializes the view
+     */
     @SuppressLint("NotifyDataSetChanged")
     private fun initialize(view: View) {
         recyclerView = view.findViewById(R.id.fragmentSubjectsRecyclerView)
@@ -69,5 +82,7 @@ class SubjectsFragment : EduManFragment("Subjects") {
             findNavController().navigate(R.id.action_subjectFragment_to_subjectFormFragment)
         }
     }
+
+    // </editor-fold>
 
 }

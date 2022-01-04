@@ -11,13 +11,24 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 import java.lang.NumberFormatException
 
+/**
+ * This class represents a dialog to add a grade
+ */
 class AddGradeDialog(
     activity: Activity,
     callback: AddGradeDialogListener
 ) {
 
+    /**
+     * This interface represents a listener for the AddGradeDialog
+     */
     interface AddGradeDialogListener {
-        fun onGradeSet(grade: Grade)
+
+        /**
+         * This callback method is fired when the grade has been set
+         * @param grade The grade which has been set - [Grade]
+         */
+        fun onSave(grade: Grade)
     }
 
     private val bottomSheetDialog = BottomSheetDialog(activity, R.style.BottomSheetDialog)
@@ -56,7 +67,7 @@ class AddGradeDialog(
         }
 
         buttonSave.setOnClickListener {
-            callback.onGradeSet(grade)
+            callback.onSave(grade)
             dismiss()
         }
 

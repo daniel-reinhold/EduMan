@@ -20,11 +20,17 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class TestsFragment : EduManFragment("TestsFragment") {
 
+    // <editor-fold desc="Private variables" defaultstate="collapsed">
+
     private var subject: Subject? = null
     private val testViewModel: TestViewModel by viewModels()
 
     private var recyclerView: RecyclerView? = null
     private var adapter = TestsAdapter(listOf())
+
+    // </editor-fold>
+
+    // <editor-fold desc="Lifecycle methods" defaultstate="collapsed">
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +45,10 @@ class TestsFragment : EduManFragment("TestsFragment") {
 
         initialize()
     }
+
+    // </editor-fold>
+
+    // <editor-fold desc="Initialization methods" defaultstate="collapsed">
 
     private fun initialize() {
         subject = arguments?.getParcelable(KEY_SUBJECT)
@@ -58,5 +68,7 @@ class TestsFragment : EduManFragment("TestsFragment") {
             })
         }
     }
+
+    // </editor-fold>
 
 }

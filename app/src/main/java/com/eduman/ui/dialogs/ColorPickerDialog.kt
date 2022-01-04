@@ -11,12 +11,23 @@ import com.flask.colorpicker.slider.AlphaSlider
 import com.flask.colorpicker.slider.LightnessSlider
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
+/**
+ * This class represents a dialog for picking a color
+ */
 class ColorPickerDialog(
     activity: Activity,
     callback: ColorPickerDialogListener
 ) {
 
+    /**
+     * This interface represents a listener for the ColorPickerDialog
+     */
     interface ColorPickerDialogListener {
+
+        /**
+         * This callback method is fired when the color has been selected
+         * @param color The selected color - [Int]
+         */
         fun onColorSelected(color: Int)
     }
 

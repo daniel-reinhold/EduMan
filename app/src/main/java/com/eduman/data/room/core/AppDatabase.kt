@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.eduman.data.room.converters.DateConverter
-import com.eduman.data.room.dao.CoreDao
+import com.eduman.data.room.dao.CoreDAO
 import com.eduman.data.room.dao.GradeDAO
 import com.eduman.data.room.dao.SubjectDAO
 import com.eduman.data.room.dao.TestDAO
@@ -14,6 +14,9 @@ import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.entitiy.Test
 
+/**
+ * This method represents the local database
+ */
 @Database(
     entities = [
         Subject::class,
@@ -24,7 +27,7 @@ import com.eduman.data.room.entitiy.Test
 )
 @TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun getCoreDAO(): CoreDao
+    abstract fun getCoreDAO(): CoreDAO
     abstract fun getSubjectDAO(): SubjectDAO
     abstract fun getGradeDAO(): GradeDAO
     abstract fun getTestDAO(): TestDAO

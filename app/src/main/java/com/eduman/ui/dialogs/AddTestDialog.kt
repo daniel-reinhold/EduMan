@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity
 import com.eduman.R
 import com.eduman.core.util.formatter.DateFormatter
 import com.eduman.core.util.formatter.TimeFormatter
+import com.eduman.data.room.entitiy.Grade
 import com.eduman.data.util.Time
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
@@ -18,12 +19,24 @@ import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import java.util.*
 
+/**
+ * This class represents a dialog to add a test
+ */
 class AddTestDialog(
     private val parentActivity: FragmentActivity,
     private val callback: AddTestDialogListener
 ) {
 
+    /**
+     * This interface represents a listener for the AddTestDialog
+     */
     interface AddTestDialogListener {
+
+        /**
+         * This callback method is fired when the test has been set
+         * @param topic The topic of the test - [String]
+         * @param date The date when the test is written - [Long]
+         */
         fun onSave(topic: String, date: Long)
     }
 

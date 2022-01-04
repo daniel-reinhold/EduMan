@@ -1,8 +1,6 @@
 package com.eduman.ui.activites
 
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -18,6 +16,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : EduManActivity("MainActivity") {
 
+    // <editor-fold desc="Static variables" defaultstate="collapsed"
+
     companion object {
         // A list of fragments which should provide a "back-button"
         private val CHILD_FRAGMENTS = listOf(
@@ -27,6 +27,10 @@ class MainActivity : EduManActivity("MainActivity") {
         )
     }
 
+    // </editor-fold>
+
+    // <editor-fold desc="Private variables" defaultstate="collapsed">
+
     private var navHostFragment: NavHostFragment? = null
     private var bottomNavigationMenu: BottomNavigationView? = null
 
@@ -34,7 +38,10 @@ class MainActivity : EduManActivity("MainActivity") {
     private var appBarConfiguration: AppBarConfiguration? = null
 
     private var toolbar: Toolbar? = null
-    private var actionBar: ActionBar? = null
+
+    // </editor-fold>
+
+    // <editor-fold desc="Lifecycle methods" defaultstate="collapsed">
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +51,21 @@ class MainActivity : EduManActivity("MainActivity") {
         initializeNavigation()
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return navController?.let { controller ->
+            appBarConfiguration?.let { config ->
+                controller.navigateUp(config)
+            }
+        } ?: true
+    }
+
+    // </editor-fold>
+
+    // <editor-fold desc="Initialization methods" defaultstate="collapsed">
+
+    /**
+     * This method initializes the Navigation component
+     */
     private fun initializeNavigation() {
         navHostFragment = supportFragmentManager.findFragmentById(R.id.activityMainHostFragment) as NavHostFragment
         bottomNavigationMenu = findViewById(R.id.activityMainBottomNavigationMenu)
@@ -70,18 +92,15 @@ class MainActivity : EduManActivity("MainActivity") {
         }
     }
 
+    /**
+     * This method initializes the AppBar
+     */
     private fun initializeAppBar() {
         toolbar = findViewById(R.id.activityMainToolBar)
 
         setSupportActionBar(toolbar)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController?.let { controller ->
-            appBarConfiguration?.let { config ->
-                controller.navigateUp(config)
-            }
-        } ?: true
-    }
+    // </editor-fold>
 
 }

@@ -6,6 +6,14 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
+/**
+ * This class represents a subject in the local database
+ *
+ * @property id The unique ID of the subject - [Int]?
+ * @property title The title of the subject - [String]
+ * @property color The color of the subject - [Int]
+ * @property teacherName The name of the teacher who is teaching the subject - [String]
+ */
 @Parcelize
 @Entity(tableName = "subjects")
 data class Subject(

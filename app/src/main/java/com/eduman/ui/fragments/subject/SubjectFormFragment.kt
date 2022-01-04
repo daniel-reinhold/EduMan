@@ -23,6 +23,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SubjectFormFragment : EduManFragment("SubjectForm") {
 
+    // <editor-fold desc="Private variables" defaultstate="collapsed">
+
     private val subjectViewModel: SubjectViewModel by viewModels()
 
     private var textFieldSubjectName: TextInputLayout? = null
@@ -39,6 +41,10 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         color = ColorPickerDialog.INITIAL_COLOR.toInt()
     )
 
+    // </editor-fold>
+
+    // <editor-fold desc="Callback implementations" defaultstate="collapsed">
+
     private val colorPickerDialogCallback = object : ColorPickerDialog.ColorPickerDialogListener {
         override fun onColorSelected(color: Int) {
             colorView?.backgroundTintList = GeneralUtil.getColorStateList(color)
@@ -46,6 +52,10 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         }
 
     }
+
+    // </editor-fold>
+
+    // <editor-fold desc="Lifecycle methods" defaultstate="collapsed">
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,6 +71,13 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         initialize()
     }
 
+    // </editor-fold>
+
+    // <editor-fold desc="Initialization methods" defaultstate="collapsed">
+
+    /**
+     * This method initializes the view
+     */
     private fun initialize() {
         textFieldSubjectName = activity?.findViewById(R.id.fragmentSubjectFormTextFieldSubjectName)
         textFieldTeacherName = activity?.findViewById(R.id.fragmentSubjectFormTextFieldTeacherName)
@@ -91,6 +108,14 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         }
     }
 
+    // </editor-fold>
+
+    // <editor-fold desc="Helper methods" defaultstate="collapsed">
+
+    /**
+     * This methods validates the form fields an sets the Save-Button
+     * enabled or disabled depending on the result
+     */
     private fun validate() {
         var valid = true
 
@@ -101,5 +126,7 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
 
         buttonSave?.isEnabled = valid
     }
+
+    // </editor-fold>
 
 }
