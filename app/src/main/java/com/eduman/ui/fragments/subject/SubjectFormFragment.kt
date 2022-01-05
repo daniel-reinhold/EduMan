@@ -9,12 +9,15 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.eduman.R
 import com.eduman.core.EduManFragment
+import com.eduman.core.components.textfield.BaseTextField
+import com.eduman.core.components.textfield.TextField
+import com.eduman.core.components.textfield.validator.implementation.PresenceValidator
 import com.eduman.core.util.GeneralUtil
+import com.eduman.core.util.extensions.toNonNullable
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.viewmodel.SubjectViewModel
 import com.eduman.ui.dialogs.ColorPickerDialog
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,19 +27,15 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
 
     private val subjectViewModel: SubjectViewModel by viewModels()
 
-    private var textFieldSubjectName: TextInputLayout? = null
-    private var textFieldTeacherName: TextInputLayout? = null
+    private var textFieldSubjectName: TextField? = null
+    private var textFieldTeacherName: TextField? = null
 
     private var colorView: View? = null
     private var buttonSelectColor: MaterialButton? = null
 
     private var buttonSave: MaterialButton? = null
 
-    var subject = Subject(
-        title = "",
-        teacherName = "",
-        color = ColorPickerDialog.INITIAL_COLOR.toInt()
-    )
+    var selectedColor = ColorPickerDialog.INITIAL_COLOR.toInt()
 
     // </editor-fold>
 
@@ -45,7 +44,7 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
     private val colorPickerDialogCallback = object : ColorPickerDialog.ColorPickerDialogListener {
         override fun onColorSelected(color: Int) {
             colorView?.backgroundTintList = GeneralUtil.getColorStateList(color)
-            subject.color = color
+            selectedColor = color
         }
 
     }
@@ -82,15 +81,22 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         buttonSelectColor = activity?.findViewById(R.id.fragmentSubjectFormButtonSelectColor)
         buttonSave = activity?.findViewById(R.id.fragmentSubjectFormButtonSave)
 
-        textFieldSubjectName?.editText?.doAfterTextChanged {
-            subject.title = it.toString()
-            validate()
+        activity?.let {
+            textFieldSubjectName?.addValidator(PresenceValidator(it))
+            textFieldTeacherName?.addValidator(PresenceValidator(it))
         }
 
-        textFieldTeacherName?.editText?.doAfterTextChanged {
-            subject.teacherName = it.toString()
-            validate()
-        }
+        textFieldSubjectName?.setOnTextChangeListener(object : BaseTextField.TextChangeListener {
+            override fun onTextChange(text: String) {
+                validate()
+            }
+        })
+
+        textFieldTeacherName?.setOnTextChangeListener(object : BaseTextField.TextChangeListener {
+            override fun onTextChange(text: String) {
+                validate()
+            }
+        })
 
         buttonSelectColor?.setOnClickListener {
             activity?.let {
@@ -99,6 +105,11 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         }
 
         buttonSave?.setOnClickListener {
+            val subject = Subject(
+                title = textFieldSubjectName?.getValue().toNonNullable(),
+                teacherName = textFieldTeacherName?.getValue().toNonNullable(),
+                color = selectedColor
+            )
             subjectViewModel.insert(subject).invokeOnCompletion {
                 findNavController().navigateUp()
             }
@@ -114,14 +125,11 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
      * enabled or disabled depending on the result
      */
     private fun validate() {
-        var valid = true
+        val errorCount =
+            textFieldSubjectName?.getErrorCount().toNonNullable() +
+            textFieldTeacherName?.getErrorCount().toNonNullable()
 
-        if (textFieldSubjectName?.editText?.text?.toString()?.isEmpty() == true ||
-            textFieldTeacherName?.editText?.text?.toString()?.isEmpty() == true) {
-            valid = false
-        }
-
-        buttonSave?.isEnabled = valid
+        buttonSave?.isEnabled = errorCount == 0
     }
 
     // </editor-fold>
