@@ -170,11 +170,15 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
         buttonAddGrade?.setOnClickListener {
             activity?.let {
                 AddGradeDialog(it, object : AddGradeDialog.AddGradeDialogListener {
-                    override fun onSave(grade: Grade) {
+                    override fun onSave(grade: Float, weighting: Float) {
                         subject?.id?.let { subjectId ->
-                            grade.subjectId = subjectId
+                            val gradeInstance = Grade(
+                                grade = grade,
+                                weighting = weighting,
+                                subjectId = subjectId
+                            )
 
-                            gradeViewModel.insert(grade)
+                            gradeViewModel.insert(gradeInstance)
                         }
                     }
                 }).show()

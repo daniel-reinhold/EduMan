@@ -1,13 +1,19 @@
 package com.eduman.core.util.formatter
 
-import com.eduman.data.util.Time
+import android.content.Context
+import com.eduman.R
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TimeFormatter {
 
     companion object {
 
-        fun formatTimeDefault(time: Time): String {
-            return "${time.hour}:${time.minute}"
+        fun formatTimeDefault(context: Context?, date: Date): String {
+            return SimpleDateFormat(
+                context?.getString(R.string.format_time_default),
+                Locale.getDefault()
+            ).format(date)
         }
 
     }

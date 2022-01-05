@@ -22,7 +22,7 @@
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_margin">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.eduman.core.components.textfield.TextField
             android:id="@+id/dialogAddTestTextFieldTopic"
             style="@style/DialogTextField"
             android:layout_width="match_parent"
@@ -31,46 +31,37 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="text" />
+                android:layout_height="match_parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.eduman.core.components.textfield.TextField>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.eduman.core.components.textfield.DateTextField
             android:id="@+id/dialogAddTestTextFieldDate"
             style="@style/DialogTextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/extra_small_margin"
-            android:hint="@string/date"
-            app:startIconDrawable="@drawable/icon_calendar">
+            android:hint="@string/date">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:enabled="false"
-                android:textColor="@drawable/text_color_text_field_with_selector"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="date" />
+                android:layout_height="match_parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.eduman.core.components.textfield.DateTextField>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.eduman.core.components.textfield.TimeTextField
             android:id="@+id/dialogAddTestTextFieldTime"
             style="@style/DialogTextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/extra_small_margin"
-            android:hint="@string/time"
-            app:startIconDrawable="@drawable/icon_clock">
+            android:hint="@string/time">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:enabled="false"
-                android:textColor="@drawable/text_color_text_field_with_selector"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="time" />
+                android:layout_height="match_parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.eduman.core.components.textfield.TimeTextField>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/dialogAddTestButtonSave"

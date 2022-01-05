@@ -6,8 +6,6 @@ import android.view.View
 import com.eduman.R
 import com.eduman.core.util.GeneralUtil
 import com.flask.colorpicker.ColorPickerView
-import com.flask.colorpicker.slider.AlphaSlider
-import com.flask.colorpicker.slider.LightnessSlider
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 /**

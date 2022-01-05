@@ -27,6 +27,8 @@
     <string name="select_color">Farbe auswählen</string>
     <string name="tests">Leistungskontrollen</string>
     <string name="add_grade">Note hinzufügen</string>
+    <string name="error_grade_not_in_range">Note muss im Bereich zwischen 1.0 und 6.0</string>
+    <string name="error_not_a_number">Muss eine Zahl sein</string>
 
     <string name="add_test">Leistungskontrolle hinzufügen</string>
     <string name="topic">Thema</string>
@@ -34,5 +36,10 @@
     <string name="time">Uhrzeit</string>
 
     <string name="format_date_default">dd.MM.yyyy</string>
+    <string name="format_time_default">HH:mm</string>
     <string name="format_date_time_default">dd.MM.yyyy, HH:mm</string>
+
+    <string name="error_blank">Muss angegeben werden</string>
+    <string name="error_not_a_float">Muss eine gültige Kommazahl sein</string>
+    <string name="error_not_in_range">Muss im Bereich zwischen %1$.1f und %2$.1f liegen</string>
 </resources>

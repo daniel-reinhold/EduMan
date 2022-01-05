@@ -1,10 +1,16 @@
 package com.eduman.ui.dialogs
 
 import android.app.Activity
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
+import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import com.eduman.R
+import com.eduman.core.components.textfield.FloatTextField
+import com.eduman.core.components.textfield.validator.implementation.FloatRangeValidator
+import com.eduman.core.components.textfield.validator.implementation.PresenceValidator
 import com.eduman.data.room.entitiy.Grade
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
@@ -28,7 +34,7 @@ class AddGradeDialog(
          * This callback method is fired when the grade has been set
          * @param grade The grade which has been set - [Grade]
          */
-        fun onSave(grade: Grade)
+        fun onSave(grade: Float, weighting: Float)
     }
 
     private val bottomSheetDialog = BottomSheetDialog(activity, R.style.BottomSheetDialog)
@@ -37,37 +43,21 @@ class AddGradeDialog(
         activity.findViewById(android.R.id.content),
         false
     )
-    private val textFieldGrade: TextInputLayout = dialogContent.findViewById(R.id.dialogAddGradeTextFieldGrade)
-    private val textFieldWeighting: TextInputLayout = dialogContent.findViewById(R.id.dialogAddGradeTextFieldWeighting)
+    private val textFieldGrade: FloatTextField = dialogContent.findViewById(R.id.dialogAddGradeTextFieldGrade)
+    private val textFieldWeighting: FloatTextField = dialogContent.findViewById(R.id.dialogAddGradeTextFieldWeighting)
     private val buttonSave: MaterialButton = dialogContent.findViewById(R.id.dialogAddGradeButtonSave)
-    private val grade = Grade(
-        id = null,
-        grade = 0.0F,
-        weighting = 1.0F,
-        subjectId = 0
-    )
 
     init {
-        textFieldGrade.editText?.doAfterTextChanged {
-            validate()
-            try {
-                grade.grade = it.toString().toFloat()
-            } catch (e: NumberFormatException) {
-                Log.e("EduMan#AddGradeDialog", "Grade is not a valid float")
-            }
-        }
-
-        textFieldWeighting.editText?.doAfterTextChanged {
-            validate()
-            try {
-                grade.weighting = it.toString().toFloat()
-            } catch (e: NumberFormatException) {
-                Log.e("EduMan#AddGradeDialog", "Grade is not a valid float")
-            }
-        }
+        textFieldGrade.addValidator(
+            PresenceValidator(activity),
+            FloatRangeValidator(activity, 1.0F, 6.0F)
+        )
+        textFieldWeighting.addValidator(PresenceValidator(activity))
+        textFieldGrade.editText?.doAfterTextChanged { validate() }
+        textFieldWeighting.editText?.doAfterTextChanged { validate() }
 
         buttonSave.setOnClickListener {
-            callback.onSave(grade)
+            callback.onSave(textFieldGrade.getValue(), textFieldWeighting.getValue())
             dismiss()
         }
 
@@ -75,14 +65,8 @@ class AddGradeDialog(
     }
 
     private fun validate() {
-        var valid = true
-
-        if (textFieldGrade.editText?.text?.toString()?.isEmpty() == true ||
-            textFieldWeighting.editText?.text?.toString()?.isEmpty() == true) {
-            valid = false
-        }
-
-        buttonSave.isEnabled = valid
+        val errorCount = textFieldGrade.getErrorCount() + textFieldWeighting.getErrorCount()
+        buttonSave.isEnabled = errorCount == 0
     }
 
     fun show() = bottomSheetDialog.show()

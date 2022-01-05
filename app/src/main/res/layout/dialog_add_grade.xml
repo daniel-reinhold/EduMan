@@ -1,67 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background_bottom_sheet_dialog"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <com.google.android.material.textview.MaterialTextView
-        android:padding="@dimen/default_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/default_margin"
         android:text="@string/add_grade"
         android:textColor="@color/text"
         android:textSize="@dimen/font_size_large"
         android:textStyle="bold" />
 
     <LinearLayout
-        android:paddingHorizontal="@dimen/default_margin"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/default_margin">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.eduman.core.components.textfield.FloatTextField
             android:id="@+id/dialogAddGradeTextFieldGrade"
-            android:hint="@string/grade"
             style="@style/DialogTextField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:hint="@string/grade">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:inputType="numberDecimal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.eduman.core.components.textfield.FloatTextField>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="@dimen/extra_small_margin"
+        <com.eduman.core.components.textfield.FloatTextField
             android:id="@+id/dialogAddGradeTextFieldWeighting"
-            android:hint="@string/weighting"
             style="@style/DialogTextField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_small_margin"
+            android:hint="@string/weighting">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:text="@string/default_grade_weighting"
-                android:inputType="numberDecimal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="@string/default_grade_weighting" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.eduman.core.components.textfield.FloatTextField>
 
         <com.google.android.material.button.MaterialButton
-            android:enabled="false"
             android:id="@+id/dialogAddGradeButtonSave"
-            android:layout_marginBottom="@dimen/default_margin"
             style="@style/DefaultButton"
-            android:layout_marginTop="@dimen/default_margin"
-            app:icon="@drawable/icon_save"
-            android:text="@string/save"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:enabled="false"
+            android:text="@string/save"
+            app:icon="@drawable/icon_save" />
 
     </LinearLayout>
 

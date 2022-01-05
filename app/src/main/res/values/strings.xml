@@ -29,6 +29,8 @@
     <string name="select_color">Select color</string>
     <string name="tests">Tests</string>
     <string name="add_grade">Add grade</string>
+    <string name="error_grade_not_in_range">Grade has to be in the range between 1.0 and 6.0</string>
+    <string name="error_not_a_number">Has to be a number</string>
 
     <string name="add_test">Add test</string>
     <string name="topic">Topic</string>
@@ -36,5 +38,10 @@
     <string name="time">Time</string>
 
     <string name="format_date_default">yyyy/dd/MM</string>
+    <string name="format_time_default">hh:mm a</string>
     <string name="format_date_time_default">yyyy/dd/MM, hh:mm a</string>
+
+    <string name="error_blank">Must be specified</string>
+    <string name="error_not_a_float">Must be a valid point number</string>
+    <string name="error_not_in_range">Has to be in the range between %1$.1f and %2$.1f</string>
 </resources>

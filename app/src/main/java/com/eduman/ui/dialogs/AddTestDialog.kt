@@ -5,6 +5,12 @@ import android.view.LayoutInflater
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.FragmentActivity
 import com.eduman.R
+import com.eduman.core.components.textfield.BaseTextField
+import com.eduman.core.components.textfield.DateTextField
+import com.eduman.core.components.textfield.TextField
+import com.eduman.core.components.textfield.TimeTextField
+import com.eduman.core.components.textfield.validator.implementation.PresenceValidator
+import com.eduman.core.util.DateTimeUtil
 import com.eduman.core.util.formatter.DateFormatter
 import com.eduman.core.util.formatter.TimeFormatter
 import com.eduman.data.util.Time
@@ -22,7 +28,7 @@ import java.util.*
  * This class represents a dialog to add a test
  */
 class AddTestDialog(
-    private val parentActivity: FragmentActivity,
+    parentActivity: FragmentActivity,
     private val callback: AddTestDialogListener
 ) {
 
@@ -46,90 +52,55 @@ class AddTestDialog(
         false
     )
 
-    private val textFieldTopic: TextInputLayout = dialogContent.findViewById(R.id.dialogAddTestTextFieldTopic)
-    private val textFieldDate: TextInputLayout = dialogContent.findViewById(R.id.dialogAddTestTextFieldDate)
-    private val textFieldTime: TextInputLayout = dialogContent.findViewById(R.id.dialogAddTestTextFieldTime)
+    private val textFieldTopic: TextField = dialogContent.findViewById(R.id.dialogAddTestTextFieldTopic)
+    private val textFieldDate: DateTextField = dialogContent.findViewById(R.id.dialogAddTestTextFieldDate)
+    private val textFieldTime: TimeTextField = dialogContent.findViewById(R.id.dialogAddTestTextFieldTime)
     private val buttonSave: MaterialButton = dialogContent.findViewById(R.id.dialogAddTestButtonSave)
 
-    private var selectedDate = MaterialDatePicker.todayInUtcMilliseconds()
-    private var selectedTime = Time()
-
     init {
-        textFieldTopic.editText?.doAfterTextChanged { validate() }
-        textFieldDate.setStartIconOnClickListener { showDatePicker() }
-        textFieldTime.setStartIconOnClickListener { showTimePicker() }
+        textFieldTopic.setOnTextChangeListener(object : BaseTextField.TextChangeListener {
+            override fun onTextChange(text: String) {
+                validate()
+            }
+        })
+
+        textFieldDate.setOnTextChangeListener(object : BaseTextField.TextChangeListener {
+            override fun onTextChange(text: String) {
+                validate()
+            }
+        })
+
+        textFieldTime.setOnTextChangeListener(object : BaseTextField.TextChangeListener {
+            override fun onTextChange(text: String) {
+                validate()
+            }
+        })
+
+        textFieldDate.setFragmentManager(parentActivity.supportFragmentManager)
+        textFieldTime.setFragmentManager(parentActivity.supportFragmentManager)
+        textFieldTopic.addValidator(PresenceValidator(parentActivity))
+        textFieldDate.addValidator(PresenceValidator(parentActivity))
+        textFieldTime.addValidator(PresenceValidator(parentActivity))
 
         buttonSave.setOnClickListener {
-            val date = Calendar.getInstance().apply {
-                timeInMillis = selectedDate
-                set(Calendar.HOUR_OF_DAY, selectedTime.hour)
-                set(Calendar.MINUTE, selectedTime.minute)
-            }
-
-            callback.onSave(
-                textFieldTopic.editText?.text.toString(),
-                date.timeInMillis
+            val date = DateTimeUtil.dateAndTimeToDateTime(
+                textFieldDate.getValue(),
+                textFieldTime.getValue()
             )
+            callback.onSave(textFieldTopic.getValue(), date.time)
             dismiss()
         }
 
         bottomSheetDialog.setContentView(dialogContent)
     }
 
-    private fun showDatePicker() {
-        MaterialDatePicker.Builder.datePicker()
-            .setTitleText(R.string.select_date)
-            .setSelection(selectedDate)
-            .setCalendarConstraints(
-                CalendarConstraints.Builder().setValidator(
-                    DateValidatorPointForward.now()
-                ).build()
-            )
-            .build().apply {
-                addOnPositiveButtonClickListener { timestamp ->
-                    Date(timestamp).also { date ->
-                        textFieldDate.editText?.setText(DateFormatter.formatDateDefault(parentActivity, date))
-                        selectedDate = timestamp
-                    }
-                    validate()
-                }
-                show(parentActivity.supportFragmentManager, "DatePicker")
-            }
-    }
-
-    private fun showTimePicker() {
-        MaterialTimePicker.Builder()
-            .setTitleText(R.string.select_time)
-            .setHour(selectedTime.hour)
-            .setMinute(selectedTime.minute)
-            .setTimeFormat(
-                if (DateFormat.is24HourFormat(parentActivity)) TimeFormat.CLOCK_24H else TimeFormat.CLOCK_12H
-            )
-            .build().apply {
-                addOnPositiveButtonClickListener {
-                    Time(
-                        this.hour,
-                        this.minute
-                    ).also { time ->
-                        textFieldTime.editText?.setText(TimeFormatter.formatTimeDefault(time))
-                        selectedTime = time
-                    }
-                    validate()
-                }
-                show(parentActivity.supportFragmentManager, "TimePicker")
-            }
-    }
-
     private fun validate() {
-        var valid = true
+        val errorCount =
+            textFieldTopic.getErrorCount() +
+            textFieldDate.getErrorCount() +
+            textFieldTime.getErrorCount()
 
-        if (textFieldTopic.editText?.text.toString().isBlank() ||
-            textFieldDate.editText?.text.toString().isBlank() ||
-            textFieldTime.editText?.text.toString().isBlank()) {
-            valid = false
-        }
-
-        buttonSave.isEnabled = valid
+        buttonSave.isEnabled = errorCount == 0
     }
 
     fun show() = bottomSheetDialog.show()
