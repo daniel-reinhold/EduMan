@@ -10,6 +10,9 @@ interface SubjectDAO {
     @Query("SELECT * FROM subjects")
     fun getAll(): Flow<List<Subject>>
 
+    @Query("SELECT * FROM subjects WHERE id = :id LIMIT 1")
+    fun find(id: Int): Flow<Subject?>
+
     @Query("SELECT * FROM subjects WHERE title = :title")
     fun searchByTitle(title: String): Flow<List<Subject>>
 

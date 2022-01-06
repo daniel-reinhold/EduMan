@@ -23,6 +23,12 @@ class SubjectViewModel @Inject constructor(
     fun getAll() = repository.getAll()
 
     /**
+     * This method searches for a subject with a certain ID
+     * @return [Subject]? wrapped in LiveData
+     */
+    fun find(id: Int) = repository.find(id)
+
+    /**
      * This method queries subjects by their title
      * @param title The title of the subject to search for
      * @return [List]<[Subject]> wrapped in LiveData

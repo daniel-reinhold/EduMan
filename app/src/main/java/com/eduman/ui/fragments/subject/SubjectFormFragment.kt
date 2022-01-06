@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.eduman.R
+import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
 import com.eduman.core.components.textfield.BaseTextField
 import com.eduman.core.components.textfield.TextField
@@ -35,7 +35,9 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
 
     private var buttonSave: MaterialButton? = null
 
-    var selectedColor = ColorPickerDialog.INITIAL_COLOR.toInt()
+    var selectedColor = ColorPickerDialog.DEFAULT_INITIAL_COLOR.toInt()
+
+    private var subjectToEdit: Subject? = null
 
     // </editor-fold>
 
@@ -75,6 +77,7 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
      * This method initializes the view
      */
     private fun initialize() {
+        subjectToEdit = arguments?.getParcelable(KEY_SUBJECT)
         textFieldSubjectName = activity?.findViewById(R.id.fragmentSubjectFormTextFieldSubjectName)
         textFieldTeacherName = activity?.findViewById(R.id.fragmentSubjectFormTextFieldTeacherName)
         colorView = activity?.findViewById(R.id.fragmentSubjectFormColorView)
@@ -84,6 +87,14 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         activity?.let {
             textFieldSubjectName?.addValidator(PresenceValidator(it))
             textFieldTeacherName?.addValidator(PresenceValidator(it))
+        }
+
+        subjectToEdit?.let {
+            textFieldSubjectName?.setValue(it.title)
+            textFieldTeacherName?.setValue(it.teacherName)
+            colorView?.backgroundTintList = GeneralUtil.getColorStateList(it.color)
+            selectedColor = it.color
+            buttonSave?.isEnabled = true
         }
 
         textFieldSubjectName?.setOnTextChangeListener(object : BaseTextField.TextChangeListener {
@@ -100,12 +111,13 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
 
         buttonSelectColor?.setOnClickListener {
             activity?.let {
-                ColorPickerDialog(it, colorPickerDialogCallback).show()
+                ColorPickerDialog(it, colorPickerDialogCallback, selectedColor).show()
             }
         }
 
         buttonSave?.setOnClickListener {
             val subject = Subject(
+                id = subjectToEdit?.id,
                 title = textFieldSubjectName?.getValue().toNonNullable(),
                 teacherName = textFieldTeacherName?.getValue().toNonNullable(),
                 color = selectedColor

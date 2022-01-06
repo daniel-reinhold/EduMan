@@ -29,7 +29,12 @@
         android:id="@+id/subjectFormFragment"
         android:name="com.eduman.ui.fragments.subject.SubjectFormFragment"
         android:label="@string/subject"
-        tools:layout="@layout/fragment_subject_form" />
+        tools:layout="@layout/fragment_subject_form">
+        <argument
+            android:name="subject"
+            android:defaultValue="@null"
+            app:argType="com.eduman.data.room.entitiy.Subject" />
+    </fragment>
     <fragment
         android:id="@+id/subjectDetailFragment"
         android:name="com.eduman.ui.fragments.subject.SubjectDetailFragment"
@@ -45,6 +50,13 @@
         <argument
             android:name="subject"
             app:argType="com.eduman.data.room.entitiy.Subject" />
+        <action
+            android:id="@+id/action_subjectDetailFragment_to_subjectFormFragment"
+            app:destination="@id/subjectFormFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/testsFragment"

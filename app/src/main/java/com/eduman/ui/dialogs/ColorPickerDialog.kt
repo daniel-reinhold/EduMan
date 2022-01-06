@@ -13,7 +13,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
  */
 class ColorPickerDialog(
     activity: Activity,
-    callback: ColorPickerDialogListener
+    callback: ColorPickerDialogListener,
+    initialColor: Int? = null
 ) {
 
     /**
@@ -29,7 +30,7 @@ class ColorPickerDialog(
     }
 
     companion object {
-        const val INITIAL_COLOR: Long = 0xFF34C759
+        const val DEFAULT_INITIAL_COLOR: Long = 0xFF34C759
     }
 
     private val dialogContent = LayoutInflater.from(activity).inflate(
@@ -45,7 +46,10 @@ class ColorPickerDialog(
     init {
         bottomSheetDialog.setContentView(dialogContent)
 
-        colorPicker.setInitialColor(INITIAL_COLOR.toInt(), true)
+        (initialColor ?: DEFAULT_INITIAL_COLOR.toInt()).let { color ->
+            colorPicker.setInitialColor(color, true)
+            colorView.backgroundTintList = GeneralUtil.getColorStateList(color)
+        }
 
         colorPicker.addOnColorChangedListener { color ->
             colorView.backgroundTintList = GeneralUtil.getColorStateList(color)

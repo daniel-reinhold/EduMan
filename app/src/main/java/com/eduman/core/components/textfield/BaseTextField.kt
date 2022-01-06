@@ -25,7 +25,7 @@ abstract class BaseTextField : TextInputLayout {
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
 
-        this.editText?.setOnFocusChangeListener { v, hasFocus ->
+        this.editText?.setOnFocusChangeListener { _, hasFocus ->
             if (!alreadyFocused && hasFocus) {
                 alreadyFocused = true
             }

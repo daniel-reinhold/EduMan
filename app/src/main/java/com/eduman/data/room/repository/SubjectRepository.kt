@@ -11,6 +11,8 @@ class SubjectRepository @Inject constructor(
 
     fun getAll() = dao.getAll().asLiveData()
 
+    fun find(id: Int) = dao.find(id).asLiveData()
+
     fun searchByTitle(title: String) = dao.searchByTitle(title).asLiveData()
 
     suspend fun insert(subject: Subject) = dao.insert(subject)

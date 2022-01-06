@@ -1,9 +1,7 @@
 package com.eduman.ui.fragments.subject
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
@@ -20,6 +18,7 @@ import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.entitiy.Test
 import com.eduman.data.room.viewmodel.CoreViewModel
 import com.eduman.data.room.viewmodel.GradeViewModel
+import com.eduman.data.room.viewmodel.SubjectViewModel
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.GradesPreviewAdapter
 import com.eduman.ui.adapters.TestsPreviewAdapter
@@ -47,6 +46,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
     private var subject: Subject? = null
 
+    private val subjectViewModel: SubjectViewModel by viewModels()
     private val gradeViewModel: GradeViewModel by viewModels()
     private val testViewModel: TestViewModel by viewModels()
     private val coreViewModel: CoreViewModel by viewModels()
@@ -84,6 +84,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
 
         initialize()
     }
@@ -105,13 +106,15 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
         buttonAddGrade = activity?.findViewById(R.id.fragmentSubjectDetailButtonAddGrade)
         buttonAddTest = activity?.findViewById(R.id.fragmentSubjectDetailButtonAddTest)
 
-        setActionBarTitle(subject?.title)
-        textViewTeacherName?.text = subject?.teacherName
-
         recyclerViewGrades?.adapter = adapterGrades
         recyclerViewTests?.adapter = adapterTests
 
         subject?.id?.let { subjectId ->
+            subjectViewModel.find(subjectId).observe(viewLifecycleOwner, {
+                setActionBarTitle(it?.title)
+                textViewTeacherName?.text = it?.teacherName
+            })
+
             // Check if any grades or tests exist for the subject
             coreViewModel.checkGradeAndTestCount(subjectId).observe(viewLifecycleOwner, { gradeAndTestCount ->
                 if (gradeAndTestCount.gradeCount == 0 && gradeAndTestCount.testCount == 0) {
@@ -208,5 +211,24 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
     }
 
     // </editor-fold>
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.subject_detail_overflow_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.subjectDetailMenuItemEdit -> {
+                subject?.let {
+                    findNavController().navigate(
+                        R.id.action_subjectDetailFragment_to_subjectFormFragment,
+                        bundleOf(KEY_SUBJECT to it)
+                    )
+                }
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
 }

@@ -1,14 +1,27 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Theme.EduMan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="navigationIcon">@drawable/icon_arrow_left</item>
-        <item name="android:navigationIcon">@drawable/icon_arrow_left</item>
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_variant</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <item name="android:statusBarColor">@color/status_bar_background</item>
         <item name="android:windowLightStatusBar">@bool/is_light_status_bar</item>
+
+        <item name="actionOverflowButtonStyle">@style/ActionBarOverflowButtonStyle</item>
+        <item name="actionOverflowMenuStyle">@style/ActionBarOverflowMenuStyle</item>
+    </style>
+
+    <!-- Style of the Overflow-Button in the ToolBar -->
+    <style name="ActionBarOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/icon_dark</item>
+        <item name="android:src">@drawable/icon_overflow_menu</item>
+    </style>
+
+    <style name="ActionBarOverflowMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:overlapAnchor">false</item>
+        <item name="android:popupBackground">@drawable/background_action_bar_overflow_menu</item>
     </style>
 
     <style name="DefaultCard" parent="Widget.MaterialComponents.CardView">

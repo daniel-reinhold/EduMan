@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/background_action_bar_overflow_menu.xml" value="0.14635416666666667" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/background_bottom_sheet_dialog.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/background_color_view.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/button_background.xml" value="0.2703125" />
@@ -16,7 +17,9 @@
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_color.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_dashboard.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_donut_chart.xml" value="0.2703125" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_edit.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_education.xml" value="0.2703125" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_overflow_menu.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_save.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/icon_subjects.xml" value="0.2703125" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/drawable/plus (1).xml" value="0.2703125" />
@@ -43,6 +46,7 @@
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/rvi_test.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/layout/rvi_test_preview.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/SchoolManager/app/src/main/res/menu/subject_detail_overflow_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/SchoolManager/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
       </map>
     </option>
