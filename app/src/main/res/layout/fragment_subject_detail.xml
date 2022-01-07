@@ -56,23 +56,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="@dimen/default_margin">
 
                     <ImageView
-                        android:contentDescription="@string/cd_average"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/cd_average"
                         android:src="@drawable/icon_donut_chart"
                         app:tint="@color/icon_dark" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/fragmentSubjectDetailsTextViewGradeAverage"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/extra_small_margin"
                         android:textColor="@color/text"
                         android:textSize="@dimen/font_size_large"
                         android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/fragmentSubjectDetailsButtonGrades"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:background="?attr/actionBarItemBackground"
+                        android:contentDescription="@string/cd_open_new_view"
+                        android:src="@drawable/icon_arrow_right"
+                        app:tint="@color/icon_dark" />
 
                 </LinearLayout>
 
@@ -136,46 +148,46 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="@dimen/default_margin">
 
                     <ImageView
-                        android:contentDescription="@string/cd_test"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/cd_test"
                         android:src="@drawable/icon_test"
                         app:tint="@color/icon_dark" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/extra_small_margin"
+                        android:layout_weight="1"
                         android:text="@string/tests"
                         android:textColor="@color/text"
                         android:textSize="@dimen/font_size_large"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:contentDescription="@string/cd_open_new_view"
                         android:id="@+id/fragmentSubjectDetailsButtonTests"
-                        android:background="?attr/actionBarItemBackground"
-                        android:layout_marginStart="@dimen/small_margin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:background="?attr/actionBarItemBackground"
+                        android:contentDescription="@string/cd_open_new_view"
                         android:src="@drawable/icon_arrow_right"
                         app:tint="@color/icon_dark" />
 
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:overScrollMode="never"
                     android:id="@+id/fragmentSubjectDetailsRecyclerViewTests"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:itemCount="3"
                     tools:listitem="@layout/rvi_test_preview" />

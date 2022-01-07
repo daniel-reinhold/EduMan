@@ -51,6 +51,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
     private val testViewModel: TestViewModel by viewModels()
     private val coreViewModel: CoreViewModel by viewModels()
 
+    private var buttonGrades: ImageView? = null
     private var buttonTests: ImageView? = null
 
     private var textViewTeacherName: MaterialTextView? = null
@@ -95,6 +96,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
     private fun initialize() {
         subject = arguments?.getParcelable(KEY_SUBJECT)
+        buttonGrades = activity?.findViewById(R.id.fragmentSubjectDetailsButtonGrades)
         buttonTests = activity?.findViewById(R.id.fragmentSubjectDetailsButtonTests)
         textViewTeacherName = activity?.findViewById(R.id.fragmentSubjectDetailsTextViewTeacherName)
         containerEmpty = activity?.findViewById(R.id.fragmentSubjectDetailsContainerEmpty)
@@ -159,6 +161,16 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
         }
 
+        // Navigate to the grades fragment
+        buttonGrades?.setOnClickListener {
+            subject?.let {
+                findNavController().navigate(
+                    R.id.action_subjectDetailFragment_to_gradesFragment,
+                    bundleOf(KEY_SUBJECT to it)
+                )
+            }
+        }
+
         // Navigate to the tests fragment
         buttonTests?.setOnClickListener {
             subject?.let {
@@ -212,6 +224,8 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
     // </editor-fold>
 
+    // <editor-fold desc="Initializing Options menu" defaultstate="collapsed">
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.subject_detail_overflow_menu, menu)
     }
@@ -230,5 +244,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    // </editor-fold>
 
 }

@@ -25,7 +25,8 @@ class MainActivity : EduManActivity("MainActivity") {
         private val CHILD_FRAGMENTS = listOf(
             R.id.subjectFormFragment,
             R.id.subjectDetailFragment,
-            R.id.testsFragment
+            R.id.testsFragment,
+            R.id.gradesFragment
         )
     }
 
