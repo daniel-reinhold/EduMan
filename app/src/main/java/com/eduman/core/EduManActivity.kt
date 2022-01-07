@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.eduman.core.Constants.Companion.MAX_LOGGING_TAG_LENGTH
+import com.google.android.gms.ads.FullScreenContentCallback
 
 /**
  * This class represents the Base activity for all in this project used Activities
  * @property loggingTag The logging tag for this activity
  */
-open class EduManActivity(
+abstract class EduManActivity(
     private val loggingTag: String
 ) : AppCompatActivity() {
 
@@ -42,5 +43,7 @@ open class EduManActivity(
     fun setActionBarSubTitle(actionBarSubTitle: String?) {
         supportActionBar?.subtitle = actionBarSubTitle
     }
+
+    abstract fun showInterstitialAd(callback: FullScreenContentCallback)
 
 }

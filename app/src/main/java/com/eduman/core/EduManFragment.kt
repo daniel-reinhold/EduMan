@@ -2,6 +2,7 @@ package com.eduman.core
 
 import androidx.fragment.app.Fragment
 import com.eduman.core.Constants.Companion.MAX_LOGGING_TAG_LENGTH
+import com.google.android.gms.ads.FullScreenContentCallback
 
 open class EduManFragment(
     private val loggingTag: String
@@ -35,6 +36,10 @@ open class EduManFragment(
      */
     protected fun setActionBarSubTitle(actionBarSubTitle: String?) {
         (activity as? EduManActivity)?.setActionBarSubTitle(actionBarSubTitle)
+    }
+
+    protected fun showInterstitialAd(callback: FullScreenContentCallback) {
+        (activity as? EduManActivity)?.showInterstitialAd(callback)
     }
 
 }

@@ -1,5 +1,6 @@
 package com.eduman.ui.fragments.subject
 
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
+import com.eduman.core.App
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
@@ -24,6 +26,8 @@ import com.eduman.ui.adapters.GradesPreviewAdapter
 import com.eduman.ui.adapters.TestsPreviewAdapter
 import com.eduman.ui.dialogs.AddGradeDialog
 import com.eduman.ui.dialogs.AddTestDialog
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
@@ -163,21 +167,35 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
         // Navigate to the grades fragment
         buttonGrades?.setOnClickListener {
-            subject?.let {
-                findNavController().navigate(
-                    R.id.action_subjectDetailFragment_to_gradesFragment,
-                    bundleOf(KEY_SUBJECT to it)
-                )
+            if (App.IS_RELEASE) {
+                showInterstitialAd(object : FullScreenContentCallback() {
+                    override fun onAdDismissedFullScreenContent() {
+                        navigateToGradesFragment()
+                    }
+
+                    override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                        navigateToGradesFragment()
+                    }
+                })
+            } else {
+                navigateToGradesFragment()
             }
         }
 
         // Navigate to the tests fragment
         buttonTests?.setOnClickListener {
-            subject?.let {
-                findNavController().navigate(
-                    R.id.action_subjectDetailFragment_to_testsFragment,
-                    bundleOf(KEY_SUBJECT to it)
-                )
+            if (App.IS_RELEASE) {
+                showInterstitialAd(object : FullScreenContentCallback() {
+                    override fun onAdDismissedFullScreenContent() {
+                        navigateToTestsFragment()
+                    }
+
+                    override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                        navigateToTestsFragment()
+                    }
+                })
+            } else {
+                navigateToTestsFragment()
             }
         }
 
@@ -242,6 +260,28 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    // </editor-fold>
+
+    // <editor-fold desc="Navigation methods" defaultstate="collapsed">
+
+    private fun navigateToGradesFragment() {
+        subject?.let {
+            findNavController().navigate(
+                R.id.action_subjectDetailFragment_to_gradesFragment,
+                bundleOf(KEY_SUBJECT to it)
+            )
+        }
+    }
+
+    private fun navigateToTestsFragment() {
+        subject?.let {
+            findNavController().navigate(
+                R.id.action_subjectDetailFragment_to_testsFragment,
+                bundleOf(KEY_SUBJECT to it)
+            )
         }
     }
 

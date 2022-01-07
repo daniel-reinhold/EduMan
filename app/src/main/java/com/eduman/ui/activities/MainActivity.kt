@@ -1,6 +1,7 @@
 package com.eduman.ui.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -9,10 +10,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.eduman.R
+import com.eduman.core.App
 import com.eduman.core.EduManActivity
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,7 +45,9 @@ class MainActivity : EduManActivity("MainActivity") {
 
     private var toolbar: Toolbar? = null
 
+    private var interstitialAdUnitId = "ca-app-pub-6555431213345265/1746444940"
     private var adView: AdView? = null
+    private var interstitialAd: InterstitialAd? = null
 
     // </editor-fold>
 
@@ -114,9 +118,30 @@ class MainActivity : EduManActivity("MainActivity") {
     private fun initializeAds() {
         adView = findViewById(R.id.activityMainAdView)
 
-        MobileAds.initialize(this) {}
-        val adRequest = AdRequest.Builder().build()
-        adView?.loadAd(adRequest)
+        if (App.IS_RELEASE) {
+            MobileAds.initialize(this) {}
+            val adRequestBannerAd = AdRequest.Builder().build()
+
+            adView?.loadAd(adRequestBannerAd)
+        } else {
+            adView?.visibility = View.GONE
+        }
+    }
+
+    override fun showInterstitialAd(callback: FullScreenContentCallback) {
+        val adRequestInterstitialAd = AdRequest.Builder().build()
+        InterstitialAd.load(this, interstitialAdUnitId, adRequestInterstitialAd, object : InterstitialAdLoadCallback() {
+            override fun onAdLoaded(ad: InterstitialAd) {
+                interstitialAd = ad
+            }
+
+            override fun onAdFailedToLoad(loadError: LoadAdError) {
+                interstitialAd = null
+            }
+        })
+
+        interstitialAd?.fullScreenContentCallback = callback
+        interstitialAd?.show(this)
     }
 
     // </editor-fold>
