@@ -1,9 +1,7 @@
 package com.eduman.ui.activities
 
 import android.os.Bundle
-import android.view.ContextMenu
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,6 +10,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.eduman.R
 import com.eduman.core.EduManActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,6 +43,8 @@ class MainActivity : EduManActivity("MainActivity") {
 
     private var toolbar: Toolbar? = null
 
+    private var adView: AdView? = null
+
     // </editor-fold>
 
     // <editor-fold desc="Lifecycle methods" defaultstate="collapsed">
@@ -52,6 +55,7 @@ class MainActivity : EduManActivity("MainActivity") {
 
         initializeAppBar()
         initializeNavigation()
+        initializeAds()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -102,6 +106,17 @@ class MainActivity : EduManActivity("MainActivity") {
         toolbar = findViewById(R.id.activityMainToolBar)
 
         setSupportActionBar(toolbar)
+    }
+
+    /**
+     * This method initializes the Ads
+     */
+    private fun initializeAds() {
+        adView = findViewById(R.id.activityMainAdView)
+
+        MobileAds.initialize(this) {}
+        val adRequest = AdRequest.Builder().build()
+        adView?.loadAd(adRequest)
     }
 
     // </editor-fold>

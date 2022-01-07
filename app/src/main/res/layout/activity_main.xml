@@ -36,6 +36,13 @@
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_navigation_menu" />
 
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/activityMainAdView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

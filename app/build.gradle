@@ -73,4 +73,7 @@ dependencies {
     // Color picker (included as aar because it isn't hosted anymore)
     implementation fileTree(includes: ['color_picker.aar'], dir: 'libs')
 
+    // Ads
+    implementation "com.google.android.gms:play-services-ads:$adsVersion"
+
 }

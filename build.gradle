@@ -8,6 +8,7 @@ buildscript {
     ext.navVersion          = '2.3.0-alpha01'
     ext.lottieVersion       = '4.2.1'
     ext.colorPickerVersion  = '0.0.15'
+    ext.adsVersion          = '20.5.0'
 
     repositories {
         google()
