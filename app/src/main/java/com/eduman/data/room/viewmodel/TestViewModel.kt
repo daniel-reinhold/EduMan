@@ -30,6 +30,13 @@ class TestViewModel @Inject constructor(
     fun getNext(subjectId: Int, amount: Int) = repository.getNext(subjectId, amount)
 
     /**
+     * This method queries an specific amount of tests ordered ascending by "date"
+     * @param amount The amount of tests - [Int]
+     * @return [List]<[Test]> wrapped in LiveData
+     */
+    fun getNext(amount: Int) = repository.getNext(amount)
+
+    /**
      * This method queries the grade for a specific test
      * @param testId The ID of the test - [Int]
      * @return TestAndGrade wrapped in LiveData

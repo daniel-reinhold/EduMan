@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">EduMan</string>
     <string name="default_grade_weighting" translatable="false">1.0</string>
+    <!--- e.G. 2021/12/05 ∙ Maths -->
+    <string name="date_with_subject" translatable="false">%1$s ∙ %2$s</string>
 
     <string name="save">Save</string>
     <string name="details">Details</string>
@@ -15,6 +17,7 @@
     <string name="edit">Edit</string>
     <string name="grade_colon">Grade:</string>
     <string name="weighting_value">Weighting: %1$s</string>
+    <string name="upcoming">Upcoming</string>
 
     <string name="dashboard">Dashboard</string>
 
@@ -48,4 +51,5 @@
     <string name="error_blank">Must be specified</string>
     <string name="error_not_a_float">Must be a valid point number</string>
     <string name="error_not_in_range">Has to be in the range between %1$.1f and %2$.1f</string>
+    <string name="no_tests_added_yet">No tests have been added yet</string>
 </resources>

@@ -13,6 +13,7 @@
     <string name="edit">Bearbeiten</string>
     <string name="grade_colon">Note:</string>
     <string name="weighting_value">Gewichtung: %1$s</string>
+    <string name="upcoming">Anstehend</string>
 
     <string name="dashboard">Dashboard</string>
 
@@ -46,4 +47,5 @@
     <string name="error_blank">Muss angegeben werden</string>
     <string name="error_not_a_float">Muss eine gültige Kommazahl sein</string>
     <string name="error_not_in_range">Muss im Bereich zwischen %1$.1f und %2$.1f liegen</string>
+    <string name="no_tests_added_yet">Es wurden noch keine Leistungskontrollen erfasst</string>
 </resources>

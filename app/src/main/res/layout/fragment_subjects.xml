@@ -34,6 +34,7 @@
             android:text="@string/no_subjects_added_yet"
             android:textAlignment="center"
             android:textSize="@dimen/font_size_large"
+            android:textColor="@color/text"
             android:textStyle="bold" />
 
     </LinearLayout>

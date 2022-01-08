@@ -8,6 +8,6 @@
     <fragment
         tools:layout="@layout/fragment_dashboard"
         android:id="@+id/dashboardFragment"
-        android:name="com.eduman.ui.fragments.DashboardFragment"
+        android:name="com.eduman.ui.fragments.dashboard.DashboardFragment"
         android:label="@string/dashboard" />
 </navigation>
