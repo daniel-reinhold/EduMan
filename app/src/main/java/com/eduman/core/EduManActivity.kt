@@ -44,6 +44,6 @@ abstract class EduManActivity(
         supportActionBar?.subtitle = actionBarSubTitle
     }
 
-    abstract fun showInterstitialAd(callback: FullScreenContentCallback)
+    open fun showInterstitialAd(callback: FullScreenContentCallback) = Unit
 
 }

@@ -13,7 +13,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class SubjectViewModel @Inject constructor(
-    val repository: SubjectRepository
+    private val repository: SubjectRepository
 ) : ViewModel() {
 
     /**

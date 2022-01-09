@@ -4,23 +4,31 @@
     package="com.eduman">
 
     <application
-        android:allowBackup="true"
         android:name=".core.EduManApplication"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:fullBackupOnly="true"
         android:icon="@mipmap/icon_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon_launcher_round"
         android:supportsRtl="true"
-        tools:ignore="GoogleAppIndexingWarning"
         android:theme="@style/Theme.EduMan"
-        android:fullBackupContent="@xml/backup_descriptor">
+        tools:ignore="GoogleAppIndexingWarning">
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6555431213345265~2794258144" />
 
         <activity
+            android:name="com.eduman.ui.activities.StartupActivity"
+            android:exported="true" />
+
+        <activity
             android:name="com.eduman.ui.activities.MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.eduman.ui.activities.LaunchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,7 +1,9 @@
 package com.eduman.ui.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -12,6 +14,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.eduman.R
 import com.eduman.core.App
 import com.eduman.core.EduManActivity
+import com.eduman.data.room.dao.SettingDAO
+import com.eduman.data.room.viewmodel.SettingViewModel
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback

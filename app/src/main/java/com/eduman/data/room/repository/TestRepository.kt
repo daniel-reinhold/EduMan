@@ -6,7 +6,7 @@ import com.eduman.data.room.entitiy.Test
 import javax.inject.Inject
 
 class TestRepository @Inject constructor(
-    val dao: TestDAO
+    private val dao: TestDAO
 ) {
 
     fun getAll(subjectId: Int) = dao.getAll(subjectId).asLiveData()

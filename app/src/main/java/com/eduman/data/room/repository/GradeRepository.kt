@@ -6,7 +6,7 @@ import com.eduman.data.room.entitiy.Grade
 import javax.inject.Inject
 
 class GradeRepository @Inject constructor(
-    val dao: GradeDAO
+    private val dao: GradeDAO
 ) {
 
     fun getAll(subjectId: Int) = dao.getAll(subjectId).asLiveData()

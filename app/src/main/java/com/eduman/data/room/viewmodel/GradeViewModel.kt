@@ -13,7 +13,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class GradeViewModel @Inject constructor(
-    val repository: GradeRepository
+    private val repository: GradeRepository
 ) : ViewModel() {
 
     /**

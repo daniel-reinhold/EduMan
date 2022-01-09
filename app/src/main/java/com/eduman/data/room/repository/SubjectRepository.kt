@@ -6,7 +6,7 @@ import com.eduman.data.room.entitiy.Subject
 import javax.inject.Inject
 
 class SubjectRepository @Inject constructor(
-    val dao: SubjectDAO
+    private val dao: SubjectDAO
 ) {
 
     fun getAll() = dao.getAll().asLiveData()

@@ -3,7 +3,9 @@ package com.eduman.core.di
 import android.content.Context
 import androidx.room.Room
 import com.eduman.data.room.core.AppDatabase
+import com.eduman.data.room.core.DATABASE_INIT_CALLBACK
 import com.eduman.data.room.core.MIGRATION_1_2
+import com.eduman.data.room.core.MIGRATION_2_3
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +26,8 @@ object AppModule {
         AppDatabase::class.java,
         "eduman_db"
     )
-    .addMigrations(MIGRATION_1_2)
+    .addCallback(DATABASE_INIT_CALLBACK)
+    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
     .build()
 
     @Singleton
@@ -42,5 +45,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideTestDao(database: AppDatabase) = database.getTestDAO()
+
+    @Singleton
+    @Provides
+    fun provideSettingDao(database: AppDatabase) = database.getSettingDAO()
 
 }

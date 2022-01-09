@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TestViewModel @Inject constructor(
-    val repository: TestRepository
+    private val repository: TestRepository
 ) : ViewModel() {
 
     /**
