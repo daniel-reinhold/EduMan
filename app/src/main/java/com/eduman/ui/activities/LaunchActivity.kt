@@ -6,7 +6,6 @@ import com.eduman.core.EduManActivity
 import com.eduman.core.util.SharedPreferencesUtil
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class LaunchActivity : EduManActivity("LaunchActivity") {
 
     private var sharedPreferences: SharedPreferencesUtil? = null
@@ -20,10 +19,14 @@ class LaunchActivity : EduManActivity("LaunchActivity") {
     private fun initialize() {
         sharedPreferences = SharedPreferencesUtil(this)
 
-        if (sharedPreferences?.getUsername() == null || sharedPreferences?.getUsePin() == null) {
+        if (sharedPreferences?.getUsername() == null || sharedPreferences?.usePin() == null) {
             startActivity(Intent(this, SetupActivity::class.java))
         } else {
-            startActivity(Intent(this, MainActivity::class.java))
+            if (sharedPreferences?.usePin() == true) {
+                startActivity(Intent(this, AuthorizationActivity::class.java))
+            } else {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
         }
     }
 

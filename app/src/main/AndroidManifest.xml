@@ -35,6 +35,10 @@
             android:exported="true" />
 
         <activity
+            android:name="com.eduman.ui.activities.AuthorizationActivity"
+            android:exported="true" />
+
+        <activity
             android:name="com.eduman.ui.activities.MainActivity"
             android:exported="true" />
 

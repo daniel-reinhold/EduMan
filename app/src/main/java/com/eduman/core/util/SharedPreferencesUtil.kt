@@ -39,7 +39,7 @@ class SharedPreferencesUtil(activity: Activity?) {
         setString(KEY_SP_PIN, encrypted)
     }
 
-    fun getUsePin() = getBoolean(KEY_SP_USE_PIN)
+    fun usePin() = getBoolean(KEY_SP_USE_PIN)
     fun setUsePin(usePin: Boolean) = setBoolean(KEY_SP_USE_PIN, usePin)
 
     // </editor-fold>

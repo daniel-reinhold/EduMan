@@ -65,4 +65,5 @@
     <string name="pin">PIN</string>
     <string name="dont_use_pin">Keine PIN benutzen</string>
     <string name="pin_not_used">PIN wird nicht genutzt</string>
+    <string name="title_login">EduMan ∙ Anmeldung</string>
 </resources>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activityMainRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activities.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activityAuthorizationToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextAppearance="@style/TextAppearanceActionBarSubTitle"
+        app:title="@string/title_login"
+        app:titleTextAppearance="@style/TextAppearanceActionBarTitle" />
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/activityAuthorizationCardDigit1"
+                    style="@style/DefaultCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp">
+
+                    <EditText
+                        android:id="@+id/activityAuthorizationDigit1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:cursorVisible="false"
+                        android:hint="@string/hint_pin"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textSize="64sp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/activityAuthorizationButtonClearDigit1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/extra_small_margin"
+                    android:background="@drawable/background_button_clear_pin_field"
+                    android:paddingVertical="4dp"
+                    android:src="@drawable/icon_close"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="?attr/selectableItemBackground"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/activityAuthorizationCardDigit2"
+                    style="@style/DefaultCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp">
+
+                    <EditText
+                        android:id="@+id/activityAuthorizationDigit2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:cursorVisible="false"
+                        android:hint="@string/hint_pin"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textSize="64sp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/activityAuthorizationButtonClearDigit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/extra_small_margin"
+                    android:background="@drawable/background_button_clear_pin_field"
+                    android:paddingVertical="4dp"
+                    android:src="@drawable/icon_close"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/activityAuthorizationCardDigit3"
+                    style="@style/DefaultCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp">
+
+                    <EditText
+                        android:id="@+id/activityAuthorizationDigit3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:cursorVisible="false"
+                        android:hint="@string/hint_pin"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textSize="64sp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/activityAuthorizationButtonClearDigit3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/extra_small_margin"
+                    android:background="@drawable/background_button_clear_pin_field"
+                    android:paddingVertical="4dp"
+                    android:src="@drawable/icon_close"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/activityAuthorizationCardDigit4"
+                    style="@style/DefaultCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp">
+
+                    <EditText
+                        android:id="@+id/activityAuthorizationDigit4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:cursorVisible="false"
+                        android:hint="@string/hint_pin"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textSize="64sp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/activityAuthorizationButtonClearDigit4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/extra_small_margin"
+                    android:background="@drawable/background_button_clear_pin_field"
+                    android:paddingVertical="4dp"
+                    android:src="@drawable/icon_close"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
