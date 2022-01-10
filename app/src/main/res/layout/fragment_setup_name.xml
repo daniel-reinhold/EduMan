@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.eduman.core.components.textfield.TextField
+        app:helperTextTextColor="@color/text_secondary"
+        android:id="@+id/fragmentSetupNameTextFieldName"
+        android:hint="@string/setup_question_name"
+        app:helperText="@string/data_saved_only_local"
+        style="@style/DefaultTextField"
+        android:layout_margin="@dimen/default_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.eduman.core.components.textfield.TextField>
+
+</LinearLayout>

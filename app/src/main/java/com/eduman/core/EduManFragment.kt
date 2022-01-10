@@ -31,11 +31,31 @@ open class EduManFragment(
     }
 
     /**
+     * This method updates the title of the actionbar
+     * @param actionBarTitleResId The resource ID of the action bar title - [String]
+     */
+    protected fun setActionBarTitle(actionBarTitleResId: Int) {
+        (activity as? EduManActivity)?.setActionBarTitle(
+            activity?.getString(actionBarTitleResId)
+        )
+    }
+
+    /**
      * This method updates the subtitle of the actionbar
      * @param actionBarSubTitle The new subtitle of the actionbar - [String]
      */
     protected fun setActionBarSubTitle(actionBarSubTitle: String?) {
         (activity as? EduManActivity)?.setActionBarSubTitle(actionBarSubTitle)
+    }
+
+    /**
+     * This method updates the subtitle of the actionbar
+     * @param actionBarSubTitleResId The resource ID of the action bar tittle - [String]
+     */
+    protected fun setActionBarSubTitle(actionBarSubTitleResId: Int) {
+        (activity as? EduManActivity)?.setActionBarSubTitle(
+            activity?.getString(actionBarSubTitleResId)
+        )
     }
 
     protected fun showInterstitialAd(callback: FullScreenContentCallback) {

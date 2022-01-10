@@ -11,7 +11,7 @@ import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.viewmodel.GradeViewModel
-import com.eduman.ui.adapters.GradesAdapter
+import com.eduman.ui.adapters.recyclerview.GradesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

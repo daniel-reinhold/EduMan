@@ -13,7 +13,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.eduman.R
 import com.eduman.core.App
+import com.eduman.core.Constants
 import com.eduman.core.EduManActivity
+import com.eduman.core.util.SharedPreferencesUtil
 import com.eduman.data.room.dao.SettingDAO
 import com.eduman.data.room.viewmodel.SettingViewModel
 import com.google.android.gms.ads.*
@@ -41,6 +43,8 @@ class MainActivity : EduManActivity("MainActivity") {
 
     // <editor-fold desc="Private variables" defaultstate="collapsed">
 
+    private var sharedPreferences: SharedPreferencesUtil? = null
+
     private var navHostFragment: NavHostFragment? = null
     private var bottomNavigationMenu: BottomNavigationView? = null
 
@@ -61,6 +65,7 @@ class MainActivity : EduManActivity("MainActivity") {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initialize()
         initializeAppBar()
         initializeNavigation()
         initializeAds()
@@ -77,6 +82,13 @@ class MainActivity : EduManActivity("MainActivity") {
     // </editor-fold>
 
     // <editor-fold desc="Initialization methods" defaultstate="collapsed">
+
+    private fun initialize() {
+        sharedPreferences = SharedPreferencesUtil(this)
+
+        Log.i(getLogTag(), sharedPreferences?.getString(Constants.KEY_SP_PIN) ?: "ERROR")
+        Log.i(getLogTag(), sharedPreferences?.getPin() ?: "ERROR")
+    }
 
     /**
      * This method initializes the Navigation component

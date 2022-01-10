@@ -11,7 +11,7 @@ import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.viewmodel.TestViewModel
-import com.eduman.ui.adapters.TestsAdapter
+import com.eduman.ui.adapters.recyclerview.TestsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

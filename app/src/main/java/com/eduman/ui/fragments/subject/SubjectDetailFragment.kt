@@ -1,6 +1,5 @@
 package com.eduman.ui.fragments.subject
 
-import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
@@ -22,8 +21,8 @@ import com.eduman.data.room.viewmodel.CoreViewModel
 import com.eduman.data.room.viewmodel.GradeViewModel
 import com.eduman.data.room.viewmodel.SubjectViewModel
 import com.eduman.data.room.viewmodel.TestViewModel
-import com.eduman.ui.adapters.GradesPreviewAdapter
-import com.eduman.ui.adapters.TestsPreviewAdapter
+import com.eduman.ui.adapters.recyclerview.GradesPreviewAdapter
+import com.eduman.ui.adapters.recyclerview.TestsPreviewAdapter
 import com.eduman.ui.dialogs.AddGradeDialog
 import com.eduman.ui.dialogs.AddTestDialog
 import com.google.android.gms.ads.AdError

@@ -8,7 +8,12 @@ class Constants {
         /**
          * The key for the subject (used for transmitting data between destinations)
          */
-        const val KEY_SUBJECT = "com.eduman.core.constants.KeySubject"
+        const val KEY_SUBJECT = "com.eduman.constants.KeySubject"
+
+        const val PREFERENCE_KEY = "com.eduman.SharedPreferences"
+        const val KEY_SP_USERNAME = "com.eduman.constants.SharedPreferences.Username"
+        const val KEY_SP_PIN = "com.eduman.constants.SharedPreferences.Pin"
+        const val KEY_SP_USE_PIN = "com.eduman.constants.SharedPreferences.UsePin"
     }
 
 }

@@ -10,6 +10,8 @@
 
     <color name="card_background">#F5F5F5</color>
 
+    <color name="separator">#BFBFBF</color>
+
     <color name="icon_light">#6A6C6B</color>
     <color name="icon_dark">#121413</color>
 
@@ -30,6 +32,9 @@
 
     <color name="text_field_stroke_color_focused_dialog">@color/primary</color>
     <color name="text_field_stroke_color_unfocused_dialog">#BDBDBD</color>
+
+    <color name="pin_focused_field">#DCEDFF</color>
+    <color name="button_clear_pin_field">#FF8E88</color>
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>

@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.EduManFragment
 import com.eduman.data.room.viewmodel.TestViewModel
-import com.eduman.ui.adapters.UpcomingTestsAdapter
-import com.google.android.material.card.MaterialCardView
+import com.eduman.ui.adapters.recyclerview.UpcomingTestsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,4 +1,4 @@
-package com.eduman.ui.adapters
+package com.eduman.ui.adapters.recyclerview
 
 import android.view.LayoutInflater
 import android.view.View

@@ -48,4 +48,21 @@
     <string name="error_not_a_float">Muss eine gültige Kommazahl sein</string>
     <string name="error_not_in_range">Muss im Bereich zwischen %1$.1f und %2$.1f liegen</string>
     <string name="no_tests_added_yet">Es wurden noch keine Leistungskontrollen erfasst</string>
+    <string name="setup_assistant">EduMan Einrichtungsassistent</string>
+    <string name="setup_assistant_step1">Schritt 1 ∙ Namen angeben</string>
+    <string name="setup_assistant_step2">Schritt 2 ∙ PIN festlegen</string>
+    <string name="setup_assistant_step3">Schritt 3 ∙ Einrichtung abschließen</string>
+    <string name="next">Weiter</string>
+    <string name="back">Zurück</string>
+    <string name="setup_welcome">Herzlich willkommen bei EduMan. Unser Einrichtungsassistent wird dir gleich einige Fragen stellen. Danach kannst du direkt loslegen!</string>
+    <string name="lets_go">Los gehts!</string>
+    <string name="setup_question_name">Wie sollen wir dich nennen?</string>
+    <string name="name">Name</string>
+    <string name="data_saved_only_local">Diese Daten werden nur lokal gespeichert</string>
+    <string name="setup_question_pin">Bitte lege nun eine PIN fest</string>
+    <string name="skip">Überspringen</string>
+    <string name="or">Oder</string>
+    <string name="pin">PIN</string>
+    <string name="dont_use_pin">Keine PIN benutzen</string>
+    <string name="pin_not_used">PIN wird nicht genutzt</string>
 </resources>

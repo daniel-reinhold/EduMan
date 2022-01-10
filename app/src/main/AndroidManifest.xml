@@ -20,14 +20,7 @@
             android:value="ca-app-pub-6555431213345265~2794258144" />
 
         <activity
-            android:name="com.eduman.ui.activities.StartupActivity"
-            android:exported="true" />
-
-        <activity
-            android:name="com.eduman.ui.activities.MainActivity"
-            android:exported="true" />
-
-        <activity
+            android:noHistory="true"
             android:name="com.eduman.ui.activities.LaunchActivity"
             android:exported="true">
             <intent-filter>
@@ -36,6 +29,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.eduman.ui.activities.SetupActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.eduman.ui.activities.MainActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>

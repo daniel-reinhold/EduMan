@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.EduManFragment
 import com.eduman.data.room.viewmodel.SubjectViewModel
-import com.eduman.ui.adapters.SubjectsAdapter
+import com.eduman.ui.adapters.recyclerview.SubjectsAdapter
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
 

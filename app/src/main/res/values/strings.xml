@@ -52,4 +52,22 @@
     <string name="error_not_a_float">Must be a valid point number</string>
     <string name="error_not_in_range">Has to be in the range between %1$.1f and %2$.1f</string>
     <string name="no_tests_added_yet">No tests have been added yet</string>
+    <string name="setup_assistant">EduMan setup assitant</string>
+    <string name="setup_assistant_step1">Step 1 ∙ Set name</string>
+    <string name="setup_assistant_step2">Step 2 ∙ Set a PIN</string>
+    <string name="setup_assistant_step3">Step 3 ∙ Complete setup</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="setup_welcome">Welcome to EduMan. Our setup assistant will ask you a few questions right away. Then you can start right away!</string>
+    <string name="lets_go">Let\'s go!</string>
+    <string name="setup_question_name">How should we call you?</string>
+    <string name="name">Name</string>
+    <string name="data_saved_only_local">These data are only saved locally.</string>
+    <string name="hint_pin" translatable="false">0</string>
+    <string name="setup_question_pin">Please set a PIN now</string>
+    <string name="skip">Skip</string>
+    <string name="or">Or</string>
+    <string name="pin">PIN</string>
+    <string name="dont_use_pin">Don\'t use a PIN</string>
+    <string name="pin_not_used">PIN is not used</string>
 </resources>

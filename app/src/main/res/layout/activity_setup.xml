@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activityMainRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activities.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activitySetupToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextAppearance="@style/TextAppearanceActionBarSubTitle"
+        app:title="@string/setup_assistant"
+        app:titleTextAppearance="@style/TextAppearanceActionBarTitle" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/activitySetupViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activitySetupToolBar" />
+
+    <LinearLayout
+        android:id="@+id/activitySetupBottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activitySetupViewPager">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activitySetupButtonBack"
+            style="@style/DefaultButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:enabled="false"
+            android:text="@string/back"
+            app:icon="@drawable/icon_arrow_left" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activitySetupButtonNext"
+            style="@style/DefaultButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:enabled="false"
+            android:text="@string/next"
+            app:icon="@drawable/icon_arrow_right"
+            app:iconGravity="end" />
+
+    </LinearLayout>
+
+</LinearLayout>
