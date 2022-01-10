@@ -13,7 +13,7 @@ import com.eduman.core.components.textfield.BaseTextField
 import com.eduman.core.components.textfield.TextField
 import com.eduman.core.components.textfield.validator.implementation.PresenceValidator
 import com.eduman.core.util.GeneralUtil
-import com.eduman.core.util.extensions.toNonNullable
+import com.eduman.core.util.extensions.orZero
 import com.eduman.data.room.entitiy.Subject
 import com.eduman.data.room.viewmodel.SubjectViewModel
 import com.eduman.ui.dialogs.ColorPickerDialog
@@ -118,8 +118,8 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         buttonSave?.setOnClickListener {
             val subject = Subject(
                 id = subjectToEdit?.id,
-                title = textFieldSubjectName?.getValue().toNonNullable(),
-                teacherName = textFieldTeacherName?.getValue().toNonNullable(),
+                title = textFieldSubjectName?.getValue().orEmpty(),
+                teacherName = textFieldTeacherName?.getValue().orEmpty(),
                 color = selectedColor
             )
             subjectViewModel.insert(subject).invokeOnCompletion {
@@ -138,8 +138,8 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
      */
     private fun validate() {
         val errorCount =
-            textFieldSubjectName?.getErrorCount().toNonNullable() +
-            textFieldTeacherName?.getErrorCount().toNonNullable()
+            textFieldSubjectName?.getErrorCount().orZero() +
+            textFieldTeacherName?.getErrorCount().orZero()
 
         buttonSave?.isEnabled = errorCount == 0
     }

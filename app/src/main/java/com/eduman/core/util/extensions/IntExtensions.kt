@@ -1,5 +1,5 @@
 package com.eduman.core.util.extensions
 
-fun Int?.toNonNullable(): Int {
+fun Int?.orZero(): Int {
     return this ?: 0
 }
