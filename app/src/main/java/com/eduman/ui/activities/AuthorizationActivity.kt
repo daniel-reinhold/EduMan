@@ -1,38 +1,54 @@
 package com.eduman.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
+import androidx.appcompat.widget.Toolbar
+import androidx.core.widget.doAfterTextChanged
 import com.eduman.R
+import com.eduman.core.Constants.Companion.DEFAULT_PIN_LENGTH
 import com.eduman.core.EduManActivity
-import com.google.android.material.card.MaterialCardView
-
+import com.eduman.core.util.SharedPreferencesUtil
+import com.google.android.material.textfield.TextInputLayout
 class AuthorizationActivity : EduManActivity("AuthorizationActivity") {
 
-    private var cardDigit1: MaterialCardView? = null
-    private var cardDigit2: MaterialCardView? = null
-    private var cardDigit3: MaterialCardView? = null
-    private var cardDigit4: MaterialCardView? = null
+    private var sharedPreferences: SharedPreferencesUtil? = null
 
-    private var textFieldDigit1: EditText? = null
-    private var textFieldDigit2: EditText? = null
-    private var textFieldDigit3: EditText? = null
-    private var textFieldDigit4: EditText? = null
+    private var toolbar: Toolbar? = null
+    private var textFieldPin: TextInputLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authorization)
+
+        initialize()
     }
 
     private fun initialize() {
-        cardDigit1 = findViewById(R.id.activityAuthorizationCardDigit1)
-        cardDigit2 = findViewById(R.id.activityAuthorizationCardDigit2)
-        cardDigit3 = findViewById(R.id.activityAuthorizationCardDigit3)
-        cardDigit4 = findViewById(R.id.activityAuthorizationCardDigit4)
+        sharedPreferences = SharedPreferencesUtil(this)
+        toolbar = findViewById(R.id.activityAuthorizationToolBar)
+        textFieldPin = findViewById(R.id.activityAuthorizationTextFieldPin)
 
-        textFieldDigit1 = findViewById(R.id.activityAuthorizationDigit1)
-        textFieldDigit2 = findViewById(R.id.activityAuthorizationDigit2)
-        textFieldDigit3 = findViewById(R.id.activityAuthorizationDigit3)
-        textFieldDigit4 = findViewById(R.id.activityAuthorizationDigit4)
+        setSupportActionBar(toolbar)
+
+        textFieldPin?.editText?.doAfterTextChanged {
+            val pin = it.toString()
+
+            textFieldPin?.apply {
+                this.isErrorEnabled = false
+                this.error = null
+            }
+
+            if (pin.length == DEFAULT_PIN_LENGTH) {
+                if (sharedPreferences?.getPin() == pin) {
+                    startActivity(Intent(this, MainActivity::class.java))
+                } else {
+                    textFieldPin?.apply {
+                        this.isErrorEnabled = true
+                        this.error = getString(R.string.error_wrong_pin)
+                    }
+                }
+            }
+        }
     }
 
 }

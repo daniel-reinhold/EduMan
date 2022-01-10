@@ -39,7 +39,7 @@ class SetupPinFragment : EduManFragment("SetupPinFragment") {
     private fun initialize() {
         setupActivity = (activity as? SetupActivity)
         setupViewModel.setUsePin(true)
-        textFieldPin = activity?.findViewById(R.id.activityAuthorizationTextFieldPin)
+        textFieldPin = activity?.findViewById(R.id.fragmentSetupPinTextFieldPin)
         buttonSkip = activity?.findViewById(R.id.fragmentSetupPinButtonSkip)
 
         setActionBarTitle(R.string.setup_assistant_step2)
