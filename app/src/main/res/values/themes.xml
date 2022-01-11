@@ -10,6 +10,8 @@
 
         <item name="actionOverflowButtonStyle">@style/ActionBarOverflowButtonStyle</item>
         <item name="actionOverflowMenuStyle">@style/ActionBarOverflowMenuStyle</item>
+
+        <!-- <item name="actionModeCloseButtonStyle"></item> -->
     </style>
 
     <!-- Style of the Overflow-Button in the ToolBar -->

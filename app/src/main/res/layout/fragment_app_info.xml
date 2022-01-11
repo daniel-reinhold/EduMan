@@ -4,14 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.textview.MaterialTextView
+    <ImageView
+        android:elevation="4dp"
+        android:padding="@dimen/default_margin"
+        android:src="@drawable/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:drawableTint="@color/icon_dark"
-        android:text="@string/app_info"
-        android:textColor="@color/text"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_height="200dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="@dimen/default_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:text="@string/version_colon"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginStart="@dimen/small_margin"
+            android:id="@+id/fragmentAppInfoTextViewVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
