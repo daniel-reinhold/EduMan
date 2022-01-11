@@ -12,7 +12,14 @@
         <com.google.android.material.textview.MaterialTextView
             android:textColor="@color/text"
             android:textSize="18sp"
-            android:text="@string/info_tmg"
+            android:text="@string/data_protection_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:textColor="@color/text"
+            android:textSize="18sp"
+            android:text="@string/data_protection_state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -23,12 +30,21 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:padding="@dimen/small_margin"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/responsible_person_colon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/small_margin"
                     android:textColor="@color/text"
                     android:textSize="16sp"
                     android:text="@string/imprint_name"
@@ -50,31 +66,7 @@
                     android:layout_height="wrap_content" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:textStyle="bold"
-                    android:layout_marginTop="@dimen/default_margin"
-                    android:textColor="@color/text"
-                    android:textSize="16sp"
-                    android:text="@string/represented_by"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:textColor="@color/text"
-                    android:textSize="16sp"
-                    android:text="@string/imprint_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:textStyle="bold"
-                    android:layout_marginTop="@dimen/default_margin"
-                    android:textColor="@color/text"
-                    android:textSize="16sp"
-                    android:text="@string/contact_colon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/small_margin"
                     android:textColor="@color/text"
                     android:textSize="16sp"
                     android:text="@string/imprint_telephone"
@@ -92,35 +84,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_margin"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_separator" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/default_margin"
-                android:text="@string/disclaimer_of_liability"
-                android:textColor="@color/text"
-                android:textSize="18sp" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_separator" />
-
-        </LinearLayout>
-
         <com.google.android.material.card.MaterialCardView
             android:layout_marginTop="@dimen/default_margin"
             style="@style/DefaultCard"
@@ -137,16 +100,73 @@
                     android:textStyle="bold"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/liability_for_content"
+                    android:text="@string/overview_of_processing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:justificationMode="inter_word"
                     android:layout_marginTop="@dimen/small_margin"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/liability_for_content_text"
+                    android:text="@string/data_protection_overview_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/data_protection_overview_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/usage_data_enum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/meta_communication_data_enum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/categories_of_persons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/user_enum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/reason_of_data_processing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/reason_of_data_processing_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -170,7 +190,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/liability_for_links"
+                    android:text="@string/legal_bases"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -179,7 +199,7 @@
                     android:layout_marginTop="@dimen/small_margin"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/liability_for_links_text"
+                    android:text="@string/legal_bases_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -203,7 +223,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/google_analytics"
+                    android:text="@string/data_protection_plugins"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -212,7 +232,25 @@
                     android:layout_marginTop="@dimen/small_margin"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/google_analytics_imprint_text"
+                    android:text="@string/data_protection_plugins_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/info_legal_bases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/info_legal_bases_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -236,7 +274,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/google_ad_sense"
+                    android:text="@string/data_protection_frameworks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -245,7 +283,7 @@
                     android:layout_marginTop="@dimen/small_margin"
                     android:textColor="@color/text"
                     android:textSize="16sp"
-                    android:text="@string/google_ad_sense_imprint_text"
+                    android:text="@string/data_protection_frameworks_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 

@@ -36,6 +36,7 @@ class MainActivity : EduManActivity("MainActivity") {
             R.id.appSettingsFragment,
             R.id.appInfoFragment,
             R.id.librariesFragment,
+            R.id.dataProtectionFragment,
             R.id.imprintFragment
         )
     }

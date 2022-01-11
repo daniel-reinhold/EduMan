@@ -7,10 +7,12 @@
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_imprint.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_info.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_library.xml" value="0.2703125" />
+        <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_lock.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_phone.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_app_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_app_settings.xml" value="0.264" />
-        <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_imprint.xml" value="0.264" />
+        <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_data_protection.xml" value="0.264" />
+        <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_imprint.xml" value="0.256437204414083" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_libraries.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_settings_overview.xml" value="0.264" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_setup_pin.xml" value="0.25416666666666665" />
