@@ -1,17 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.textview.MaterialTextView
+    <LinearLayout
+        android:padding="@dimen/default_margin"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:drawableTint="@color/icon_dark"
-        android:text="@string/imprint"
-        android:textColor="@color/text"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:textColor="@color/text"
+            android:textSize="18sp"
+            android:text="@string/info_tmg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="@dimen/default_margin"
+            style="@style/DefaultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="@dimen/small_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/imprint_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/imprint_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/imprint_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/represented_by"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/imprint_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/contact_colon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/imprint_telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/imprint_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_separator" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                android:text="@string/disclaimer_of_liability"
+                android:textColor="@color/text"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_separator" />
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="@dimen/default_margin"
+            style="@style/DefaultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="@dimen/small_margin"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/liability_for_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/liability_for_content_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="@dimen/default_margin"
+            style="@style/DefaultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="@dimen/small_margin"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/liability_for_links"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/liability_for_links_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="@dimen/default_margin"
+            style="@style/DefaultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="@dimen/small_margin"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/google_analytics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/google_analytics_imprint_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="@dimen/default_margin"
+            style="@style/DefaultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="@dimen/small_margin"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/google_ad_sense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"
+                    android:text="@string/google_ad_sense_imprint_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>
