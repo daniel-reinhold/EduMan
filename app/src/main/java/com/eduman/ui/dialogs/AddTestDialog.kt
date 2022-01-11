@@ -11,18 +11,8 @@ import com.eduman.core.components.textfield.TextField
 import com.eduman.core.components.textfield.TimeTextField
 import com.eduman.core.components.textfield.validator.implementation.PresenceValidator
 import com.eduman.core.util.DateTimeUtil
-import com.eduman.core.util.formatter.DateFormatter
-import com.eduman.core.util.formatter.TimeFormatter
-import com.eduman.data.util.Time
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.datepicker.CalendarConstraints
-import com.google.android.material.datepicker.DateValidatorPointForward
-import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.textfield.TextInputLayout
-import com.google.android.material.timepicker.MaterialTimePicker
-import com.google.android.material.timepicker.TimeFormat
-import java.util.*
 
 /**
  * This class represents a dialog to add a test

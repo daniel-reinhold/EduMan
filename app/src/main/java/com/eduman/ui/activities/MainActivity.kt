@@ -16,8 +16,6 @@ import com.eduman.core.App
 import com.eduman.core.Constants
 import com.eduman.core.EduManActivity
 import com.eduman.core.util.SharedPreferencesUtil
-import com.eduman.data.room.dao.SettingDAO
-import com.eduman.data.room.viewmodel.SettingViewModel
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
