@@ -67,4 +67,9 @@
     <string name="pin_not_used">PIN wird nicht genutzt</string>
     <string name="title_login">EduMan ∙ Anmeldung</string>
     <string name="error_wrong_pin">Diese PIN ist leider nicht richtig</string>
+    <string name="settings">Einstellungen</string>
+    <string name="app_settings">App-Einstellungen</string>
+    <string name="app_info">App-Informationen</string>
+    <string name="libraries">Bibliotheken</string>
+    <string name="imprint">Impressum</string>
 </resources>

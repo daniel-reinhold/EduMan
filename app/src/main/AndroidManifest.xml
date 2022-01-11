@@ -31,10 +31,12 @@
         </activity>
 
         <activity
+            android:noHistory="true"
             android:name="com.eduman.ui.activities.SetupActivity"
             android:exported="true" />
 
         <activity
+            android:noHistory="true"
             android:name="com.eduman.ui.activities.AuthorizationActivity"
             android:exported="true" />
 

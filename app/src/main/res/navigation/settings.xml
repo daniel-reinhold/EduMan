@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings"
+    app:startDestination="@id/settingsOverviewFragment">
+
+    <fragment
+        android:id="@+id/settingsOverviewFragment"
+        android:name="com.eduman.ui.fragments.settings.SettingsOverviewFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings_overview">
+        <action
+            android:id="@+id/action_settingsOverviewFragment_to_appSettingsFragment"
+            app:destination="@id/appSettingsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_settingsOverviewFragment_to_appInfoFragment"
+            app:destination="@id/appInfoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_settingsOverviewFragment_to_librariesFragment"
+            app:destination="@id/librariesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_settingsOverviewFragment_to_imprintFragment"
+            app:destination="@id/imprintFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/appSettingsFragment"
+        android:name="com.eduman.ui.fragments.settings.AppSettingsFragment"
+        android:label="@string/app_settings"
+        tools:layout="@layout/fragment_app_settings" />
+    <fragment
+        android:id="@+id/appInfoFragment"
+        android:name="com.eduman.ui.fragments.settings.AppInfoFragment"
+        android:label="@string/app_info"
+        tools:layout="@layout/fragment_app_info" />
+    <fragment
+        android:id="@+id/librariesFragment"
+        android:name="com.eduman.ui.fragments.settings.LibrariesFragment"
+        android:label="@string/libraries"
+        tools:layout="@layout/fragment_libraries" />
+    <fragment
+        android:id="@+id/imprintFragment"
+        android:name="com.eduman.ui.fragments.settings.ImprintFragment"
+        android:label="@string/imprint"
+        tools:layout="@layout/fragment_imprint" />
+
+</navigation>

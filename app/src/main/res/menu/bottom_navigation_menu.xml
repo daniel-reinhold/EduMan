@@ -8,4 +8,9 @@
         android:id="@+id/subjects"
         android:title="@string/subjects"
         android:icon="@drawable/icon_subjects" />
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        android:icon="@drawable/icon_settings" />
 </menu>
