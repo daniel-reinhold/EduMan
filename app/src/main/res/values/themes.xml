@@ -83,4 +83,9 @@
         <item name="android:textSize">@dimen/font_size_app_bar_subtitle</item>
     </style>
 
+    <style name="DefaultSwitchStyle" parent="TextAppearance.AppCompat.Widget.Switch">
+        <item name="thumbTint">@color/switch_thumb_color</item>
+        <item name="trackTint">@color/switch_track_color</item>
+    </style>
+
 </resources>

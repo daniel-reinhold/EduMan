@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary_light"></color>
     <color name="primary">#007AFF</color>
     <color name="primary_variant">#0A84FF</color>
 
@@ -35,6 +36,12 @@
 
     <color name="pin_focused_field">#DCEDFF</color>
     <color name="button_clear_pin_field">#FF8E88</color>
+
+    <color name="switch_track_checked">#68AFFB</color>
+    <color name="switch_thumb_checked">#007AFF</color>
+
+    <color name="switch_track_unchecked">#e0e0e0</color>
+    <color name="switch_thumb_unchecked">#bdbdbd</color>
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>

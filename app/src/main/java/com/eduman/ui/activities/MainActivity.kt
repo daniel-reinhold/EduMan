@@ -3,7 +3,6 @@ package com.eduman.ui.activities
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -33,7 +32,11 @@ class MainActivity : EduManActivity("MainActivity") {
             R.id.subjectFormFragment,
             R.id.subjectDetailFragment,
             R.id.testsFragment,
-            R.id.gradesFragment
+            R.id.gradesFragment,
+            R.id.appSettingsFragment,
+            R.id.appInfoFragment,
+            R.id.librariesFragment,
+            R.id.imprintFragment
         )
     }
 
