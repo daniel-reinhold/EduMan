@@ -45,8 +45,6 @@ class MainActivity : EduManActivity("MainActivity") {
 
     // <editor-fold desc="Private variables" defaultstate="collapsed">
 
-    private var sharedPreferences: SharedPreferencesUtil? = null
-
     private var navHostFragment: NavHostFragment? = null
     private var bottomNavigationMenu: BottomNavigationView? = null
 
@@ -67,7 +65,6 @@ class MainActivity : EduManActivity("MainActivity") {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initialize()
         initializeAppBar()
         initializeNavigation()
         initializeAds()
@@ -84,13 +81,6 @@ class MainActivity : EduManActivity("MainActivity") {
     // </editor-fold>
 
     // <editor-fold desc="Initialization methods" defaultstate="collapsed">
-
-    private fun initialize() {
-        sharedPreferences = SharedPreferencesUtil(this)
-
-        Log.i(getLogTag(), sharedPreferences?.getString(Constants.KEY_SP_PIN) ?: "ERROR")
-        Log.i(getLogTag(), sharedPreferences?.getPin() ?: "ERROR")
-    }
 
     /**
      * This method initializes the Navigation component

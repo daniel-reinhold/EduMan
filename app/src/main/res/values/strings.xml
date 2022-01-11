@@ -119,4 +119,7 @@
     <string name="library_thanks">These libraries are used in parts by EduMan. We thank the open source community for all of their contributions.</string>
     <string name="app_info_version">Version: %1$s</string>
     <string name="version_colon">Version:</string>
+    <string name="greeting_morning">Good morning, %1$s</string>
+    <string name="greeting_day">Hello, %1$s</string>
+    <string name="greeting_evening">Good evening, %1$s</string>
 </resources>
