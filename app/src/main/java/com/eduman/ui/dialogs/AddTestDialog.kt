@@ -1,8 +1,6 @@
 package com.eduman.ui.dialogs
 
-import android.text.format.DateFormat
 import android.view.LayoutInflater
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.FragmentActivity
 import com.eduman.R
 import com.eduman.core.components.textfield.BaseTextField

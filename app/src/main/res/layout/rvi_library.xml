@@ -14,6 +14,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:contentDescription="@string/cd_library_icon"
             android:id="@+id/rviLibraryImageViewLogo"
             android:layout_width="0dp"
             android:layout_height="match_parent"

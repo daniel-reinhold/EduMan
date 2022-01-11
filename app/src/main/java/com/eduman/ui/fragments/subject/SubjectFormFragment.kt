@@ -14,7 +14,7 @@ import com.eduman.core.components.textfield.TextField
 import com.eduman.core.components.textfield.validator.implementation.PresenceValidator
 import com.eduman.core.util.GeneralUtil
 import com.eduman.core.util.extensions.orZero
-import com.eduman.data.room.entitiy.Subject
+import com.eduman.data.room.entity.Subject
 import com.eduman.data.room.viewmodel.SubjectViewModel
 import com.eduman.ui.dialogs.ColorPickerDialog
 import com.google.android.material.button.MaterialButton

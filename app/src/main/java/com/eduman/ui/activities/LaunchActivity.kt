@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import com.eduman.core.EduManActivity
 import com.eduman.core.util.SharedPreferencesUtil
-import dagger.hilt.android.AndroidEntryPoint
 
 class LaunchActivity : EduManActivity("LaunchActivity") {
 

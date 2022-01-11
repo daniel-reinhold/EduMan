@@ -1,7 +1,7 @@
 package com.eduman.ui.adapters.diffcallback
 
 import androidx.recyclerview.widget.DiffUtil
-import com.eduman.data.room.entitiy.Subject
+import com.eduman.data.room.entity.Subject
 
 class SubjectsDiffCallback(
     private val oldList: List<Subject>,

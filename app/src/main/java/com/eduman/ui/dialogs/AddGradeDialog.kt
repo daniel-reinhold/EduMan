@@ -1,21 +1,15 @@
 package com.eduman.ui.dialogs
 
 import android.app.Activity
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
-import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import com.eduman.R
 import com.eduman.core.components.textfield.FloatTextField
 import com.eduman.core.components.textfield.validator.implementation.FloatRangeValidator
 import com.eduman.core.components.textfield.validator.implementation.PresenceValidator
-import com.eduman.data.room.entitiy.Grade
+import com.eduman.data.room.entity.Grade
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputLayout
-import java.lang.NumberFormatException
 
 /**
  * This class represents a dialog to add a grade

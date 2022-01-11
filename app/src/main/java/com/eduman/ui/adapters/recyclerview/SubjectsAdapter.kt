@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.util.GeneralUtil
-import com.eduman.data.room.entitiy.Subject
+import com.eduman.data.room.entity.Subject
 import com.eduman.ui.adapters.diffcallback.SubjectsDiffCallback
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView

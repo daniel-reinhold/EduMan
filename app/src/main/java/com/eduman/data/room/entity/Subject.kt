@@ -1,4 +1,4 @@
-package com.eduman.data.room.entitiy
+package com.eduman.data.room.entity
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

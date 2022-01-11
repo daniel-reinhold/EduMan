@@ -5,9 +5,9 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.eduman.data.room.converters.DateConverter
 import com.eduman.data.room.dao.*
-import com.eduman.data.room.entitiy.Grade
-import com.eduman.data.room.entitiy.Subject
-import com.eduman.data.room.entitiy.Test
+import com.eduman.data.room.entity.Grade
+import com.eduman.data.room.entity.Subject
+import com.eduman.data.room.entity.Test
 
 /**
  * This method represents the local database

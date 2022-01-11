@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.GradeUtil
-import com.eduman.data.room.entitiy.Grade
+import com.eduman.data.room.entity.Grade
 import com.eduman.ui.adapters.diffcallback.GradesDiffCallback
 import com.google.android.material.textview.MaterialTextView
 

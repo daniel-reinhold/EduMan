@@ -14,9 +14,9 @@ import com.eduman.core.App
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
-import com.eduman.data.room.entitiy.Grade
-import com.eduman.data.room.entitiy.Subject
-import com.eduman.data.room.entitiy.Test
+import com.eduman.data.room.entity.Grade
+import com.eduman.data.room.entity.Subject
+import com.eduman.data.room.entity.Test
 import com.eduman.data.room.viewmodel.CoreViewModel
 import com.eduman.data.room.viewmodel.GradeViewModel
 import com.eduman.data.room.viewmodel.SubjectViewModel

@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <ImageView
+        android:contentDescription="@string/cd_eduman_logo"
         android:elevation="4dp"
         android:padding="@dimen/default_margin"
         android:src="@drawable/title"

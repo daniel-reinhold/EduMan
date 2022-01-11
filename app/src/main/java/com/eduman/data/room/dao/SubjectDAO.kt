@@ -1,7 +1,7 @@
 package com.eduman.data.room.dao
 
 import androidx.room.*
-import com.eduman.data.room.entitiy.Subject
+import com.eduman.data.room.entity.Subject
 import kotlinx.coroutines.flow.Flow
 
 @Dao

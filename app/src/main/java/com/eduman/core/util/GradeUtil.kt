@@ -1,8 +1,7 @@
 package com.eduman.core.util
 
-import androidx.annotation.ColorInt
 import com.eduman.R
-import com.eduman.data.room.entitiy.Grade
+import com.eduman.data.room.entity.Grade
 
 class GradeUtil {
 

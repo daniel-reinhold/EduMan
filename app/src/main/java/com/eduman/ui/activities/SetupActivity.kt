@@ -32,9 +32,6 @@ class SetupActivity : EduManActivity("StartupActivity") {
     private var buttonBack: MaterialButton? = null
     private var buttonNext: MaterialButton? = null
 
-    private var runnableButtonBack: Runnable? = null
-    private var runnableButtonNext: Runnable? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setup)
@@ -58,18 +55,10 @@ class SetupActivity : EduManActivity("StartupActivity") {
 
         buttonBack?.setOnClickListener {
             viewPager?.currentItem = (viewPager?.currentItem ?: 1) - 1
-            runnableButtonBack?.run()
-
-            runnableButtonBack = null
-            runnableButtonNext = null
         }
 
         buttonNext?.setOnClickListener {
             viewPager?.currentItem = (viewPager?.currentItem ?: 0) + 1
-            runnableButtonNext?.run()
-
-            runnableButtonBack = null
-            runnableButtonNext = null
         }
     }
 
@@ -98,14 +87,6 @@ class SetupActivity : EduManActivity("StartupActivity") {
 
     fun setPage(page: Int) {
         viewPager?.currentItem = page
-    }
-
-    fun setRunnableButtonBack(runnable: Runnable) {
-        runnableButtonBack = runnable
-    }
-
-    fun setRunnableButtonNext(runnable: Runnable) {
-        runnableButtonNext = runnable
     }
 
 }

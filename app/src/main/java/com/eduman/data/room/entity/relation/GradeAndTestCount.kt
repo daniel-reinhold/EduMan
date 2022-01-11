@@ -1,4 +1,4 @@
-package com.eduman.data.room.entitiy.relation
+package com.eduman.data.room.entity.relation
 
 import androidx.room.ColumnInfo
 

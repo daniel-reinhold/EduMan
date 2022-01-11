@@ -2,7 +2,6 @@ package com.eduman.core.components.textfield
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.View
 import androidx.core.widget.doAfterTextChanged
 import com.eduman.core.components.textfield.validator.Validator
 import com.google.android.material.textfield.TextInputLayout

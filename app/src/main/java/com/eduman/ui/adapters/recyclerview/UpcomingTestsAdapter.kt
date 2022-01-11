@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.formatter.DateFormatter
-import com.eduman.data.room.entitiy.relation.TestAndSubject
+import com.eduman.data.room.entity.relation.TestAndSubject
 import com.eduman.ui.adapters.diffcallback.TestAndSubjectsDiffCallback
 import com.google.android.material.textview.MaterialTextView
 

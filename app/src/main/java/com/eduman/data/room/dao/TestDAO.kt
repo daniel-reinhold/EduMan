@@ -1,9 +1,9 @@
 package com.eduman.data.room.dao
 
 import androidx.room.*
-import com.eduman.data.room.entitiy.Test
-import com.eduman.data.room.entitiy.relation.TestAndGrade
-import com.eduman.data.room.entitiy.relation.TestAndSubject
+import com.eduman.data.room.entity.Test
+import com.eduman.data.room.entity.relation.TestAndGrade
+import com.eduman.data.room.entity.relation.TestAndSubject
 import kotlinx.coroutines.flow.Flow
 
 @Dao

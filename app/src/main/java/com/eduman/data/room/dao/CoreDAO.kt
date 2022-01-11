@@ -2,7 +2,7 @@ package com.eduman.data.room.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.eduman.data.room.entitiy.relation.GradeAndTestCount
+import com.eduman.data.room.entity.relation.GradeAndTestCount
 import kotlinx.coroutines.flow.Flow
 
 @Dao

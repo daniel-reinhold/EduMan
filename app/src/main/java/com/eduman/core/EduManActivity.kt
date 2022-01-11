@@ -1,7 +1,5 @@
 package com.eduman.core
 
-import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.eduman.core.Constants.Companion.MAX_LOGGING_TAG_LENGTH
 import com.google.android.gms.ads.FullScreenContentCallback

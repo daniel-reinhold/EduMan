@@ -1,7 +1,7 @@
 package com.eduman.data.room.dao
 
 import androidx.room.*
-import com.eduman.data.room.entitiy.Grade
+import com.eduman.data.room.entity.Grade
 import kotlinx.coroutines.flow.Flow
 
 @Dao

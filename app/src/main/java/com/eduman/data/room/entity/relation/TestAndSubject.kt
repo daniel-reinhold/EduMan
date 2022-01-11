@@ -1,9 +1,9 @@
-package com.eduman.data.room.entitiy.relation
+package com.eduman.data.room.entity.relation
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.eduman.data.room.entitiy.Subject
-import com.eduman.data.room.entitiy.Test
+import com.eduman.data.room.entity.Subject
+import com.eduman.data.room.entity.Test
 
 data class TestAndSubject(
     @Embedded

@@ -1,11 +1,9 @@
 package com.eduman.ui.fragments.setup
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.eduman.R
 import com.eduman.core.EduManFragment
 import com.eduman.ui.activities.SetupActivity

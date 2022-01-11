@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.EduManFragment
-import com.eduman.data.room.entitiy.Subject
+import com.eduman.data.room.entity.Subject
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.recyclerview.TestsAdapter
 import dagger.hilt.android.AndroidEntryPoint

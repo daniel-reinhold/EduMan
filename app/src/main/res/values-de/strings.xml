@@ -76,7 +76,7 @@
     <string name="info_tmg">Angaben gemäß § 5 TMG</string>
     <string name="represented_by">Vertreten durch:</string>
     <string name="contact_colon">Kontakt:</string>
-    <string name="imprint_telephone">Telefon: 03771-4973876</string>
+    <string name="imprint_telephone">Telefon: 03771–4973876</string>
     <string name="imprint_email">E-Mail: daniel.reinhold261201@gmail.com</string>
     <string name="disclaimer_of_liability">Haftungsausschluss</string>
     <string name="liability_for_content">Haftung für Inhalte</string>
@@ -112,4 +112,7 @@
     <string name="greeting_morning">Guten Morgen, %1$s</string>
     <string name="greeting_day">Hallo, %1$s</string>
     <string name="greeting_evening">Guten Abend, %1$s</string>
+    <string name="cd_eduman_logo">EduMan Logo</string>
+    <string name="cd_library_icon">Logo der Bibliothek</string>
+    <string name="question_data_correct">Sind diese Daten korrekt?</string>
 </resources>

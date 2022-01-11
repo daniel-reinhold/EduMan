@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
-        android:text="Sind diese Daten korrekt?"
+        android:text="@string/question_data_correct"
         android:textColor="@color/text"
         android:textSize="18sp"
         android:textStyle="bold" />

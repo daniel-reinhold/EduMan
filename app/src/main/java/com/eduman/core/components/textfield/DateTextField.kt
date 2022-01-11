@@ -10,8 +10,6 @@ import com.eduman.core.util.formatter.DateFormatter
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
-import java.lang.IllegalArgumentException
-import java.lang.NullPointerException
 import java.util.*
 
 class DateTextField : BaseTextField {

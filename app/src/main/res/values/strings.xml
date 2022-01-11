@@ -52,7 +52,7 @@
     <string name="error_not_a_float">Must be a valid point number</string>
     <string name="error_not_in_range">Has to be in the range between %1$.1f and %2$.1f</string>
     <string name="no_tests_added_yet">No tests have been added yet</string>
-    <string name="setup_assistant">EduMan setup assitant</string>
+    <string name="setup_assistant">EduMan setup assistant</string>
     <string name="setup_assistant_step1">Step 1 ∙ Set name</string>
     <string name="setup_assistant_step2">Step 2 ∙ Set a PIN</string>
     <string name="setup_assistant_step3">Step 3 ∙ Complete setup</string>
@@ -84,7 +84,7 @@
     <string name="imprint_city" translatable="false">08280 Aue</string>
     <string name="represented_by">Represented by:</string>
     <string name="contact_colon">Contact:</string>
-    <string name="imprint_telephone">Phone: 03771-4973876</string>
+    <string name="imprint_telephone">Phone: 03771–4973876</string>
     <string name="imprint_email">E-Mail: daniel.reinhold261201@gmail.com</string>
     <string name="disclaimer_of_liability">Disclaimer of liability</string>
     <string name="liability_for_content">Liability for content</string>
@@ -122,4 +122,7 @@
     <string name="greeting_morning">Good morning, %1$s</string>
     <string name="greeting_day">Hello, %1$s</string>
     <string name="greeting_evening">Good evening, %1$s</string>
+    <string name="cd_eduman_logo">EduMan Logo</string>
+    <string name="cd_library_icon">Icon of the library</string>
+    <string name="question_data_correct">Are these data correct?</string>
 </resources>

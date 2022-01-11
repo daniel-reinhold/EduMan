@@ -2,7 +2,7 @@ package com.eduman.data.room.repository
 
 import androidx.lifecycle.asLiveData
 import com.eduman.data.room.dao.SubjectDAO
-import com.eduman.data.room.entitiy.Subject
+import com.eduman.data.room.entity.Subject
 import javax.inject.Inject
 
 class SubjectRepository @Inject constructor(

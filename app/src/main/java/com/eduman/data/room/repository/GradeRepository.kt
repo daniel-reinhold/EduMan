@@ -2,7 +2,7 @@ package com.eduman.data.room.repository
 
 import androidx.lifecycle.asLiveData
 import com.eduman.data.room.dao.GradeDAO
-import com.eduman.data.room.entitiy.Grade
+import com.eduman.data.room.entity.Grade
 import javax.inject.Inject
 
 class GradeRepository @Inject constructor(

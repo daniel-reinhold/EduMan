@@ -1,9 +1,9 @@
-package com.eduman.data.room.entitiy.relation
+package com.eduman.data.room.entity.relation
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.eduman.data.room.entitiy.Grade
-import com.eduman.data.room.entitiy.Test
+import com.eduman.data.room.entity.Grade
+import com.eduman.data.room.entity.Test
 
 /**
  * This class represents a One-To-One relationship between a test and a grade

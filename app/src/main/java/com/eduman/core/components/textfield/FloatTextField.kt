@@ -3,9 +3,7 @@ package com.eduman.core.components.textfield
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
-import android.util.Log
 import com.eduman.core.components.textfield.validator.implementation.FloatValidator
-import java.lang.NumberFormatException
 
 class FloatTextField : BaseTextField {
 
