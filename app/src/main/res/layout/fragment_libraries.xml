@@ -2,16 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <com.google.android.material.textview.MaterialTextView
+        android:padding="@dimen/default_margin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:drawableTint="@color/icon_dark"
-        android:text="@string/libraries"
+        android:text="@string/library_thanks"
         android:textColor="@color/text"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textSize="18sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:overScrollMode="never"
+        android:clipToPadding="false"
+        android:paddingVertical="@dimen/extra_small_margin"
+        tools:listitem="@layout/rvi_library"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:id="@+id/fragmentLibrariesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
