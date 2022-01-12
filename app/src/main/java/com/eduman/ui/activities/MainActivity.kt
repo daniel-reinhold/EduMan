@@ -126,16 +126,19 @@ class MainActivity : EduManActivity("MainActivity") {
      * This method initializes the Ads
      */
     private fun initializeAds() {
-        containerBannerAd = findViewById(R.id.activityMainContainerBannerAd)
-        adView = AdView(this).apply {
-            this.adSize = AdSize.BANNER
-            this.adUnitId = BANNER_AD_ID
-        }
-        containerBannerAd?.addView(adView)
+        // Only initialize the banner ad in production
+        if (App.IS_RELEASE) {
+            containerBannerAd = findViewById(R.id.activityMainContainerBannerAd)
+            adView = AdView(this).apply {
+                this.adSize = AdSize.BANNER
+                this.adUnitId = BANNER_AD_ID
+            }
+            containerBannerAd?.addView(adView)
 
-        MobileAds.initialize(this) {}
-        val adRequestBannerAd = AdRequest.Builder().build()
-        adView?.loadAd(adRequestBannerAd)
+            MobileAds.initialize(this) {}
+            val adRequestBannerAd = AdRequest.Builder().build()
+            adView?.loadAd(adRequestBannerAd)
+        }
     }
 
     override fun showInterstitialAd(callback: FullScreenContentCallback) {

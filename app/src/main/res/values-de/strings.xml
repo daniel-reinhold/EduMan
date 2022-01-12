@@ -115,4 +115,11 @@
     <string name="cd_eduman_logo">EduMan Logo</string>
     <string name="cd_library_icon">Logo der Bibliothek</string>
     <string name="question_data_correct">Sind diese Daten korrekt?</string>
+    <string name="topic_colon">Thema:</string>
+    <string name="date_colon">Datum:</string>
+    <string name="test_already_written">Leistungkontrolle wurde bereits geschrieben</string>
+    <string name="weighting_colon">Gewichtung:</string>
+    <string name="set_grade">Note erfassen</string>
+    <string name="no_grade_for_test">Zu dieser Leistungskontrolle wurde noch keine Note erfasst</string>
+    <string name="record_grade">Note erfassen</string>
 </resources>

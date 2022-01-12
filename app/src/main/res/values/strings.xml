@@ -125,4 +125,11 @@
     <string name="cd_eduman_logo">EduMan Logo</string>
     <string name="cd_library_icon">Icon of the library</string>
     <string name="question_data_correct">Are these data correct?</string>
+    <string name="topic_colon">Topic:</string>
+    <string name="date_colon">Date:</string>
+    <string name="test_already_written">Test has already been written</string>
+    <string name="weighting_colon">Weighting:</string>
+    <string name="set_grade">Set grade</string>
+    <string name="no_grade_for_test">No grade has yet been recorded for this test</string>
+    <string name="record_grade">Record grade</string>
 </resources>

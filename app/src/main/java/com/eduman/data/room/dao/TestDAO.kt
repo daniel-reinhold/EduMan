@@ -12,6 +12,10 @@ interface TestDAO {
     @Query("SELECT * FROM tests WHERE subject_id = :subjectId")
     fun getAll(subjectId: Int): Flow<List<Test>>
 
+    @Transaction
+    @Query("SELECT * FROM tests WHERE subject_id = :subjectId")
+    fun getAllWithGrade(subjectId: Int): Flow<List<TestAndGrade>>
+
     @Query("SELECT * FROM tests WHERE subject_id = :subjectId ORDER BY date ASC LIMIT :amount")
     fun getNext(subjectId: Int, amount: Int): Flow<List<Test>>
 

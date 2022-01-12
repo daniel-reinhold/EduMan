@@ -9,13 +9,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.formatter.DateTimeFormatter
 import com.eduman.data.room.entity.Test
+import com.eduman.data.room.entity.relation.TestAndGrade
+import com.eduman.ui.adapters.diffcallback.TestAndGradeDiffCallback
 import com.eduman.ui.adapters.diffcallback.TestsDiffCallback
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
 class TestsAdapter(
-    private var list: List<Test>
+    private val callback: Callback
 ) : RecyclerView.Adapter<TestsAdapter.AdapterViewHolder>() {
+
+    interface Callback {
+        fun onTestClicked(test: Test)
+    }
+
+    private var list = listOf<Test>()
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val card: MaterialCardView = view as MaterialCardView
@@ -40,6 +48,10 @@ class TestsAdapter(
 
         holder.textViewTopic.text = test.topic
         holder.textViewDate.text = DateTimeFormatter.formatDateTimeDefault(holder.context, test.date)
+
+        holder.card.setOnClickListener {
+            callback.onTestClicked(test)
+        }
     }
 
     override fun getItemCount() = list.size

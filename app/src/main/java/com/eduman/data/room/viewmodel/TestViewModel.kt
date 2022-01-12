@@ -21,6 +21,13 @@ class TestViewModel @Inject constructor(
     fun getAll(subjectId: Int) = repository.getAll(subjectId)
 
     /**
+     * This method queries all tests and their associated grade for a specific subject
+     * @param subjectId The ID of the subject - [Int]
+     * @return [List]<[TestAndGrade]> wrapped in LiveData
+     */
+    fun getAllWithGrade(subjectId: Int) = repository.getAllWithGrade(subjectId)
+
+    /**
      * This method queries an specific amount of tests for a specific subject
      * ordered ascending by "date"
      * @param subjectId The ID of the subject - [Int]

@@ -4,12 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
+import com.eduman.core.Constants.Companion.KEY_TEST
+import com.eduman.core.Constants.Companion.KEY_TEST_AND_GRADE
 import com.eduman.core.EduManFragment
 import com.eduman.data.room.entity.Subject
+import com.eduman.data.room.entity.Test
+import com.eduman.data.room.entity.relation.TestAndGrade
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.recyclerview.TestsAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +29,15 @@ class TestsFragment : EduManFragment("TestsFragment") {
     private val testViewModel: TestViewModel by viewModels()
 
     private var recyclerView: RecyclerView? = null
-    private var adapter = TestsAdapter(listOf())
+    private var adapter = TestsAdapter(object : TestsAdapter.Callback {
+        override fun onTestClicked(test: Test) {
+            findNavController().navigate(
+                R.id.action_testsFragment_to_testDetailFragment,
+                bundleOf(KEY_TEST to test)
+            )
+        }
+
+    })
 
     // </editor-fold>
 
@@ -51,10 +65,10 @@ class TestsFragment : EduManFragment("TestsFragment") {
         subject = arguments?.getParcelable(KEY_SUBJECT)
         recyclerView = activity?.findViewById(R.id.fragmentTestsRecyclerView)
 
-        recyclerView?.adapter = adapter
-
         setActionBarTitle(getString(R.string.tests))
         setActionBarSubTitle(subject?.title)
+
+        recyclerView?.adapter = adapter
 
         subject?.id?.let { subjectId ->
             testViewModel.getAll(subjectId).observe(viewLifecycleOwner, { tests ->

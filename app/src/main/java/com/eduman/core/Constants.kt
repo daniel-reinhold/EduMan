@@ -9,9 +9,19 @@ class Constants {
         const val MAX_LOGGING_TAG_LENGTH = 23
 
         /**
-         * The key for the subject (used for transmitting data between destinations)
+         * The key for the Subject (used for transmitting data between destinations)
          */
         const val KEY_SUBJECT = "com.eduman.constants.KeySubject"
+
+        /**
+         * The key for the Test (used for transmitting data between destinations)
+         */
+        const val KEY_TEST = "com.eduman.constants.KeyTest"
+
+        /**
+         * The key for the TestAndGrade (used for transmitting data between destinations)
+         */
+        const val KEY_TEST_AND_GRADE = "com.eduman.constants.KeyTestAndGrade"
 
         const val PREFERENCE_KEY = "com.eduman.SharedPreferences"
         const val KEY_SP_USERNAME = "com.eduman.constants.SharedPreferences.Username"

@@ -1,8 +1,10 @@
 package com.eduman.data.room.entity
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
 /**
@@ -16,6 +18,7 @@ import java.util.*
  * @property testId The ID of the associated test (optional) - [Int]?
  */
 @Entity(tableName = "grades")
+@Parcelize
 data class Grade(
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null,
@@ -34,4 +37,4 @@ data class Grade(
 
     @ColumnInfo(name = "test_id")
     var testId: Int? = null
-)
+) : Parcelable

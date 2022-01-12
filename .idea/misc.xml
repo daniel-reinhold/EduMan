@@ -13,6 +13,7 @@
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_link.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_lock.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_morning.xml" value="0.14270833333333333" />
+        <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_new.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/drawable/icon_phone.xml" value="0.2703125" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_app_info.xml" value="0.25416666666666665" />
@@ -24,6 +25,8 @@
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_settings_overview.xml" value="0.264" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_setup_complete.xml" value="0.13020833333333334" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_setup_pin.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_subject_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/EduMan/app/src/main/res/layout/fragment_test_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/rvi_library.xml" value="0.13020833333333334" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/layout/rvi_libray.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/EduMan/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />

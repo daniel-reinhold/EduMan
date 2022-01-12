@@ -11,6 +11,8 @@ class TestRepository @Inject constructor(
 
     fun getAll(subjectId: Int) = dao.getAll(subjectId).asLiveData()
 
+    fun getAllWithGrade(subjectId: Int) = dao.getAllWithGrade(subjectId).asLiveData()
+
     fun getNext(subjectId: Int, amount: Int) = dao.getNext(subjectId, amount).asLiveData()
 
     fun getNext(amount: Int) = dao.getNext(amount).asLiveData()
