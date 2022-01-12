@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.App
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
+import com.eduman.core.Constants.Companion.KEY_TEST
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
 import com.eduman.data.room.entity.Grade
@@ -72,7 +73,16 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
     private var buttonAddTest: ExtendedFloatingActionButton? = null
 
     private var adapterGrades = GradesPreviewAdapter(listOf())
-    private var adapterTests = TestsPreviewAdapter(listOf())
+
+    private val testsPreviewAdapterCallback = object : TestsPreviewAdapter.Callback {
+        override fun onClick(test: Test) {
+            findNavController().navigate(
+                R.id.action_subjectDetailFragment_to_testDetailFragment,
+                bundleOf(KEY_TEST to test)
+            )
+        }
+    }
+    private var adapterTests = TestsPreviewAdapter(testsPreviewAdapterCallback)
 
     // </editor-fold>
 

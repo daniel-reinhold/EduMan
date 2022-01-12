@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
+import com.eduman.core.Constants.Companion.KEY_TEST
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.SharedPreferencesUtil
 import com.eduman.core.util.extensions.getHour
+import com.eduman.data.room.entity.relation.TestAndSubject
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.recyclerview.UpcomingTestsAdapter
 import com.google.android.material.textview.MaterialTextView
@@ -34,7 +38,15 @@ class DashboardFragment : EduManFragment("DashboardFragment") {
 
     private var recyclerViewUpcomingTests: RecyclerView? = null
     private var containerNoUpcomingTests: LinearLayout? = null
-    private val upcomingTestsAdapter = UpcomingTestsAdapter()
+    private val upcomingTestsAdapterCallback = object : UpcomingTestsAdapter.Callback {
+        override fun onClick(testAndSubject: TestAndSubject) {
+            findNavController().navigate(
+                R.id.action_dashboardFragment_to_testDetailFragment2,
+                bundleOf(KEY_TEST to testAndSubject.test)
+            )
+        }
+    }
+    private val upcomingTestsAdapter = UpcomingTestsAdapter(upcomingTestsAdapterCallback)
 
     override fun onCreateView(
         inflater: LayoutInflater,

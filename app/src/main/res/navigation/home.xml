@@ -6,8 +6,25 @@
     app:startDestination="@id/dashboardFragment">
 
     <fragment
-        tools:layout="@layout/fragment_dashboard"
         android:id="@+id/dashboardFragment"
         android:name="com.eduman.ui.fragments.dashboard.DashboardFragment"
-        android:label="@string/dashboard" />
+        android:label="@string/dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_testDetailFragment2"
+            app:destination="@id/testDetailFragment2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/testDetailFragment2"
+        android:name="com.eduman.ui.fragments.test.TestDetailFragment"
+        android:label="TestDetailFragment"
+        tools:layout="@layout/fragment_test_details">
+        <argument
+            android:name="test"
+            app:argType="com.eduman.data.room.entity.Test" />
+    </fragment>
 </navigation>

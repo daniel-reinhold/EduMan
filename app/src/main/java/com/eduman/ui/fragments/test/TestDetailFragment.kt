@@ -18,6 +18,7 @@ import com.eduman.data.room.entity.Grade
 import com.eduman.data.room.entity.Test
 import com.eduman.data.room.entity.relation.TestAndGrade
 import com.eduman.data.room.viewmodel.GradeViewModel
+import com.eduman.data.room.viewmodel.SubjectViewModel
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.dialogs.AddGradeDialog
 import com.google.android.material.button.MaterialButton
@@ -27,6 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class TestDetailFragment : EduManFragment("TestDetailFragment") {
 
+    private val subjectViewModel: SubjectViewModel by viewModels()
     private val testViewModel: TestViewModel by viewModels()
     private val gradeViewModel: GradeViewModel by viewModels()
     private var test: Test? = null
@@ -70,6 +72,13 @@ class TestDetailFragment : EduManFragment("TestDetailFragment") {
         textViewTopic?.text = test?.topic
         test?.date?.let {
             textViewDate?.text = DateTimeFormatter.formatDateTimeDefault(activity, it)
+        }
+
+        test?.subjectId?.let { subjectId ->
+            subjectViewModel.find(subjectId).observe(viewLifecycleOwner, { subject ->
+                setActionBarTitle(R.string.test)
+                setActionBarSubTitle(subject?.title)
+            })
         }
 
         test?.id?.let { testId ->

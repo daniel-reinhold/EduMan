@@ -132,4 +132,5 @@
     <string name="set_grade">Set grade</string>
     <string name="no_grade_for_test">No grade has yet been recorded for this test</string>
     <string name="record_grade">Record grade</string>
+    <string name="string_with_two_placeholder" translatable="false">%1$s ∙ %2$s</string>
 </resources>

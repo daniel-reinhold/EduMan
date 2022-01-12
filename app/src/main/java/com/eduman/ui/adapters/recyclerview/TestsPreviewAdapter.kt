@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
@@ -13,11 +14,17 @@ import com.eduman.ui.adapters.diffcallback.TestsDiffCallback
 import com.google.android.material.textview.MaterialTextView
 
 class TestsPreviewAdapter(
-    private var list: List<Test>
+    private val callback: Callback
 ) : RecyclerView.Adapter<TestsPreviewAdapter.AdapterViewHolder>() {
+    private var list = listOf<Test>()
+
+    interface Callback {
+        fun onClick(test: Test)
+    }
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val context: Context = view.context
+        val root: LinearLayout = view as LinearLayout
         val textViewTopic: MaterialTextView = view.findViewById(R.id.rviTestPreviewTextViewTopic)
         val textViewDate: MaterialTextView = view.findViewById(R.id.rviTestPreviewTextViewDate)
     }
@@ -37,6 +44,10 @@ class TestsPreviewAdapter(
 
         holder.textViewTopic.text = test.topic
         holder.textViewDate.text = DateTimeFormatter.formatDateTimeDefault(holder.context, test.date)
+
+        holder.root.setOnClickListener {
+            callback.onClick(test)
+        }
     }
 
     override fun getItemCount() = list.size
