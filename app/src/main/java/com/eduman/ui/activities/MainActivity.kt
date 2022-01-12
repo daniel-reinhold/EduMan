@@ -2,6 +2,8 @@ package com.eduman.ui.activities
 
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -11,6 +13,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.eduman.R
 import com.eduman.core.App
+import com.eduman.core.Constants.Companion.BANNER_AD_ID
+import com.eduman.core.Constants.Companion.INTERSTITIAL_AD_UNIT_ID
 import com.eduman.core.EduManActivity
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -50,7 +54,8 @@ class MainActivity : EduManActivity("MainActivity") {
 
     private var toolbar: Toolbar? = null
 
-    private var interstitialAdUnitId = "ca-app-pub-6555431213345265/1746444940"
+    private var containerBannerAd: LinearLayout? = null
+
     private var adView: AdView? = null
     private var interstitialAd: InterstitialAd? = null
 
@@ -121,21 +126,21 @@ class MainActivity : EduManActivity("MainActivity") {
      * This method initializes the Ads
      */
     private fun initializeAds() {
-        adView = findViewById(R.id.activityMainAdView)
-
-        if (App.IS_RELEASE) {
-            MobileAds.initialize(this) {}
-            val adRequestBannerAd = AdRequest.Builder().build()
-
-            adView?.loadAd(adRequestBannerAd)
-        } else {
-            adView?.visibility = View.GONE
+        containerBannerAd = findViewById(R.id.activityMainContainerBannerAd)
+        adView = AdView(this).apply {
+            this.adSize = AdSize.BANNER
+            this.adUnitId = BANNER_AD_ID
         }
+        containerBannerAd?.addView(adView)
+
+        MobileAds.initialize(this) {}
+        val adRequestBannerAd = AdRequest.Builder().build()
+        adView?.loadAd(adRequestBannerAd)
     }
 
     override fun showInterstitialAd(callback: FullScreenContentCallback) {
         val adRequestInterstitialAd = AdRequest.Builder().build()
-        InterstitialAd.load(this, interstitialAdUnitId, adRequestInterstitialAd, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(this, INTERSTITIAL_AD_UNIT_ID, adRequestInterstitialAd, object : InterstitialAdLoadCallback() {
             override fun onAdLoaded(ad: InterstitialAd) {
                 interstitialAd = ad
             }

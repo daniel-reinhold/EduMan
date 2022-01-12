@@ -20,6 +20,16 @@ class Constants {
 
         const val DEFAULT_PIN_LENGTH: Int = 4
 
+        val BANNER_AD_ID = if (App.IS_RELEASE)
+            "ca-app-pub-6555431213345265/8349837158"
+        else
+            "ca-app-pub-3940256099942544/6300978111"
+
+        val INTERSTITIAL_AD_UNIT_ID = if (App.IS_RELEASE)
+            "ca-app-pub-6555431213345265/1746444940"
+        else
+            "ca-app-pub-3940256099942544/1033173712"
+
         val USED_LIBRARIES = listOf(
             Library("Android Core Library", "android.com", "https://developer.android.com/jetpack/androidx/releases/core", R.drawable.logo_android),
             Library("Kotlin", "kotlinlang.com", "https://kotlinlang.org/", R.drawable.logo_kotlin),

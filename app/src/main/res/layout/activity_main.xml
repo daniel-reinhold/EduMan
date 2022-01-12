@@ -36,12 +36,12 @@
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_navigation_menu" />
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/activityMainAdView"
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/activityMainContainerBannerAd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-6555431213345265/8349837158" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
