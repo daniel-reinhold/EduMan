@@ -84,6 +84,8 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
         buttonSelectColor = activity?.findViewById(R.id.fragmentSubjectFormButtonSelectColor)
         buttonSave = activity?.findViewById(R.id.fragmentSubjectFormButtonSave)
 
+        setActionBarTitle(R.string.create_subject)
+
         activity?.let {
             textFieldSubjectName?.addValidator(PresenceValidator(it))
             textFieldTeacherName?.addValidator(PresenceValidator(it))
@@ -95,6 +97,7 @@ class SubjectFormFragment : EduManFragment("SubjectForm") {
             colorView?.backgroundTintList = GeneralUtil.getColorStateList(it.color)
             selectedColor = it.color
             buttonSave?.isEnabled = true
+            setActionBarTitle(R.string.edit_subject)
         }
 
         textFieldSubjectName?.setOnTextChangeListener(object : BaseTextField.TextChangeListener {

@@ -19,6 +19,11 @@ class Constants {
         const val KEY_TEST = "com.eduman.constants.KeyTest"
 
         /**
+         * The key for the Subject ID (used for transmitting data between destinations)
+         */
+        const val KEY_SUBJECT_ID = "com.eduman.constants.KeySubjectId"
+
+        /**
          * The key for the TestAndGrade (used for transmitting data between destinations)
          */
         const val KEY_TEST_AND_GRADE = "com.eduman.constants.KeyTestAndGrade"

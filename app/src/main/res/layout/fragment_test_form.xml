@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="@dimen/default_margin"
+    android:orientation="vertical">
+
+    <com.eduman.core.components.textfield.TextField
+        android:id="@+id/fragmentTestFormTextFieldTopic"
+        style="@style/DialogTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/topic">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.eduman.core.components.textfield.TextField>
+
+    <com.eduman.core.components.textfield.DateTextField
+        android:id="@+id/fragmentTestFormTextFieldDate"
+        style="@style/DialogTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/extra_small_margin"
+        android:hint="@string/date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.eduman.core.components.textfield.DateTextField>
+
+    <com.eduman.core.components.textfield.TimeTextField
+        android:id="@+id/fragmentTestFormTextFieldTime"
+        style="@style/DialogTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/extra_small_margin"
+        android:hint="@string/time">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.eduman.core.components.textfield.TimeTextField>
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragmentTestFormButtonSave"
+        style="@style/DefaultButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/save"
+        app:icon="@drawable/icon_save" />
+
+</LinearLayout>

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.App
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
+import com.eduman.core.Constants.Companion.KEY_SUBJECT_ID
 import com.eduman.core.Constants.Companion.KEY_TEST
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
@@ -27,14 +28,12 @@ import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.recyclerview.GradesPreviewAdapter
 import com.eduman.ui.adapters.recyclerview.TestsPreviewAdapter
 import com.eduman.ui.dialogs.AddGradeDialog
-import com.eduman.ui.dialogs.AddTestDialog
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class SubjectDetailFragment : EduManFragment("Dashboard") {
@@ -226,6 +225,12 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
         // Display a dialog to add a test
         buttonAddTest?.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_subjectDetailFragment_to_testFormFragment,
+                bundleOf(KEY_SUBJECT_ID to subject?.id)
+            )
+
+            /*
             activity?.let {
                 AddTestDialog(it, object : AddTestDialog.AddTestDialogListener {
                     override fun onSave(topic: String, date: Long) {
@@ -242,6 +247,7 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
 
                 }).show()
             }
+            */
         }
 
     }

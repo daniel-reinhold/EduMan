@@ -122,4 +122,8 @@
     <string name="set_grade">Note erfassen</string>
     <string name="no_grade_for_test">Zu dieser Leistungskontrolle wurde noch keine Note erfasst</string>
     <string name="record_grade">Note erfassen</string>
+    <string name="create_subject">Fach erstellen</string>
+    <string name="edit_subject">Fach bearbeiten</string>
+    <string name="create_test">Leistungskontrolle erstellen</string>
+    <string name="edit_test">Leistungskontrolle bearbeiten</string>
 </resources>

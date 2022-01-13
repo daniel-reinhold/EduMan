@@ -133,4 +133,8 @@
     <string name="no_grade_for_test">No grade has yet been recorded for this test</string>
     <string name="record_grade">Record grade</string>
     <string name="string_with_two_placeholder" translatable="false">%1$s ∙ %2$s</string>
+    <string name="create_subject">Create subject</string>
+    <string name="edit_subject">Edit Subject</string>
+    <string name="create_test">Create test</string>
+    <string name="edit_test">Edit test</string>
 </resources>
