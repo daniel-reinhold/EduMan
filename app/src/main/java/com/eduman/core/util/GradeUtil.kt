@@ -27,14 +27,6 @@ class GradeUtil {
             }
         }
 
-        fun formatGrade(grade: Float, decimalPlaces: Int = 2): String {
-            return if (grade % 1.0 == 0.0) {
-                String.format("%.0f", grade)
-            } else {
-                String.format("%.${decimalPlaces}f", grade)
-            }
-        }
-
     }
 
 }

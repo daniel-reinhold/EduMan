@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
+import com.eduman.core.util.extensions.format
 import com.eduman.data.room.entity.Grade
 import com.eduman.ui.adapters.diffcallback.GradesDiffCallback
 import com.google.android.material.textview.MaterialTextView
@@ -17,7 +18,6 @@ class GradesPreviewAdapter(
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textViewGrade: MaterialTextView = view.findViewById(R.id.rviGradePreviewTextViewGrade)
         val textViewWeighting: MaterialTextView = view.findViewById(R.id.rviGradePreviewTextViewWeighting)
-        val textViewTotal: MaterialTextView = view.findViewById(R.id.rviGradePreviewTextViewTotal)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
@@ -33,9 +33,8 @@ class GradesPreviewAdapter(
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
         val grade = list[holder.adapterPosition]
 
-        holder.textViewGrade.text = grade.grade.toString()
-        holder.textViewWeighting.text = grade.weighting.toString()
-        holder.textViewTotal.text = (grade.grade * grade.weighting).toString()
+        holder.textViewGrade.text = grade.grade.format()
+        holder.textViewWeighting.text = grade.weighting.format()
     }
 
     override fun getItemCount() = list.size

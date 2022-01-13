@@ -12,6 +12,7 @@ import com.eduman.core.Constants.Companion.KEY_TEST
 import com.eduman.core.Constants.Companion.KEY_TEST_AND_GRADE
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
+import com.eduman.core.util.extensions.format
 import com.eduman.core.util.extensions.setTextColorByResId
 import com.eduman.core.util.formatter.DateTimeFormatter
 import com.eduman.data.room.entity.Grade
@@ -93,10 +94,10 @@ class TestDetailFragment : EduManFragment("TestDetailFragment") {
                     containerNoGrade?.visibility = View.GONE
                     textViewGrade?.apply {
                         val grade = testAndGrade.grade.grade
-                        this.text = GradeUtil.formatGrade(grade)
+                        this.text = grade.format()
                         this.setTextColorByResId(GradeUtil.gradeToColor(grade))
                     }
-                    textViewWeighting?.text = GradeUtil.formatGrade(testAndGrade.grade.weighting)
+                    textViewWeighting?.text = testAndGrade.grade.weighting.format()
                 }
             })
 

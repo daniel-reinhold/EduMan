@@ -5,7 +5,7 @@ buildscript {
     ext.lifecycleVersion    = '2.4.0'
     ext.coroutinesVersion   = '1.5.2'
     ext.hiltVersion         = '2.38.1'
-    ext.navVersion          = '2.3.0-alpha01'
+    ext.navVersion          = '2.4.0-rc01'
     ext.lottieVersion       = '4.2.1'
     ext.colorPickerVersion  = '0.0.15'
     ext.adsVersion          = '20.5.0'

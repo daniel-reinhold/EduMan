@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.util.GradeUtil
+import com.eduman.core.util.extensions.format
+import com.eduman.core.util.extensions.setTextColorByResId
 import com.eduman.data.room.entity.Grade
 import com.eduman.ui.adapters.diffcallback.GradesDiffCallback
 import com.google.android.material.textview.MaterialTextView
@@ -37,14 +39,12 @@ class GradesAdapter : RecyclerView.Adapter<GradesAdapter.AdapterViewHolder>() {
         val grade = list[holder.adapterPosition]
 
         holder.textViewGrade.apply {
-            this.text = GradeUtil.formatGrade(grade.grade)
-            this.setTextColor(
-                ContextCompat.getColor(holder.context, GradeUtil.gradeToColor(grade.grade))
-            )
+            this.text = grade.grade.format()
+            this.setTextColorByResId(GradeUtil.gradeToColor(grade.grade))
         }
         holder.textViewWeighting.text = holder.context.getString(
             R.string.weighting_value,
-            GradeUtil.formatGrade(grade.weighting)
+            grade.weighting.format()
         )
     }
 

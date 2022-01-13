@@ -15,6 +15,8 @@ import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.Constants.Companion.KEY_TEST
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
+import com.eduman.core.util.extensions.format
+import com.eduman.core.util.extensions.setTextColorByResId
 import com.eduman.data.room.entity.Grade
 import com.eduman.data.room.entity.Subject
 import com.eduman.data.room.entity.Test
@@ -142,13 +144,8 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
             gradeViewModel.getAll(subjectId).observe(viewLifecycleOwner, { grades ->
                 textViewGradeAverage?.apply {
                     val average = GradeUtil.calculateGradeAverage(grades)
-
-                    this.text = GradeUtil.formatGrade(average, 2)
-                    activity?.let {
-                        this.setTextColor(
-                            ContextCompat.getColor(it, GradeUtil.gradeToColor(average))
-                        )
-                    }
+                    this.text = average.format(2, false)
+                    this.setTextColorByResId(GradeUtil.gradeToColor(average))
                 }
             })
 

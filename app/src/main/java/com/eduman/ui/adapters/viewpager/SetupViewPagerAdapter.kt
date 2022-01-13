@@ -9,7 +9,8 @@ import com.eduman.ui.fragments.setup.SetupNameFragment
 import com.eduman.ui.fragments.setup.SetupPinFragment
 import com.eduman.ui.fragments.setup.SetupStartFragment
 
-class SetupViewPagerAdapter(
+class
+SetupViewPagerAdapter(
     activity: FragmentActivity
 ) : FragmentStateAdapter(activity) {
 

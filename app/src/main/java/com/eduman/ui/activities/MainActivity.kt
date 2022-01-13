@@ -1,10 +1,12 @@
 package com.eduman.ui.activities
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -109,7 +111,16 @@ class MainActivity : EduManActivity("MainActivity") {
         navController?.addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar?.apply {
                 setDisplayHomeAsUpEnabled((destination.id in CHILD_FRAGMENTS))
-                setHomeAsUpIndicator(if (destination.id in CHILD_FRAGMENTS) R.drawable.icon_arrow_left else 0)
+
+                val context: Context = this@MainActivity.baseContext
+                val drawable = ContextCompat.getDrawable(
+                    context,
+                    R.drawable.icon_arrow_left
+                )?.apply {
+                    this.setTint(ContextCompat.getColor(context, R.color.icon_dark))
+                }
+
+                setHomeAsUpIndicator(if (destination.id in CHILD_FRAGMENTS) drawable else null)
                 setActionBarSubTitle("")
             }
         }
