@@ -33,4 +33,18 @@ data class Test(
 
     @ColumnInfo(name = "subject_id")
     var subjectId: Int
-) : Parcelable
+) : Parcelable {
+
+    companion object {
+
+        fun getInstance(): Test {
+            return Test(
+                topic = "",
+                date = Date(),
+                subjectId = 0
+            )
+        }
+
+    }
+
+}

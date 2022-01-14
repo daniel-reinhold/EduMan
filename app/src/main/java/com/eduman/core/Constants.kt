@@ -23,10 +23,10 @@ class Constants {
          */
         const val KEY_SUBJECT_ID = "com.eduman.constants.KeySubjectId"
 
-        /**
-         * The key for the TestAndGrade (used for transmitting data between destinations)
-         */
-        const val KEY_TEST_AND_GRADE = "com.eduman.constants.KeyTestAndGrade"
+        const val KEY_FORM_MODE = "com.eduman.constants.KeyFormMode"
+
+        const val FORM_MODE_CREATE = 10
+        const val FORM_MODE_EDIT = 20
 
         const val PREFERENCE_KEY = "com.eduman.SharedPreferences"
         const val KEY_SP_USERNAME = "com.eduman.constants.SharedPreferences.Username"

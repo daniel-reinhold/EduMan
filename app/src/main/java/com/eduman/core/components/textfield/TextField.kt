@@ -20,7 +20,7 @@ class TextField : BaseTextField {
         return this.editText?.text.toString()
     }
 
-    fun setValue(value: String) {
+    fun setValue(value: String?) {
         this.editText?.setText(value)
     }
 

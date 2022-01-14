@@ -10,6 +10,7 @@ import com.eduman.core.util.formatter.DateFormatter
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
+import java.text.SimpleDateFormat
 import java.util.*
 
 class DateTextField : BaseTextField {
@@ -53,6 +54,24 @@ class DateTextField : BaseTextField {
 
     fun getValue(): Calendar {
         return selectedDate
+    }
+
+    fun setValue(date: Date?) {
+        date ?: return
+
+        val day = SimpleDateFormat("dd", Locale.getDefault()).format(date).toInt()
+        val month = SimpleDateFormat("MM", Locale.getDefault()).format(date).toInt()
+        val year = SimpleDateFormat("yyy", Locale.getDefault()).format(date).toInt()
+
+        selectedDate = Calendar.getInstance().apply {
+            set(Calendar.YEAR, year)
+            set(Calendar.MONTH, month)
+            set(Calendar.DAY_OF_MONTH, day)
+        }
+
+        this.editText?.setText(
+            DateFormatter.formatDateDefault(context, selectedDate.time)
+        )
     }
 
     private fun showDatePicker() {

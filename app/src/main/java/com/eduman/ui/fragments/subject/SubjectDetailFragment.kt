@@ -4,13 +4,15 @@ import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.App
+import com.eduman.core.Constants.Companion.FORM_MODE_CREATE
+import com.eduman.core.Constants.Companion.FORM_MODE_EDIT
+import com.eduman.core.Constants.Companion.KEY_FORM_MODE
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.Constants.Companion.KEY_SUBJECT_ID
 import com.eduman.core.Constants.Companion.KEY_TEST
@@ -78,8 +80,11 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
     private val testsPreviewAdapterCallback = object : TestsPreviewAdapter.Callback {
         override fun onClick(test: Test) {
             findNavController().navigate(
-                R.id.action_subjectDetailFragment_to_testDetailFragment,
-                bundleOf(KEY_TEST to test)
+                R.id.action_global_testDetailFragment,
+                bundleOf(
+                    KEY_FORM_MODE to FORM_MODE_EDIT,
+                    KEY_TEST to test
+                )
             )
         }
     }
@@ -226,8 +231,11 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
         // Display a dialog to add a test
         buttonAddTest?.setOnClickListener {
             findNavController().navigate(
-                R.id.action_subjectDetailFragment_to_testFormFragment,
-                bundleOf(KEY_SUBJECT_ID to subject?.id)
+                R.id.action_global_testFormFragment,
+                bundleOf(
+                    KEY_FORM_MODE to FORM_MODE_CREATE,
+                    KEY_SUBJECT_ID to subject?.id
+                )
             )
 
             /*

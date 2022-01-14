@@ -41,8 +41,7 @@ class MainActivity : EduManActivity("MainActivity") {
             R.id.librariesFragment,
             R.id.dataProtectionFragment,
             R.id.imprintFragment,
-            R.id.testDetailFragment,
-            R.id.testDetailFragment2
+            R.id.testDetailFragment
         )
     }
 

@@ -2,14 +2,15 @@ package com.eduman.ui.fragments.test
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.LinearLayout
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.eduman.R
+import com.eduman.core.Constants.Companion.FORM_MODE_EDIT
+import com.eduman.core.Constants.Companion.KEY_FORM_MODE
 import com.eduman.core.Constants.Companion.KEY_TEST
-import com.eduman.core.Constants.Companion.KEY_TEST_AND_GRADE
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
 import com.eduman.core.util.extensions.format
@@ -56,6 +57,7 @@ class TestDetailFragment : EduManFragment("TestDetailFragment") {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setHasOptionsMenu(true)
         initialize()
     }
 
@@ -119,6 +121,26 @@ class TestDetailFragment : EduManFragment("TestDetailFragment") {
                     }
                 }
             }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.test_detail_overflow_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.testDetailMenuItemEdit -> {
+                findNavController().navigate(
+                    R.id.action_global_testFormFragment,
+                    bundleOf(
+                        KEY_FORM_MODE to FORM_MODE_EDIT,
+                        KEY_TEST to test
+                    )
+                )
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

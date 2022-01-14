@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eduman.R
 import com.eduman.core.Constants.Companion.KEY_SUBJECT
 import com.eduman.core.Constants.Companion.KEY_TEST
-import com.eduman.core.Constants.Companion.KEY_TEST_AND_GRADE
 import com.eduman.core.EduManFragment
 import com.eduman.data.room.entity.Subject
 import com.eduman.data.room.entity.Test
-import com.eduman.data.room.entity.relation.TestAndGrade
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.recyclerview.TestsAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +30,7 @@ class TestsFragment : EduManFragment("TestsFragment") {
     private var adapter = TestsAdapter(object : TestsAdapter.Callback {
         override fun onTestClicked(test: Test) {
             findNavController().navigate(
-                R.id.action_testsFragment_to_testDetailFragment,
+                R.id.action_global_testDetailFragment,
                 bundleOf(KEY_TEST to test)
             )
         }

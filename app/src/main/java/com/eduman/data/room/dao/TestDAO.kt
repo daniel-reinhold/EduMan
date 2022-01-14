@@ -27,7 +27,7 @@ interface TestDAO {
     @Query("SELECT * FROM tests WHERE id = :testId LIMIT 1")
     fun getGrade(testId: Int): Flow<TestAndGrade>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(tes: Test)
 
     @Delete

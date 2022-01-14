@@ -7,10 +7,12 @@ import android.util.AttributeSet
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
 import com.eduman.R
+import com.eduman.core.util.formatter.DateFormatter
 import com.eduman.core.util.formatter.TimeFormatter
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import java.lang.NullPointerException
+import java.text.SimpleDateFormat
 import java.util.*
 
 class TimeTextField : BaseTextField {
@@ -50,6 +52,22 @@ class TimeTextField : BaseTextField {
 
     fun setFragmentManager(fragmentManager: FragmentManager) {
         this.fragmentManager = fragmentManager
+    }
+
+    fun setValue(time: Date?) {
+        time ?: return
+
+        val hour = SimpleDateFormat("HH", Locale.getDefault()).format(time).toInt()
+        val minute = SimpleDateFormat("mm", Locale.getDefault()).format(time).toInt()
+
+        selectedTime = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, hour)
+            set(Calendar.MINUTE, minute)
+        }
+
+        this.editText?.setText(
+            TimeFormatter.formatTimeDefault(context, selectedTime.time)
+        )
     }
 
     fun getValue(): Calendar {

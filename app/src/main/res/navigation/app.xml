@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app"
     app:startDestination="@+id/home">
 
     <include app:graph="@navigation/home" />
     <include app:graph="@navigation/subjects" />
     <include app:graph="@navigation/settings" />
+
+    <fragment
+        android:id="@+id/testFormFragment"
+        android:name="com.eduman.ui.fragments.test.TestFormFragment"
+        tools:layout="@layout/fragment_test_form" />
+
+    <fragment
+        android:id="@+id/testDetailFragment"
+        android:name="com.eduman.ui.fragments.test.TestDetailFragment"
+        tools:layout="@layout/fragment_test_details" />
+    <action
+        android:id="@+id/action_global_testFormFragment"
+        app:destination="@id/testFormFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <action
+        android:id="@+id/action_global_testDetailFragment"
+        app:destination="@id/testDetailFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
 </navigation>

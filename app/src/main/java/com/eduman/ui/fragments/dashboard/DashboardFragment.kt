@@ -27,7 +27,10 @@ import java.util.*
 class DashboardFragment : EduManFragment("DashboardFragment") {
 
     companion object {
-        private const val DEFAULT_UPCOMING_TESTS_COUNT = 3
+        /**
+         * Amount of upcoming tests which are displayed
+         */
+        private const val UPCOMING_TESTS_COUNT = 3
     }
 
     private val testViewModel: TestViewModel by viewModels()
@@ -41,7 +44,7 @@ class DashboardFragment : EduManFragment("DashboardFragment") {
     private val upcomingTestsAdapterCallback = object : UpcomingTestsAdapter.Callback {
         override fun onClick(testAndSubject: TestAndSubject) {
             findNavController().navigate(
-                R.id.action_dashboardFragment_to_testDetailFragment2,
+                R.id.action_global_testDetailFragment,
                 bundleOf(KEY_TEST to testAndSubject.test)
             )
         }
@@ -97,7 +100,7 @@ class DashboardFragment : EduManFragment("DashboardFragment") {
         }
 
         recyclerViewUpcomingTests?.adapter = upcomingTestsAdapter
-        testViewModel.getNext(DEFAULT_UPCOMING_TESTS_COUNT).observe(viewLifecycleOwner, { list ->
+        testViewModel.getNext(UPCOMING_TESTS_COUNT).observe(viewLifecycleOwner, { list ->
             if (list.isNotEmpty()) {
                 recyclerViewUpcomingTests?.visibility = View.VISIBLE
                 containerNoUpcomingTests?.visibility = View.GONE
