@@ -17,4 +17,6 @@ class GradeRepository @Inject constructor(
 
     suspend fun delete(grade: Grade) = dao.delete(grade)
 
+    suspend fun deleteBySubjectId(subjectId: Int) = dao.deleteBySubjectId(subjectId)
+
 }

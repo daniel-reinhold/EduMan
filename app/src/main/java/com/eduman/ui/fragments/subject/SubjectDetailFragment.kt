@@ -19,6 +19,7 @@ import com.eduman.core.Constants.Companion.KEY_TEST
 import com.eduman.core.EduManFragment
 import com.eduman.core.util.GradeUtil
 import com.eduman.core.util.extensions.format
+import com.eduman.core.util.extensions.orZero
 import com.eduman.core.util.extensions.setTextColorByResId
 import com.eduman.data.room.entity.Grade
 import com.eduman.data.room.entity.Subject
@@ -30,6 +31,7 @@ import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.adapters.recyclerview.GradesPreviewAdapter
 import com.eduman.ui.adapters.recyclerview.TestsPreviewAdapter
 import com.eduman.ui.dialogs.AddGradeDialog
+import com.eduman.ui.dialogs.ConfirmationDialog
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.material.card.MaterialCardView
@@ -50,6 +52,32 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
     // </editor-fold>
 
     // <editor-fold desc="Private variables" defaultstate="collapsed">
+
+    private val testsPreviewAdapterCallback = object : TestsPreviewAdapter.Callback {
+        override fun onClick(test: Test) {
+            findNavController().navigate(
+                R.id.action_global_testDetailFragment,
+                bundleOf(
+                    KEY_FORM_MODE to FORM_MODE_EDIT,
+                    KEY_TEST to test
+                )
+            )
+        }
+    }
+
+    private var confirmDeleteCallback = object : ConfirmationDialog.Callback {
+        override fun onConfirmed() {
+            subject?.let { s ->
+                subjectViewModel.delete(s).invokeOnCompletion {
+                    gradeViewModel.deleteBySubjectId(s.id.orZero()).invokeOnCompletion {
+                        testViewModel.deleteBySubjectId(s.id.orZero()).invokeOnCompletion {
+                            findNavController().navigateUp()
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     private var subject: Subject? = null
 
@@ -76,18 +104,6 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
     private var buttonAddTest: ExtendedFloatingActionButton? = null
 
     private var adapterGrades = GradesPreviewAdapter(listOf())
-
-    private val testsPreviewAdapterCallback = object : TestsPreviewAdapter.Callback {
-        override fun onClick(test: Test) {
-            findNavController().navigate(
-                R.id.action_global_testDetailFragment,
-                bundleOf(
-                    KEY_FORM_MODE to FORM_MODE_EDIT,
-                    KEY_TEST to test
-                )
-            )
-        }
-    }
     private var adapterTests = TestsPreviewAdapter(testsPreviewAdapterCallback)
 
     // </editor-fold>
@@ -237,25 +253,6 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
                     KEY_SUBJECT_ID to subject?.id
                 )
             )
-
-            /*
-            activity?.let {
-                AddTestDialog(it, object : AddTestDialog.AddTestDialogListener {
-                    override fun onSave(topic: String, date: Long) {
-                        subject?.id?.let { subjectId ->
-                            val test = Test(
-                                topic = topic,
-                                date = Date(date),
-                                subjectId = subjectId
-                            )
-
-                            testViewModel.insert(test)
-                        }
-                    }
-
-                }).show()
-            }
-            */
         }
 
     }
@@ -278,6 +275,18 @@ class SubjectDetailFragment : EduManFragment("Dashboard") {
                     )
                 }
                 true
+            }
+            R.id.subjectDetailMenuItemDelete -> {
+                activity?.let {
+                    ConfirmationDialog(it, confirmDeleteCallback).apply {
+                        setTitle(R.string.title_dialog_delete_subject)
+                        setDescription(getString(R.string.description_dialog_delete_subject, subject?.title))
+                        setButtonConfirmText(R.string.delete)
+                        setButtonConfirmIcon(R.drawable.icon_delete)
+                    }.build().show()
+                    true
+                }
+                false
             }
             else -> super.onOptionsItemSelected(item)
         }

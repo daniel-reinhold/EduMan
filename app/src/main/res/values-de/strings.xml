@@ -131,4 +131,6 @@
     <string name="cancel">Abbrechen</string>
     <string name="description_dialog_delete_test">Soll die Leistungskontrolle \'%1$s\' wirklich gelöscht werden?</string>
     <string name="title_dialog_delete_test">Leistungskontrolle löschen</string>
+    <string name="title_dialog_delete_subject">Fach löschen</string>
+    <string name="description_dialog_delete_subject">Soll das Fach \'%1$s\' wirklich gelöscht werden? Es werden auch alle dazugehörigen Noten und Leistungskontrollen gelöscht.</string>
 </resources>

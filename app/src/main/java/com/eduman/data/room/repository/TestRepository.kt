@@ -23,4 +23,6 @@ class TestRepository @Inject constructor(
 
     suspend fun delete(test: Test) = dao.delete(test)
 
+    suspend fun deleteBySubjectId(subjectId: Int) = dao.deleteBySubjectId(subjectId)
+
 }

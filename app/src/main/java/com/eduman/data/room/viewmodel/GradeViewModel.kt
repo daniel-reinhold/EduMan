@@ -48,4 +48,12 @@ class GradeViewModel @Inject constructor(
         repository.delete(grade)
     }
 
+    /**
+     * This method deletes all grades for a specific subject
+     * @param subjectId The ID of the subject to delete all grades for - [Int]
+     */
+    fun deleteBySubjectId(subjectId: Int) = viewModelScope.launch {
+        repository.deleteBySubjectId(subjectId)
+    }
+
 }

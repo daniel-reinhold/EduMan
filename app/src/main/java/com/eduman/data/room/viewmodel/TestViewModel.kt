@@ -66,4 +66,12 @@ class TestViewModel @Inject constructor(
         repository.delete(test)
     }
 
+    /**
+     * This method deletes all tests for a specific subject
+     * @param subjectId The ID of the subject to delete all tests for - [Int]
+     */
+    fun deleteBySubjectId(subjectId: Int) = viewModelScope.launch {
+        repository.deleteBySubjectId(subjectId)
+    }
+
 }

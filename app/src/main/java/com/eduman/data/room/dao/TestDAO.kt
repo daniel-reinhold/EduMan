@@ -33,4 +33,7 @@ interface TestDAO {
     @Delete
     suspend fun delete(tes: Test)
 
+    @Query("DELETE FROM tests where subject_id = :subjectId")
+    suspend fun deleteBySubjectId(subjectId: Int)
+
 }

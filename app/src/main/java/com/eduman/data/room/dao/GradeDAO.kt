@@ -19,4 +19,7 @@ interface GradeDAO {
     @Delete
     suspend fun delete(grade: Grade)
 
+    @Query("DELETE FROM grades WHERE subject_id = :subjectId")
+    suspend fun deleteBySubjectId(subjectId: Int)
+
 }

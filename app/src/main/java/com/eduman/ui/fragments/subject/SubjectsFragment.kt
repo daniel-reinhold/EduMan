@@ -55,6 +55,8 @@ class SubjectsFragment : EduManFragment("Subjects") {
      */
     @SuppressLint("NotifyDataSetChanged")
     private fun initialize(view: View) {
+        setActionBarTitle(getString(R.string.subjects))
+
         recyclerView = view.findViewById(R.id.fragmentSubjectsRecyclerView)
         containerEmpty = view.findViewById(R.id.fragmentSubjectsContainerEmpty)
         buttonAddSubject = view.findViewById(R.id.fragmentSubjectsButtonAddSubject)
