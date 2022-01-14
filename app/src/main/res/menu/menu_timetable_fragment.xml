@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/timetableMenuItemSelect"
+        android:icon="@drawable/icon_arrow_down"
+        android:title="@string/select_timetable"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/timetableMenuItemAdd"
+        android:icon="@drawable/icon_plus"
+        android:title="@string/add_timetable"
+        app:showAsAction="ifRoom" />
+
+</menu>

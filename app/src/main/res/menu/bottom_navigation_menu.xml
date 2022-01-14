@@ -10,7 +10,13 @@
         android:icon="@drawable/icon_subjects" />
 
     <item
+        android:id="@+id/timetable"
+        android:title="@string/timetable"
+        android:icon="@drawable/icon_timetable" />
+
+    <item
         android:id="@+id/settings"
         android:title="@string/settings"
         android:icon="@drawable/icon_settings" />
+
 </menu>

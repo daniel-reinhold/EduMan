@@ -8,6 +8,7 @@
     <include app:graph="@navigation/home" />
     <include app:graph="@navigation/subjects" />
     <include app:graph="@navigation/settings" />
+    <include app:graph="@navigation/timetable" />
 
     <fragment
         android:id="@+id/testFormFragment"

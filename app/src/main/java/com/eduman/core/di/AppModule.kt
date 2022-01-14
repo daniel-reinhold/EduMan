@@ -22,8 +22,7 @@ object AppModule {
         context,
         AppDatabase::class.java,
         "eduman_db"
-    )
-    .build()
+    ).build()
 
     @Singleton
     @Provides
