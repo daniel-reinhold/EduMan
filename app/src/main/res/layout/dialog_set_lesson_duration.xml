@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/default_margin">
+
+    <View
+        android:layout_width="@dimen/bottom_sheet_dialog_handle_width"
+        android:layout_height="@dimen/bottom_sheet_dialog_handle_height"
+        android:background="@drawable/background_bottom_sheet_handle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/set_lesson_duration"
+        android:textColor="@color/text"
+        android:textSize="@dimen/font_size_large"
+        android:textStyle="bold" />
+
+    <com.eduman.core.components.textfield.IntegerTextField
+        android:id="@+id/dialogSetLessonDurationTextFieldDuration"
+        style="@style/DefaultTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:hint="@string/duration_lesson_in_minutes">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.eduman.core.components.textfield.IntegerTextField>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dialogSetLessonDurationButtonSave"
+        style="@style/DefaultButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/save"
+        app:icon="@drawable/icon_save" />
+
+</LinearLayout>

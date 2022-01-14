@@ -6,12 +6,42 @@
     android:padding="@dimen/default_margin">
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:textColor="@color/text"
         android:id="@+id/fragmentAppSettingsSwitchUsePin"
+        style="@style/DefaultSwitchStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:checked="false"
+        android:padding="@dimen/small_margin"
         android:text="@string/use_pin"
-        style="@style/DefaultSwitchStyle" />
+        android:textColor="@color/text" />
+
+    <LinearLayout
+        android:id="@+id/fragmentAppSettingsContainerLessonDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/small_margin">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:letterSpacing="0.05"
+            android:text="@string/duration_lesson"
+            android:textColor="@color/text"
+            android:textSize="@dimen/font_size_default" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/fragmentAppSettingsTextViewLessonDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45min"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/font_size_default" />
+
+    </LinearLayout>
 
 </LinearLayout>

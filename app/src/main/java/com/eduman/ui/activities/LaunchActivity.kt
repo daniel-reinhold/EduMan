@@ -18,6 +18,10 @@ class LaunchActivity : EduManActivity("LaunchActivity") {
     private fun initialize() {
         sharedPreferences = SharedPreferencesUtil(this)
 
+        if (sharedPreferences?.getLessonDuration() == null || sharedPreferences?.getLessonDuration() == 0) {
+            sharedPreferences?.setLessonDuration(45)
+        }
+
         if (sharedPreferences?.getUsername() == null || sharedPreferences?.usePin() == null) {
             startActivity(Intent(this, SetupActivity::class.java))
         } else {
