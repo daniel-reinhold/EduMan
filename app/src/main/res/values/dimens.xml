@@ -14,6 +14,10 @@
     <dimen name="recyclerview_bottom_padding">80dp</dimen>
 
     <dimen name="bottom_sheet_dialog_corner_radius">16dp</dimen>
+
+    <dimen name="bottom_sheet_dialog_handle_width">50dp</dimen>
+    <dimen name="bottom_sheet_dialog_handle_height">7dp</dimen>
+    <dimen name="bottom_sheet_dialog_handle_radius">3.5dp</dimen>
     <dimen name="action_bar_overflow_menu_corner_radius">8dp</dimen>
 
     <dimen name="extra_small_margin">8dp</dimen>

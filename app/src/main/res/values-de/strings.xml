@@ -126,4 +126,9 @@
     <string name="edit_subject">Fach bearbeiten</string>
     <string name="create_test">Leistungskontrolle erstellen</string>
     <string name="edit_test">Leistungskontrolle bearbeiten</string>
+    <string name="delete">Löschen</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="description_dialog_delete_test">Soll die Leistungskontrolle \'%1$s\' wirklich gelöscht werden?</string>
+    <string name="title_dialog_delete_test">Leistungskontrolle löschen</string>
 </resources>

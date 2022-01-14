@@ -137,4 +137,9 @@
     <string name="edit_subject">Edit Subject</string>
     <string name="create_test">Create test</string>
     <string name="edit_test">Edit test</string>
+    <string name="delete">Delete</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_dialog_delete_test">Delete test</string>
+    <string name="description_dialog_delete_test">Do you really wan to delete the test \'%1$s\'?</string>
 </resources>

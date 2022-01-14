@@ -23,6 +23,7 @@ import com.eduman.data.room.viewmodel.GradeViewModel
 import com.eduman.data.room.viewmodel.SubjectViewModel
 import com.eduman.data.room.viewmodel.TestViewModel
 import com.eduman.ui.dialogs.AddGradeDialog
+import com.eduman.ui.dialogs.ConfirmationDialog
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textview.MaterialTextView
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,6 +46,16 @@ class TestDetailFragment : EduManFragment("TestDetailFragment") {
 
     private var containerNoGrade: LinearLayout? = null
     private var buttonRecordGrade: MaterialButton? = null
+
+    private var confirmDeleteCallback = object : ConfirmationDialog.Callback {
+        override fun onConfirmed() {
+            test?.let {
+                testViewModel.delete(it).invokeOnCompletion {
+                    findNavController().navigateUp()
+                }
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -139,6 +150,18 @@ class TestDetailFragment : EduManFragment("TestDetailFragment") {
                     )
                 )
                 true
+            }
+            R.id.testDetailMenuItemDelete -> {
+                activity?.let {
+                    ConfirmationDialog(it, confirmDeleteCallback).apply {
+                        setTitle(R.string.title_dialog_delete_test)
+                        setDescription(getString(R.string.description_dialog_delete_test, test?.topic))
+                        setButtonConfirmText(R.string.delete)
+                        setButtonConfirmIcon(R.drawable.icon_delete)
+                    }.build().show()
+                    true
+                }
+                false
             }
             else -> super.onOptionsItemSelected(item)
         }

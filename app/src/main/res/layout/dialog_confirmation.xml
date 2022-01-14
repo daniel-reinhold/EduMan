@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:padding="@dimen/default_margin"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <View
+        android:background="@drawable/background_bottom_sheet_handle"
+        android:layout_width="@dimen/bottom_sheet_dialog_handle_width"
+        android:layout_height="@dimen/bottom_sheet_dialog_handle_height" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_marginTop="@dimen/default_margin"
+        android:id="@+id/dialogConfirmationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leistungskontrolle löschen"
+        android:textColor="@color/text"
+        android:textSize="@dimen/font_size_large"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dialogConfirmationDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="Soll die Leistungskontrolle 'Potenzen' worklich gelöscht werden?"
+        android:textColor="@color/text"
+        android:textSize="@dimen/font_size_default" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialogConfirmationButtonCancel"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/extra_small_margin"
+            android:layout_weight="1"
+            android:backgroundTint="@color/error"
+            android:singleLine="true"
+            android:text="@string/cancel"
+            app:icon="@drawable/icon_close" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialogConfirmationButtonConfirm"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/extra_small_margin"
+            android:layout_weight="1"
+            android:backgroundTint="@color/success"
+            android:singleLine="true"
+            android:text="@string/ok"
+            app:icon="@drawable/icon_check" />
+
+    </LinearLayout>
+
+</LinearLayout>
