@@ -138,4 +138,8 @@
     <string name="cd_next">Weiter</string>
     <string name="select_timetable">Stundenplan auswählen</string>
     <string name="add_timetable">Stundenplan hinzufügen</string>
+    <string name="duration_lesson">Unterrichtsstundendauer</string>
+    <string name="duration_lesson_value">%1$d min</string>
+    <string name="duration_lesson_in_minutes">Unterrichtsstundendauer in Minuten</string>
+    <string name="set_lesson_duration">Unterrichtsstundendauer ändern</string>
 </resources>

@@ -32,6 +32,7 @@ class Constants {
         const val KEY_SP_USERNAME = "com.eduman.constants.SharedPreferences.Username"
         const val KEY_SP_PIN = "com.eduman.constants.SharedPreferences.Pin"
         const val KEY_SP_USE_PIN = "com.eduman.constants.SharedPreferences.UsePin"
+        const val KEY_SP_LESSON_DURATION = "com.eduman.constants.SharedPreferences.LessonDuration"
 
         const val DEFAULT_PIN_LENGTH: Int = 4
 

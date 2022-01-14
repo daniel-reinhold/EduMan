@@ -149,4 +149,8 @@
     <string name="cd_next">Next</string>
     <string name="select_timetable">Select timetable</string>
     <string name="add_timetable">Add timetable</string>
+    <string name="duration_lesson">Lession duration</string>
+    <string name="duration_lesson_value">%1$d min</string>
+    <string name="duration_lesson_in_minutes">Lesson duration in minutes</string>
+    <string name="set_lesson_duration">Set lesson duration</string>
 </resources>

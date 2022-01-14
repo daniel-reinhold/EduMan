@@ -22,7 +22,11 @@ object AppModule {
         context,
         AppDatabase::class.java,
         "eduman_db"
-    ).build()
+    )
+        .addMigrations(
+            MIGRATION_1_2
+        )
+        .build()
 
     @Singleton
     @Provides
@@ -39,5 +43,18 @@ object AppModule {
     @Singleton
     @Provides
     fun provideTestDao(database: AppDatabase) = database.getTestDAO()
+
+    @Singleton
+    @Provides
+    fun provideTimetableDao(database: AppDatabase) = database.getTimetableDAO()
+
+    @Singleton
+    @Provides
+    fun provideTimetableDayDao(database: AppDatabase) = database.getTimetableDayDAO()
+
+    @Singleton
+    @Provides
+    fun provideTimetableDayEntryDao(database: AppDatabase) = database.getTimetableDayEntryDAO()
+
 
 }
